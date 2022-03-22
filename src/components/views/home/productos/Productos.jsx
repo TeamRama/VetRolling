@@ -23,10 +23,10 @@ const Productos = () => {
       <div className="container">
           <h1 className="text-white text-center fw-bold">Productos para tus mascotas</h1>
           <div>
-        <div className="row">
+        <div className="row ">
           {productos && productos.map((el, i) => {
             return(
-              <div key={i} className="col-md-4 col-sm-12 my-3 text-center">
+              <div key={i} className="col-lg-4 col-md-12 col-sm-12 my-3 text-center d-flex justify-content-center aling-items-center">
                 <CardProducto imagen={el.productoImg} nombre={el.productoTitle} precio={el.productoPrecio}></CardProducto>
               </div>
             )
