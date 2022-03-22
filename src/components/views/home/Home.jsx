@@ -1,8 +1,8 @@
 import React from 'react';
 import Portada from './Portada';
 import InformacionGralHome from './InformacionGralHome';
-import Planes from './planes/Planes';
 import Publicidad from './Publicidad';
+import Productos from './productos/Productos';
 
 const Home = () => {
     return (
@@ -10,8 +10,8 @@ const Home = () => {
             <Portada></Portada>
             <main className='bg-dark'>
             <InformacionGralHome></InformacionGralHome>
-            <Planes></Planes>
             <Publicidad></Publicidad>
+            <Productos></Productos>
             </main>
         </div>
     );
