@@ -3,7 +3,7 @@ import { Card, Col, Button} from "react-bootstrap";
 
 const ServicioCard = ({ servicios }) => {
     return (
-             <Col sm={12} md={4} className="d-flex justify-content-center my-5">
+             <Col sm={12} md={12} lg={4} className="d-flex justify-content-center my-5">
             <Card style={{ width: "18rem" }}>
               <img src={servicios.servicioImg} alt="asd"></img>
               <Card.Body>

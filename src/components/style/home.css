@@ -62,3 +62,8 @@
 .publicidad-h2{
     color: #feba0b;
 }
+
+/* Carousel Opiniones clientes */
+.img-opiniones-carousel{
+    opacity: 0.2;
+}
