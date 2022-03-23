@@ -22,7 +22,7 @@ const Servicio = () => {
   
     return (
       <div className="my-5">
-        <h2 className="text-center fw-bold text-white">Nuestros Servicios</h2>
+        <h2 className="text-center fw-bold">Nuestros Servicios</h2>
         <Container>
           <Row>
             {servicios && 

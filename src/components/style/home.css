@@ -59,11 +59,15 @@
     height: 500px;
 }
 
-.publicidad-h2{
-    color: #feba0b;
-}
 
 /* Carousel Opiniones clientes */
-.img-opiniones-carousel{
-    opacity: 0.2;
+.texto-sombra{
+    text-shadow: 7px 4px 5px black;
+}
+
+/* css de componente planes */
+
+.img-sombra {
+    border-radius: 20px;
+    box-shadow: 2px 2px 9px #999;
 }

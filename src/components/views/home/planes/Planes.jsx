@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import CardPlan from "./CardPlan";
 
+
 const Planes = () => {
   const [planes, setPlanes] = useState(null);
 
@@ -22,7 +23,7 @@ const Planes = () => {
 
   return (
     <div>
-      <h2 className="text-white text-center fw-bold my-5">
+      <h2 className="text-center fw-bold my-5">
         Nuestra veterinaria actualmente ofrece un servicio especial mensual para
         nuestras mascotas al estilo de una obra social, por lo que cuenta con 3
         planes:

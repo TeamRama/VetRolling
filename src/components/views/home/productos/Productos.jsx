@@ -21,7 +21,7 @@ const Productos = () => {
   
     return (
       <div className="container">
-          <h1 className="text-white text-center fw-bold">Productos para tus mascotas</h1>
+          <h1 className="text-center fw-bold">Productos para tus mascotas</h1>
           <div>
         <div className="row ">
           {productos && productos.map((el, i) => {

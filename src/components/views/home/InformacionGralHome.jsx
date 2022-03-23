@@ -12,7 +12,7 @@ const InformacionGralHome = () => {
               Tu Clinica Veterinaria de confianza en Tucuman
             </h2>
           </Col>
-          <Col sm={12} md={8} className="text-center lead my-5 text-white">
+          <Col sm={12} md={8} className="text-center lead my-5 text-black">
             <p>
               En Clínica Veterinaria Rolling, tu centro veterinario de confianza
               en Tucuman, contamos con el mejor equipo tanto humano como técnico

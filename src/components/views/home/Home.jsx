@@ -12,7 +12,6 @@ const Home = () => {
     return (
         <div>
             <Portada></Portada>
-            <div className='bg-dark'>
             <main className='container'>
             <InformacionGralHome></InformacionGralHome>
             <Publicidad></Publicidad>
@@ -22,7 +21,6 @@ const Home = () => {
             <Opiniones></Opiniones>
             <Profesionales></Profesionales>
             </main>
-            </div>
         </div>
     );
 };
