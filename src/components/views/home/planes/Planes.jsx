@@ -13,7 +13,6 @@ const Planes = () => {
   const getPlanes = async () => {
     try {
       const res = await fetch("http://localhost:4001/planes");
-      console.log(res);
       const planesApi = await res.json();
       setPlanes(planesApi);
     } catch (error) {

@@ -12,7 +12,6 @@ const Servicio = () => {
     const getServicios = async () => {  
        try{
           const res = await fetch("http://localhost:4001/servicios")
-          console.log(res)
           const serviciosApi = await res.json()
           setServicios(serviciosApi)
       } catch (error) {

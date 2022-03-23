@@ -11,7 +11,6 @@ const Productos = () => {
     const getProductos = async () => {
        try{
           const res = await fetch("http://localhost:4001/productos")
-          console.log(res)
           const productosApi = await res.json()
           setProductos(productosApi)
       } catch (error) {

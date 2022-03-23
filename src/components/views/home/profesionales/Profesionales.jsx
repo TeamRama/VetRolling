@@ -11,7 +11,6 @@ const Profesionales = () => {
   const getVeterinarios = async () => {
      try{
         const res = await fetch("http://localhost:4001/veterinarios")
-        console.log(res)
         const serviciosApi = await res.json()
         setVeterinarios(serviciosApi)
     } catch (error) {
