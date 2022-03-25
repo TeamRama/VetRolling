@@ -22,10 +22,8 @@ const Planes = () => {
 
   return (
     <div>
-      <h2 className="text-center fw-bold my-5">
-        Nuestra veterinaria actualmente ofrece un servicio especial mensual para
-        nuestras mascotas al estilo de una obra social, por lo que cuenta con 3
-        planes:
+      <h2 className="text-center display-4 fw-bold mt-5">
+        Nuestros Planes:
       </h2>
       <div className="row">
         {planes &&

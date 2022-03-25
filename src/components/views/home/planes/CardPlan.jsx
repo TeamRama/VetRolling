@@ -7,14 +7,14 @@ const CardPlan = ({ imagen, nombre, descripcion }) => {
     <div>
       <Container>
         <Row>
-          <Col sm={12} md={6}>
+          <Col sm={12} md={12} lg={6}>
             <img
               className="img-fluid img-sombra"
               src={imagen}
               alt="cachorros"
             ></img>
           </Col>
-          <Col sm={12} md={6} className="mt-2">
+          <Col sm={12} md={12} lg={6} className="mt-2">
             <h3 className="text-warning fw-bold">{nombre}</h3>
             <p className="lead">{descripcion}</p>
             <Button className="bg-warning">Seguir leyendo</Button>

@@ -6,16 +6,15 @@ const InformacionGralHome = () => {
   return (
     <div>
       <Container>
-        <Row className="container">
+        <Row className="container my-5">
           <Col sm={12} md={4}>
-            <h2 className="informacion-text-color text-center my-5">
+            <h2 className="text-warning fw-bold text-center">
               Tu Clinica Veterinaria de confianza en Tucuman
             </h2>
           </Col>
-          <Col sm={12} md={8} className="text-center lead my-5 text-black">
+          <Col sm={12} md={8} className="text-center lead text-black">
             <p>
-              En Clínica Veterinaria Rolling, tu centro veterinario de confianza
-              en Tucuman, contamos con el mejor equipo tanto humano como técnico
+              En Clínica Veterinaria Rolling, contamos con el mejor equipo tanto humano como técnico
               para proporcionarle a tu mascota una atención veterinaria de la
               máxima calidad.
             </p>

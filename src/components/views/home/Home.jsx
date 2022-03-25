@@ -16,9 +16,9 @@ const Home = () => {
             <Clima></Clima>
             <main className='container'>
             <InformacionGralHome></InformacionGralHome>
+            <Planes></Planes>
             <Publicidad></Publicidad>
             <Productos></Productos>
-            <Planes></Planes>
             <Servicio></Servicio>
             <Opiniones></Opiniones>
             <Profesionales></Profesionales>

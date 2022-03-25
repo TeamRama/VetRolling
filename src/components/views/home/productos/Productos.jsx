@@ -20,7 +20,7 @@ const Productos = () => {
   
     return (
       <div className="container">
-          <h1 className="text-center fw-bold">Productos para tus mascotas</h1>
+          <h1 className="text-center display-4 fw-bold mt-5">Productos para tus mascotas</h1>
           <div>
         <div className="row ">
           {productos && productos.map((el, i) => {

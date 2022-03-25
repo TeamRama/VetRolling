@@ -6,7 +6,7 @@ const Publicidad = () => {
   return (
     <div>
       <div className="my-5">
-        <h2 className="text-center fw-bold">
+        <h2 className="text-center display-4 fw-bold">
           Alimentacion de alta calidad
         </h2>
         <div>
