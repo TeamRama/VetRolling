@@ -10,7 +10,7 @@ const TablaUsuario = ({turnos , URL, getApi}) => {
              <Container className="py-5">
         <div className="d-flex align-items-center justify-content-between">
           <h1>Tabla de Clientes</h1>
-          <Link to="/Login/CrearUsuario" className="btn-reservar text-decoration-none text-center">Crear Usuario </Link>
+          <Link to="/usuario/crear" className="btn-reservar text-decoration-none text-center">Crear Usuario </Link>
         </div>
         <hr />
         {/* Tabla de turnos */}
@@ -19,11 +19,11 @@ const TablaUsuario = ({turnos , URL, getApi}) => {
             <thead>
               <tr>
                 <th>N°.</th>
-                <th>Usuario </th>
-                <th>Nombre y Apellido</th>
+                <th>email </th>
+                <th>Nombre Completo del dueño</th>
+                <th>Nombre o Apodo de Mascota</th>
                 <th>Contraseña</th>
                 <th>Fecha de Nacimiento</th>
-                <th>email</th>
                 <th>Celular</th>
               </tr>
             </thead>

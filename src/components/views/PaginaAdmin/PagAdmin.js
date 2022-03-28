@@ -11,7 +11,7 @@ const PagAdmin = () => {
              <br/>
              <Link to="/turno/tabla" className="btn-reservar text-decoration-none text-center my-2 ">Turnos  </Link>
              <br/>
-             <Link to="/turno/tabla" className="btn-reservar text-decoration-none text-center my-2">Consultas  </Link>
+             <Link to="/PaginaContacto" className="btn-reservar text-decoration-none text-center my-2">Consultas  </Link>
 
         </Container>
         </div>

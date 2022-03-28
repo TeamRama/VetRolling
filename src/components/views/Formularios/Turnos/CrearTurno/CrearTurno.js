@@ -89,7 +89,7 @@ const CrearTurno = ({ URL }) => {
       <Container className="py-5 cuerpo">
         <h1>Todos los Turnos </h1>
         <hr />
-        {/* Form Product */}
+        {/* Form Turnos */}
 
         <Form className="my-5" onSubmit={handleSubmit}>
           <Row>

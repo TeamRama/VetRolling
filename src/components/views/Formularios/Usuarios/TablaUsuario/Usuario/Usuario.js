@@ -44,11 +44,11 @@ const Usuario = ({ turno , URL, getApi }) => {
 
     <tr>
       <td>{turno.id}</td>
-      <td>{turno.usuario}</td>
-      <td>{turno.nombreApellido}</td>
+      <td>{turno.email}</td>
+      <td>{turno.nombreDueño}</td>
+      <td>{turno.nombreMascota}</td>
       <td>{turno.contraseña}</td>
       <td>{turno.fechaNacimiento}</td>
-      <td>{turno.email}</td>
       <td>{turno.celular}</td>
       <td className="w-25">
         <div className="d-flex justify-content-center">
