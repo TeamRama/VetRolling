@@ -1,0 +1,98 @@
+.b {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+  
+  .b-left {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 100%;
+  }
+  
+  .b-right {
+    flex: 1;
+  }
+  
+  .b-card.bg {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    background-color: #333;
+  }
+  
+  .b-card {
+    width: 60%;
+    height: 70vh;
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .b-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .b-award-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 20px;
+  }
+  
+  .b-title {
+    font-weight: 400;
+  }
+  
+  .b-sub {
+    margin: 20px 0px;
+  }
+  
+  .a-desc{
+      font-weight: 300;
+  }
+  
+  .b-award{
+      margin-top: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+  }
+  
+  .b-award-texts{
+      width: 70%;
+  }
+  
+  .b-award-title{
+      font-weight: bold;
+      color: #555;
+      margin-bottom: 10px;
+  }
+  
+  @media screen and (max-width:480px) {
+      .b{
+        flex-direction: column;
+        text-align: center;
+        margin-top: 50px;
+      }
+  
+      .b-left {
+        width: 100%;
+      }
+  
+      .b-card {
+        height: 30vh;
+      }
+  
+      .b-card.bg, .b-award {
+        display: none;
+      }
+  
+      .b-right{
+        padding: 20px;
+      }
+  }
