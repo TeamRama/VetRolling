@@ -3,7 +3,7 @@ import { Col, Container, Form, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { validateNombreDueño, validateApellidoDueño, validateNombreMascota, validateRaza, validateVeterinario, validateHorario } from "../../../../helpers/ValidateFields";
-import "../../Styles/GeneralStyles.css";
+import "../../../../../Styles/GeneralStyles.css";
 
 
 
