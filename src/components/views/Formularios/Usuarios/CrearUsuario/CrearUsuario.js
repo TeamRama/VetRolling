@@ -3,7 +3,7 @@ import { Form, Row, Col, Container } from 'react-bootstrap';
 import './CrearUsuario.css';
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
-import { validateUsuario, validateNombreApellido, validateContraseña, validateFechaNacimiento , validateEmail , validateCelular } from "../../helpers/ValidateFields";
+import { validateUsuario, validateNombreApellido, validateContraseña, validateFechaNacimiento , validateEmail , validateCelular } from "../../../../helpers/ValidateFields";
 import "../../Styles/GeneralStyles.css";
 
 

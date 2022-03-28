@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import {Link} from "react-router-dom";
 import logo from "../Assets/ImgLogin/logo3nav.png";
-import "../Styles/GeneralStyles.css";
+import "../../Styles/GeneralStyles.css";
 
 const Navigation = () => {
   return (

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import Turno from "./Turnos/Turno";
+import Turno from "./Turno/Turno";
 
 
 
