@@ -82,10 +82,10 @@ const CrearUsuario = ({ URL }) => {
 
         return (
             <div className='Registro'>
-                <Container className="py-5">
+                <Container className="py-5 DatosRegistro">
                     <div ClassName=''>
                         <h1 className='TituloR'>
-                            Registracion
+                            Registrarme en Vet Rolling
                         </h1>
                     </div>
                     <hr />
@@ -96,7 +96,7 @@ const CrearUsuario = ({ URL }) => {
                     </div>
                     <div className='Form-Registro'>
                         <Form className='RForm p-3 m-3' onSubmit={handleSubmit}>
-                            <Row ClassName='' >
+                            <Row ClassName='RowUsuario' >
                                 <Col md={6}>
                                     <Form.Group className="my-3" controlId="formBasicEmail">
                                         <Form.Label className='Rlabel'>Correo Electronico</Form.Label>
