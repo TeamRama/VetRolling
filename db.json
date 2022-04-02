@@ -1,19 +1,22 @@
 {
-  "posts": [
+  "turnos": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "nombreDueño": "sdadas",
+      "apellidoDueño": "asdsad",
+      "nombreMascota": "asd",
+      "raza": "perro",
+      "veterinario": "veta",
+      "horario": "B",
+      "id": 1
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "nombreDueño": "dsadsa",
+      "apellidoDueño": "asdsad",
+      "nombreMascota": "asdsad",
+      "raza": "gato",
+      "veterinario": "vetb",
+      "horario": "D",
+      "id": 2
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
