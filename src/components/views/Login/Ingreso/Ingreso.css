@@ -9,6 +9,7 @@
 
 .FormLogin{
 width: 100%;
+display: grid;
 }
 
 .imagenl{
@@ -21,10 +22,6 @@ width: 100%;
 .logincarusel{
   box-shadow: 0 0 20px 1px rgb(131, 131, 131);
   margin: 40px 0 20px 0;
-  
-  
-
- 
   
 }
 
@@ -74,3 +71,19 @@ background-color: white;
 color: #feba0b;
 }
 
+.contraseña{
+display: flex;
+flex-direction: row;
+}
+
+.icon{
+cursor: pointer;
+position: relative;
+top: 11px;
+left: 10px;
+
+}
+
+.usuario{
+margin-right: 20px;
+}

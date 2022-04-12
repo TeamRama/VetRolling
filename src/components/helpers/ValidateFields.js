@@ -11,8 +11,9 @@ const regExpEmail = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
 const regExpContraseña =  /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/;
 const regExpUsuario = /^[A-Za-z\s?]+$/;
 const regExpNombreApellido = /^[A-Za-z\s?]+$/;
-const regExpFechaNacimiento = /^[A-Za-z\s?]+$/;
-const regExpCelular = /^[A-Za-z\s?]+$/;
+const regExpFechaNacimiento = /^\d{4}([\-/.])(0?[1-9]|1[1-2])\1(3[01]|[12][0-9]|0?[1-9])$/;
+const regExpCelular = /[0-9]+$/;
+const regExpPlan =/^[A-Za-z\s?]+$/;
 
 
 
@@ -185,6 +186,21 @@ export const validateCelular = (field) => {
 
     return false;
     
+  }
+};
+
+
+export const validatePlan = (field) => {
+  if (
+    regExpPlan.test(field) &&
+    field.trim() !== "" &&
+    (field === "cachorro" ||
+    field === "maduro" ||
+      field === "adulto")
+  ) {
+    return true;
+  } else {
+    return false;
   }
 };
 

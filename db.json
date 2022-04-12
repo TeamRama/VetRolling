@@ -10,13 +10,13 @@
       "id": 1
     },
     {
-      "nombreDueño": "dsadsa",
-      "apellidoDueño": "asdsad",
-      "nombreMascota": "asdsad",
-      "raza": "gato",
-      "veterinario": "vetb",
+      "nombreDueño": "clara",
+      "apellidoDueño": "perez",
+      "nombreMascota": "afro",
+      "raza": "ave",
+      "veterinario": "veta",
       "horario": "D",
-      "id": 2
+      "id": 3
     }
   ]
 }

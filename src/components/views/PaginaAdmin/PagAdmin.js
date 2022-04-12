@@ -1,19 +1,57 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Container, Card } from 'react-bootstrap';
+import { Link } from "react-router-dom";
 import "./PagAdmin.css";
+import "../../../Styles/GeneralStyles.css";
+import usuario from '../../Assets/ImgLogin/usuario.png';
+import turnos from '../../Assets/ImgLogin/turnos.png';
+import consultas from '../../Assets/ImgLogin/consultas.png';
 
 const PagAdmin = () => {
     return (
-        <div className='box '> 
-        <Container className="">
-             <Link to="/usuario/tabla" className="btn-reservar text-decoration-none text-center my-2">Clientes</Link>
-             <br/>
-             <Link to="/turno/tabla" className="btn-reservar text-decoration-none text-center my-2 ">Turnos  </Link>
-             <br/>
-             <Link to="/PaginaContacto" className="btn-reservar text-decoration-none text-center my-2">Consultas  </Link>
+        <div className='box '>
+            <Container className="">
+                <div className='Boxadm'>
+                    <Card className="text-center">
 
-        </Container>
+                        <Card.Body className='opcion1'>
+                            <img
+                                className="usuario "
+                                src={usuario}
+                            />
+                            <Card.Title>Usuarios Registrados </Card.Title>
+                            <Link to="/usuario/tabla" className="btn-reservar text-decoration-none text-center">Usuarios </Link>
+                        </Card.Body>
+
+                    </Card>
+                    <Card className="text-center">
+
+                        <Card.Body>
+                            <img
+                                className="turnos "
+                                src={turnos}
+                            />
+                            <Card.Title>Turnos Reservados </Card.Title>
+
+                            <button className="btn-reservar">Turnos</button>
+                        </Card.Body>
+
+                    </Card>
+                    <Card className="text-center">
+
+                        <Card.Body>
+                            <img
+                                className="consultas "
+                                src={consultas}
+                            />
+                            <Card.Title>Consultas Realizadas</Card.Title>
+
+                            <button className="btn-reservar" >Consultas</button>
+                        </Card.Body>
+
+                    </Card>
+                </div>
+            </Container>
         </div>
     );
 };

@@ -1,6 +1,9 @@
 
 main{
     padding-top: 101px;
-    z-index:auto ;
     }
+
+.navbar{
+z-index: 1;
+}    
     

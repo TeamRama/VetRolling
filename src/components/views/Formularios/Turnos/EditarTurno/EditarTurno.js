@@ -18,9 +18,7 @@ const EditarTurno = ({ URL, getApi }) => {
     const nombreDueñoRef = useRef("")
     const apellidoDueñoRef = useRef("")
     const nombreMascotaRef = useRef("")
-    const horarioRef = useRef("")
-
-
+ 
 
     const navigate = useNavigate()
 
@@ -47,7 +45,7 @@ const EditarTurno = ({ URL, getApi }) => {
             !validateNombreMascota(nombreMascotaRef.current.value) ||
             !validateRaza(turno.raza) ||
             !validateVeterinario(turno.veterinario) ||
-            !validateHorario(horarioRef.current.value)
+            !validateHorario(turno.horario)
         ) {
             Swal.fire("Ops!", " Algun dato es incorrecto .", "error");
             return;
@@ -60,7 +58,7 @@ const EditarTurno = ({ URL, getApi }) => {
             nombreMascota: nombreMascotaRef.current.value,
             raza: turno.raza,
             veterinario: turno.veterinario,
-            horario: horarioRef.current.value
+            horario: turno.horario,
         };
 
         Swal.fire({
@@ -80,7 +78,7 @@ const EditarTurno = ({ URL, getApi }) => {
                         body: JSON.stringify(turnoUpdated),
                     });
                     if (res.status === 200) {
-                        Swal.fire('Updated', 'Your file has been Updated.', 'success');
+                        Swal.fire('Modificado ', 'Su turno fue modificado con exito !!.', 'success');
                         getApi();
                         navigate("/turno/tabla");
                     }
@@ -124,18 +122,22 @@ const EditarTurno = ({ URL, getApi }) => {
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicCheckbox">
                         <Form.Label>Raza</Form.Label>
-                        <Form.Select value={turno.raza} onChange={({ target }) => setTurno({ ...turno, raza: target.value })}>
+                        <Form.Select 
+                        value={turno.raza} 
+                        onChange={({ target }) => setTurno({ ...turno, raza: target.value })}>
                             <option value="">Tipo de Raza</option>
                             <option value="perro">Perro</option>
                             <option value="gato">Gato</option>
                             <option value="ave">Ave</option>
                             <option value="reptil">Reptil</option>
-                            <option value="otro">Otro</option>
+                            <option value="otro">Otro</option>json-server --watch db.json --port 3004
                         </Form.Select>
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicCheckbox">
                         <Form.Label>Veterinario</Form.Label>
-                        <Form.Select value={turno.veterinario} onChange={({ target }) => setTurno({ ...turno, veterinario: target.value })}>
+                        <Form.Select 
+                        value={turno.veterinario} 
+                        onChange={({ target }) => setTurno({ ...turno, veterinario: target.value })}>
                             <option value="">Elegir Veterinario</option>
                             <option value="veta">Vete A</option>
                             <option value="veteb">Vete B</option>
@@ -143,7 +145,9 @@ const EditarTurno = ({ URL, getApi }) => {
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicCheckbox">
                         <Form.Label> Hora del turno</Form.Label>
-                        <Form.Select value={turno.veterinario} onChange={({ target }) => setTurno({ ...turno, horario: target.value })}>
+                        <Form.Select
+                         value={turno.veterinario} 
+                         onChange={({ target }) => setTurno({ ...turno, horario: target.value })}>
                             <option value="">Elegir Horario</option>
                             <option value="A">8-8:30</option>
                             <option value="B">8:30-9</option>

@@ -24,6 +24,7 @@ import { useEffect, useState } from "react";
 function App() {
 
   const [turnos, setTurnos] = useState([]);
+  const [usuario, setUsuario] = useState([]);
 
   const URL = process.env.REACT_APP_API_VETROLLING;
 
@@ -61,14 +62,14 @@ function App() {
             <Route exact path="/turno/crear/" element={<CrearTurno URL={URL} getApi={getApi} />} />
             <Route exact path="/turno/editar/:id" element={<EditarTurno URL={URL} getApi={getApi} />} />
             <Route exact path="/usuario/editar/" element={<EditarUsuario URL={URL} getApi={getApi} />} />
-            <Route exact path="/usuario/crear" element={<CrearUsuario URL={URL} getApi={getApi} />} />
-            <Route exact path="/usuario/tabla" element={<TablaUsuario  turnos={turnos} URL={URL} getApi={getApi} />} />
+            <Route exact path="/usuario/crear/" element={<CrearUsuario URL={URL} getApi={getApi} />} />
+            <Route exact path="/usuario/tabla/" element={<TablaUsuario  usuario={usuario} URL={URL} getApi={getApi} />} />
             <Route exact path="/login/" element={<Ingreso />} />
-            <Route exact path="/PaginaPlanes" element={<PaginaPlanes />} />
-            <Route exact path="/PaginaContacto" element={<PaginaContacto />} />
-            <Route exact path="/SobreNosotros" element={<SobreNosotros />} />
+            <Route exact path="/PaginaPlanes/" element={<PaginaPlanes />} />
+            <Route exact path="/PaginaContacto/" element={<PaginaContacto />} />
+            <Route exact path="/SobreNosotros/" element={<SobreNosotros />} />
             <Route exact path="*" element={<Pagina404 />} />
-            <Route exact path="/PagAdmin" element={<PagAdmin />} />
+            <Route exact path="/PagAdmin/" element={<PagAdmin />} />
            
 
           </Routes>

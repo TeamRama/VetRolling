@@ -27,7 +27,7 @@ const Footer = () => {
               <li className="nav-item pb-3 ">
               <Link to="*" className="temas text-decoration-none text-center">Guarderia Mascotera </Link> </li>
               <li className="nav-item pb-3 ">
-              <Link to="PaginaContacto" className="temas text-decoration-none text-center">Contacto </Link></li>
+              <Link to="/PaginaContacto" className="temas text-decoration-none text-center">Contacto </Link></li>
           </Col>
           <Col className='px-5 pt-5  f3' sm={12} md={4}>
           <p className=" fs-5 Acercade ">Puedes encontrarnos en: </p>

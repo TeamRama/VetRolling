@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 
 
 
-const Usuario = ({ turno , URL, getApi }) => {
+const Usuario = ({ usuario , URL, getApi }) => {
 
   const handleDelete = (id) => {
 
@@ -14,7 +14,7 @@ const Usuario = ({ turno , URL, getApi }) => {
       text: "You won't be able to revert this!",
       icon: 'warning',
       showCancelButton: true,
-      confirmButtonText: 'Dalete',
+      confirmButtonText: 'eliminado ',
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
@@ -26,7 +26,7 @@ const Usuario = ({ turno , URL, getApi }) => {
 
           });
           if (res.status === 200) {
-            Swal.fire('Dalated !', 'Your file has been Dalated !.', 'success');
+            Swal.fire('Eliminado  !', ' Sus datos fueron elimandos !.', 'success');
             getApi();
 
           }
@@ -43,18 +43,18 @@ const Usuario = ({ turno , URL, getApi }) => {
 
 
     <tr>
-      <td>{turno.id}</td>
-      <td>{turno.email}</td>
-      <td>{turno.nombreDueño}</td>
-      <td>{turno.nombreMascota}</td>
-      <td>{turno.contraseña}</td>
-      <td>{turno.fechaNacimiento}</td>
-      <td>{turno.celular}</td>
+      <td>{usuario.id}</td>
+      <td>{usuario.email}</td>
+      <td>{usuario.nombreDueño}</td>
+      <td>{usuario.nombreMascota}</td>
+      <td>{usuario.contraseña}</td>
+      <td>{usuario.fechaNacimiento}</td>
+      <td>{usuario.celular}</td>
       <td className="w-25">
         <div className="d-flex justify-content-center">
-          <Link to={`/usuario/editar/${turno.id}`} className="btn-editar   text-decoration-none text-center mx-1">Editar Usuario</Link>
+          <Link to={`/usuario/editar/${usuario.id}`} className="btn-editar   text-decoration-none text-center mx-1">Editar Usuario</Link>
           <button className="btn-borrar text-decoration-none text-center mx-1"
-            onClick={() => handleDelete(turno.id)} >
+            onClick={() => handleDelete(usuario.id)} >
             Borrar Usuario</button>
         </div>
       </td>
