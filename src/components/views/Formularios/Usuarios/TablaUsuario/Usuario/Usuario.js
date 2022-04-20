@@ -48,7 +48,7 @@ const Usuario = ({ usuario , URL, getApi }) => {
       <td>{usuario.nombreDueño}</td>
       <td>{usuario.nombreMascota}</td>
       <td>{usuario.contraseña}</td>
-      <td>{usuario.fechaNacimiento}</td>
+      <td>{usuario.fecha}</td>
       <td>{usuario.celular}</td>
       <td className="w-25">
         <div className="d-flex justify-content-center">

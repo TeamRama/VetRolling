@@ -1,26 +1,130 @@
-import React, { useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { Col, Container, Form, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import { validateNombreDueño, validateApellidoDueño, validateNombreMascota, validateRaza, validateVeterinario, validateHorario } from "../../../../helpers/ValidateFields";
+import { validateNombreDueño, validateNombreMascota, validateRaza, validateVeterinario, validateHorario, validateFecha } from "../../../../helpers/ValidateFields";
 import "../../../../../Styles/GeneralStyles.css";
 import "./CrearTurno.css";
+import Time from "../Time";
 
 
 
-const CrearTurno = ({ URL }) => {
+const CrearTurno = ({ URL, getApi }) => {
   //States 
   const [nombreDueño, setNombreDueño] = useState("");
-  const [apellidoDueño, setApellidoDueño] = useState("");
   const [nombreMascota, setNombreMascota] = useState("");
   const [raza, setRaza] = useState("");
   const [veterinario, setVeterinario] = useState("");
+  const [fecha, setFecha] = useState("");
   const [horario, setHorario] = useState("");
 
 
   // Navigate 
   const navigate = useNavigate()
   const handleClick = () => {
+
+  }
+
+
+
+  const [turnos, setTurnos] = useState([]);
+  const [horas, setHoras] = useState([]);
+  const [horasVeta, setHorasVeta] = useState([]);
+  const [horasVetb, setHorasVetb] = useState([]);
+  // Ref
+  const horarioRef = useRef();
+  const vetaRef = useRef();
+  const vetbRef = useRef();
+  const veterinarioRef = useRef();
+
+
+
+  // let horasVeta = []
+
+  // Arreglo de horarios
+
+  const timePicker = [
+    "09:00",
+    "10:00",
+    "11:00",
+    "12:00",
+    "17:00",
+    "18:00",
+    "19:00",
+    "20:00",
+  ];
+  // veterinarios
+  const veta = "Vet A";
+  const vetb = "Vet B";
+
+  // UseEffect
+
+  useEffect(() => {
+    horarioRef.current.disabled = true;
+    veterinarioRef.current.disabled = true;
+  }, []);
+
+  useEffect(async () => {
+    try {
+      const res = await fetch(URL);
+      const resultado = await res.json();
+      // Guardamos la db en un state
+      setTurnos(resultado);
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
+
+
+
+  function handleDateChange(e) {
+    // Realizamos filtrado de fecha
+    const busquedaFechas = turnos.filter((fechas) => fechas.fecha === e.target.value
+    );
+
+    // Nuevo filtrado de veterianrios y horas
+    const buscarVeterinario = busquedaFechas.filter((doc) => doc.veterinario === veta);
+    const buscarVeterinario1 = buscarVeterinario.map((horas) => horas.horario);
+    setHorasVeta(buscarVeterinario1);
+    const buscarVeterinarioI = busquedaFechas.filter((doc) => doc.veterinario === vetb);
+    const buscarVeterinario2 = buscarVeterinarioI.map((horas) => horas.horario);
+    setHorasVetb(buscarVeterinario2);
+
+
+
+    if (buscarVeterinario.length >= 9) {
+      vetaRef.current.disabled = true;
+
+    } else {
+      vetaRef.current.disabled = false;
+    }
+    if (buscarVeterinarioI.length >= 9) {
+      vetbRef.current.disabled = true;
+    } else {
+      vetbRef.current.disabled = false;
+    }
+
+
+
+    //  Habilitar el input de horas
+    veterinarioRef.current.disabled = false;
+  }
+
+
+  const handleVetChange = (e) => {
+
+    if (e.target.value === veta) {
+
+      const vet1filtrado = timePicker.filter((hora) => !horasVeta.includes(hora))
+      console.log('filtrado', vet1filtrado)
+      setHoras(vet1filtrado);
+    } else if (e.target.value === vetb) {
+      const vet2filtrado = timePicker.filter((hora) => !horasVetb.includes(hora))
+      console.log(vet2filtrado)
+      setHoras(vet2filtrado);
+    }
+
+    horarioRef.current.disabled = false;
 
   }
 
@@ -33,25 +137,27 @@ const CrearTurno = ({ URL }) => {
 
     if (
       !validateNombreDueño(nombreDueño) ||
-      !validateApellidoDueño(apellidoDueño) ||
       !validateNombreMascota(nombreMascota) ||
       !validateRaza(raza) ||
-      !validateVeterinario(veterinario) ||
-      !validateHorario(horario)
+      !validateFecha(fecha) ||
+      !validateHorario(horario) ||
+      !validateVeterinario(veterinario)
     ) {
       Swal.fire("Ops!", " Datos incorrectos .", "error");
       return;
     }
 
+
+
     // Enviar los datos para guardarlos 
 
     const newTurno = {
       nombreDueño,
-      apellidoDueño,
       nombreMascota,
       raza,
-      veterinario,
-      horario
+      fecha,
+      horario,
+      veterinario
 
     }
 
@@ -74,13 +180,14 @@ const CrearTurno = ({ URL }) => {
           });
           if (res.status === 201) {
             Swal.fire('Turno Guardado!', ' Tu turno fue reservado .', 'success');
+            getApi();
             navigate("/turno/tabla");
 
           }
         } catch (error) {
           console.log(error);
         }
-
+        console.log(newTurno.horario)
       }
     });
   };
@@ -96,20 +203,11 @@ const CrearTurno = ({ URL }) => {
             <Row>
               <Col md={6}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                  <Form.Label>Nombre del Dueño</Form.Label>
+                  <Form.Label>Nombre Completo del Dueño</Form.Label>
                   <Form.Control
                     type="text"
-                    placeholder="Ej: Nombre"
+                    placeholder="Nombre Completo"
                     onChange={({ target }) => setNombreDueño(target.value)} />
-                </Form.Group>
-              </Col>
-              <Col md={6}>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-                  <Form.Label>Apellido del Dueño </Form.Label>
-                  <Form.Control
-                    type="text"
-                    placeholder="Ej: Apellido"
-                    onChange={({ target }) => setApellidoDueño(target.value)} />
                 </Form.Group>
               </Col>
               <Col md={6}>
@@ -117,7 +215,7 @@ const CrearTurno = ({ URL }) => {
                   <Form.Label>Nombre de la Mascota </Form.Label>
                   <Form.Control
                     type="text"
-                    placeholder="nombre o apodo"
+                    placeholder="Nombre o Apodo"
                     onChange={({ target }) => setNombreMascota(target.value)}
                   />
                 </Form.Group>
@@ -136,48 +234,58 @@ const CrearTurno = ({ URL }) => {
                 </Form.Group>
               </Col>
               <Col md={6}>
+                <Form.Group className="mb-3">
+                  <Form.Label>Dia del turno</Form.Label>
+                  <Form.Control
+                    type="date"
+                    placeholder="Escoje el dia del turno"
+                    onChange={({ target }) => setFecha(target.value)}
+                    min="2022-04-01"
+                    onBlur={handleDateChange} />
+                </Form.Group>
+              </Col>
+              <Col md={6}>
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
                   <Form.Label> Elegir Veterinario</Form.Label>
-                  <Form.Select onChange={({ target }) => setVeterinario(target.value)} >
+                  <Form.Select
+                    onChange={({ target }) => setVeterinario(target.value)}
+                    onBlur={handleVetChange}
+                    ref={veterinarioRef} >
                     <option value="">Veterinario</option>
-                    <option value="veta">Veta</option>
-                    <option value="vetb">Vetb</option>
+                    <option
+                      ref={vetaRef}
+                      value="Vet A">Vet A</option>
+                    <option
+                      ref={vetbRef}
+                      value="Vet B">Vet B</option>
                   </Form.Select>
                 </Form.Group>
               </Col>
               <Col md={6}>
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
                   <Form.Label> Hora del turno</Form.Label>
-                  <Form.Select onChange={({ target }) => setHorario(target.value)} >
-                    <option value="">Elegir Horario</option>
-                    <option value="A">8-8:30</option>
-                    <option value="B">8:30-9</option>
-                    <option value="C">9-9:30</option>
-                    <option value="D">9:30-10</option>
-                    <option value="E">10-10:30</option>
-                    <option value="F">10:30-11</option>
-                    <option value="G">11-11:30</option>
-                    <option value="H">11:30-12</option>
-                    <option value="I">17-17:30</option>
-                    <option value="J">17:30-18</option>
-                    <option value="K">18-18:30</option>
-                    <option value="L">18:30-19</option>
-                    <option value="M">19-19:30</option>
-                    <option value="N">19:30-20</option>
-                    <option value="Ñ">20-20:30</option>
-                    <option value="O">20:30-21</option>
+                  <Form.Select
+                    ref={horarioRef}
+                    onChange={({ target }) => setHorario(target.value)}
+                  >
+                    <option value='seleccione'  >Seleccione una opcion</option>
+                    {horas.map((hora, index) => {
+                      return <Time hora={hora} key={index} />;
+                    })}
+                    
+
                   </Form.Select>
                 </Form.Group>
-              </Col>
+                </Col>
             </Row>
-       
-        <div className="text-end">
-          <button className="btn-reservar"
-            onClick={handleClick}>Reservar</button>
-        </div>
-      </Form>
-    </div >
-    </Container >
+
+            <div className="text-end">
+              <button className="btn-reservar"
+                onClick={handleClick}>Reservar</button>
+            </div>
+          </Form>
+        </div >
+      </Container >
     </div >
   );
 };

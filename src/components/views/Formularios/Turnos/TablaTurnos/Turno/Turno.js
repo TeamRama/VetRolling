@@ -41,12 +41,11 @@ const Turno = ({ turno, URL, getApi }) => {
   }
   return (
     <tr>
-          <td>{turno.id}</td>
           <td>{turno.nombreDueño}</td>
-          <td>{turno.apellidoDueño}</td>
           <td>{turno.nombreMascota}</td>
           <td>{turno.raza}</td>
           <td>{turno.veterinario}</td>
+          <td>{turno.fecha}</td>
           <td>{turno.horario}</td>
           <td className="w-25">
             <div className="d-flex justify-content-center">

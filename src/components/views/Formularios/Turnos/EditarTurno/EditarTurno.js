@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Container, Form } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
-import { validateNombreDueño, validateApellidoDueño, validateNombreMascota, validateRaza, validateVeterinario, validateHorario } from "../../../../helpers/ValidateFields";
+import { validateNombreDueño, validateNombreMascota, validateRaza, validateVeterinario, validateHorario, validateFecha } from "../../../../helpers/ValidateFields";
 import "../../../../../Styles/GeneralStyles.css";
 
 
@@ -16,9 +16,7 @@ const EditarTurno = ({ URL, getApi }) => {
     const { id } = useParams();
 
     const nombreDueñoRef = useRef("")
-    const apellidoDueñoRef = useRef("")
     const nombreMascotaRef = useRef("")
- 
 
     const navigate = useNavigate()
 
@@ -41,11 +39,11 @@ const EditarTurno = ({ URL, getApi }) => {
 
         if (
             !validateNombreDueño(nombreDueñoRef.current.value) ||
-            !validateApellidoDueño(apellidoDueñoRef.current.value) ||
             !validateNombreMascota(nombreMascotaRef.current.value) ||
             !validateRaza(turno.raza) ||
             !validateVeterinario(turno.veterinario) ||
-            !validateHorario(turno.horario)
+            !validateHorario(turno.horario) ||
+            !validateFecha(turno.fecha)
         ) {
             Swal.fire("Ops!", " Algun dato es incorrecto .", "error");
             return;
@@ -54,11 +52,11 @@ const EditarTurno = ({ URL, getApi }) => {
 
         const turnoUpdated = {
             nombreDueño: nombreDueñoRef.current.value,
-            apellidoDueño: apellidoDueñoRef.current.value,
             nombreMascota: nombreMascotaRef.current.value,
             raza: turno.raza,
             veterinario: turno.veterinario,
             horario: turno.horario,
+            fecha: turno.fecha,
         };
 
         Swal.fire({
@@ -107,13 +105,6 @@ const EditarTurno = ({ URL, getApi }) => {
                             ref={nombreDueñoRef} />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>Apellido Del Dueño</Form.Label>
-                        <Form.Control type="text"
-                            placeholder="Apellido"
-                            defaultValue={turno.apellidoDueño}
-                            ref={apellidoDueñoRef} />
-                    </Form.Group>
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Nombre de la Mascota</Form.Label>
                         <Form.Control type="text"
                             placeholder="nombre o apodo"
@@ -122,9 +113,9 @@ const EditarTurno = ({ URL, getApi }) => {
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicCheckbox">
                         <Form.Label>Raza</Form.Label>
-                        <Form.Select 
-                        value={turno.raza} 
-                        onChange={({ target }) => setTurno({ ...turno, raza: target.value })}>
+                        <Form.Select
+                            value={turno.raza}
+                            onChange={({ target }) => setTurno({ ...turno, raza: target.value })}>
                             <option value="">Tipo de Raza</option>
                             <option value="perro">Perro</option>
                             <option value="gato">Gato</option>
@@ -135,37 +126,36 @@ const EditarTurno = ({ URL, getApi }) => {
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicCheckbox">
                         <Form.Label>Veterinario</Form.Label>
-                        <Form.Select 
-                        value={turno.veterinario} 
-                        onChange={({ target }) => setTurno({ ...turno, veterinario: target.value })}>
+                        <Form.Select
+                            value={turno.veterinario}
+                            onChange={({ target }) => setTurno({ ...turno, veterinario: target.value })}>
                             <option value="">Elegir Veterinario</option>
-                            <option value="veta">Vete A</option>
-                            <option value="veteb">Vete B</option>
-                         </Form.Select>
+                            <option value="veta">Vet A</option>
+                            <option value="veteb">Vet B</option>
+                        </Form.Select>
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicCheckbox">
                         <Form.Label> Hora del turno</Form.Label>
                         <Form.Select
-                         value={turno.veterinario} 
-                         onChange={({ target }) => setTurno({ ...turno, horario: target.value })}>
+                            value={turno.veterinario}
+                            onChange={({ target }) => setTurno({ ...turno, horario: target.value })}>
                             <option value="">Elegir Horario</option>
-                            <option value="A">8-8:30</option>
-                            <option value="B">8:30-9</option>
-                            <option value="C">9-9:30</option>
-                            <option value="D">9:30-10</option>
-                            <option value="E">10-10:30</option>
-                            <option value="F">10:30-11</option>
-                            <option value="G">11-11:30</option>
-                            <option value="H">11:30-12</option>
-                            <option value="I">17-17:30</option>
-                            <option value="J">17:30-18</option>
-                            <option value="K">18-18:30</option>
-                            <option value="L">18:30-19</option>
-                            <option value="M">19-19:30</option>
-                            <option value="N">19:30-20</option>
-                            <option value="Ñ">20-20:30</option>
-                            <option value="O">20:30-21</option>
-                         </Form.Select>
+                            <option value="09hs">09 hs</option>
+                            <option value="10hs">10 hs</option>
+                            <option value="11hs">11 hs</option>
+                            <option value="12hs">12 hs</option>
+                            <option value="17hs">17 hs</option>
+                            <option value="18hs">18 hs</option>
+                            <option value="19hs">19 hs</option>
+                            <option value="20hs">20 hs</option>
+                        </Form.Select>
+                    </Form.Group>
+                    <Form.Group className="my-3">
+                        <Form.Label className='Rlabel'>Dia del turno</Form.Label>
+                        <Form.Control
+                            type="date"
+                            value={turno.fecha}
+                            onChange={({ target }) => setTurno({ ...turno, fecha: target.value })} />
                     </Form.Group>
                     <div className="text-end">
                         <button className="btn-reservar">Modificar</button>

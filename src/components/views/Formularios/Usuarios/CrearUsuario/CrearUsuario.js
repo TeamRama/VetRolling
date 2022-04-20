@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Form, Row, Col, Container } from 'react-bootstrap';
 import { useNavigate } from "react-router-dom";
-import { validateEmail, validateNombreDueño, validateNombreMascota, validateContraseña, validateFechaNacimiento, validateCelular } from "../../../../helpers/ValidateFields";
+import { validateEmail, validateNombreDueño, validateNombreMascota, validateContraseña, validateFecha, validateCelular } from "../../../../helpers/ValidateFields";
 import "../../../../../Styles/GeneralStyles.css";
 import Swal from "sweetalert2";
 import './CrearUsuario.css';
@@ -13,7 +13,7 @@ const CrearUsuario = ({ URL }) => {
     const [nombreDueño, setNombreDueño] = useState("");
     const [nombreMascota, setNombreMascota] = useState("");
     const [contraseña, setContraseña] = useState("");
-    const [fechaNacimiento, setFechaNacimiento] = useState("");
+    const [fecha, setFecha] = useState("");
     const [celular, setCelular] = useState("");
 
     // Navigate 
@@ -33,7 +33,7 @@ const CrearUsuario = ({ URL }) => {
                 !validateNombreDueño(nombreDueño) ||
                 !validateNombreMascota(nombreMascota) ||
                 !validateContraseña(contraseña) ||
-                !validateFechaNacimiento(fechaNacimiento) ||
+                !validateFecha(fecha) ||
                 !validateCelular(celular)
             ) {
                 Swal.fire("Ops!", " Some data is invalid.", "error");
@@ -47,7 +47,7 @@ const CrearUsuario = ({ URL }) => {
                 nombreDueño,
                 nombreMascota,
                 contraseña,
-                fechaNacimiento,
+                fecha,
                 celular
             }
 
@@ -139,7 +139,7 @@ const CrearUsuario = ({ URL }) => {
                                         <Form.Control
                                             type="date"
                                             placeholder="Ingresa tu fecha de Nacimiento"
-                                            onChange={({ target }) => setFechaNacimiento(target.value)}
+                                            onChange={({ target }) => setFecha(target.value)}
                                             max="2004-03-01" />
                                     </Form.Group>
                                 </Col>

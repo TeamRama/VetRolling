@@ -33,7 +33,7 @@ const PagAdmin = () => {
                             />
                             <Card.Title>Turnos Reservados </Card.Title>
 
-                            <button className="btn-reservar">Turnos</button>
+                            <Link to="/turno/tabla" className="btn-reservar text-decoration-none text-center">Turnos </Link>
                         </Card.Body>
 
                     </Card>
@@ -46,7 +46,7 @@ const PagAdmin = () => {
                             />
                             <Card.Title>Consultas Realizadas</Card.Title>
 
-                            <button className="btn-reservar" >Consultas</button>
+                            <Link to="/PaginaContacto/" className="btn-reservar text-decoration-none text-center">Consultas </Link>
                         </Card.Body>
 
                     </Card>

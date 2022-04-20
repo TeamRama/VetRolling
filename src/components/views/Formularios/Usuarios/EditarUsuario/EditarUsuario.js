@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Container, Form } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
-import { validateEmail, validateNombreDueño, validateNombreMascota, validateContraseña, validateFechaNacimiento, validateCelular } from "../../../../helpers/ValidateFields";
+import { validateEmail, validateNombreDueño, validateNombreMascota, validateContraseña, validateFecha, validateCelular } from "../../../../helpers/ValidateFields";
 import "../../../../../Styles/GeneralStyles.css";
 
 
@@ -47,7 +47,7 @@ const EditarTurno = ({ URL, getApi }) => {
             !validateNombreDueño(nombreDueñoRef.current.value) ||
             !validateNombreMascota(nombreMascotaRef.current.value) ||
             !validateContraseña(contraseñaRef.current.value) ||
-            !validateFechaNacimiento(usuario.fechaNacimiento) ||
+            !validateFecha(usuario.fecha) ||
             !validateCelular(celularRef.current.value)
         ) {
             Swal.fire("Ops!", " Datos incorrectos .", "error");
@@ -60,7 +60,7 @@ const EditarTurno = ({ URL, getApi }) => {
             nombreDueño: nombreDueñoRef.current.value,
             nombreMascota: nombreMascotaRef.current.value,
             contraseña: contraseñaRef.current.value,
-            fechaNacimiento: usuario.fechaNacimiento,
+            fecha: usuario.fecha,
             celular: celularRef.current.value,
         };
 
@@ -137,8 +137,8 @@ const EditarTurno = ({ URL, getApi }) => {
                         <Form.Label>Fecha de Nacimiento </Form.Label>
                         <Form.Control
                             type="date"
-                            value={usuario.fechaNacimiento} 
-                            onChange={({ target }) => setUsuario({ ...usuario, fechaNacimiento: target.value })} />
+                            value={usuario.fecha} 
+                            onChange={({ target }) => setUsuario({ ...usuario, fecha: target.value })} />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Celular </Form.Label>

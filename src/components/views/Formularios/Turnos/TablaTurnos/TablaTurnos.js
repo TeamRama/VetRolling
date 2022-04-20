@@ -10,6 +10,7 @@ import "../../../../../Styles/GeneralStyles.css";
 
 
 
+
 const TablaTurnos = ({ turnos, URL, getApi }) => {
 
 
@@ -23,19 +24,17 @@ const TablaTurnos = ({ turnos, URL, getApi }) => {
         </div>
         <hr />
         {/* Tabla de turnos */}
-        {turnos.length != 0 ?
+        {turnos.length  > 0 ?
           <Table bordered hover responsive
             className="align-middle mt-3">
             <thead>
               <tr>
-               
-                <th>Nombre </th>
-                <th>Apellido</th>
+                <th>Nombre Del  Dueño</th>
                 <th>Mascota</th>
                 <th>Raza</th>
                 <th>Veterinario</th>
-                <th>Horario</th>
-
+                <th>Fecha del Turno</th>
+                <th>Hora del Turno</th>
               </tr>
             </thead>
             <tbody>

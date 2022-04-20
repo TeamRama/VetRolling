@@ -1,22 +1,40 @@
 {
   "turnos": [
     {
-      "nombreDueño": "sdadas",
-      "apellidoDueño": "asdsad",
-      "nombreMascota": "asd",
+      "nombreDueño": "rama",
+      "nombreMascota": "afro",
       "raza": "perro",
-      "veterinario": "veta",
-      "horario": "B",
+      "fecha": "2022-04-19",
+      "horario": "09:00",
+      "veterinario": "Vet A",
       "id": 1
     },
     {
-      "nombreDueño": "clara",
-      "apellidoDueño": "perez",
+      "nombreDueño": "camila",
+      "nombreMascota": "duke",
+      "raza": "perro",
+      "fecha": "2022-04-19",
+      "horario": "17:00",
+      "veterinario": "Vet A",
+      "id": 2
+    },
+    {
+      "nombreDueño": "caca",
       "nombreMascota": "afro",
-      "raza": "ave",
-      "veterinario": "veta",
-      "horario": "D",
+      "raza": "gato",
+      "fecha": "2022-04-19",
+      "horario": "11:00",
+      "veterinario": "Vet A",
       "id": 3
+    },
+    {
+      "nombreDueño": "dgfdg",
+      "nombreMascota": "fdsdf",
+      "raza": "gato",
+      "fecha": "2022-04-19",
+      "horario": "12:00",
+      "veterinario": "Vet A",
+      "id": 4
     }
   ]
 }
