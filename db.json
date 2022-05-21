@@ -1,40 +1,13 @@
 {
   "turnos": [
     {
-      "nombreDueño": "rama",
-      "nombreMascota": "afro",
-      "raza": "perro",
-      "fecha": "2022-04-19",
-      "horario": "09:00",
-      "veterinario": "Vet A",
+      "email": "ramiro@gmail.com",
+      "nombreDueño": "Ramiro Nahuel Perez",
+      "nombreMascota": "Afro",
+      "contraseña": "154064742aS",
+      "fecha": "1993-03-06",
+      "celular": "3815436000",
       "id": 1
-    },
-    {
-      "nombreDueño": "camila",
-      "nombreMascota": "duke",
-      "raza": "perro",
-      "fecha": "2022-04-19",
-      "horario": "17:00",
-      "veterinario": "Vet A",
-      "id": 2
-    },
-    {
-      "nombreDueño": "caca",
-      "nombreMascota": "afro",
-      "raza": "gato",
-      "fecha": "2022-04-19",
-      "horario": "11:00",
-      "veterinario": "Vet A",
-      "id": 3
-    },
-    {
-      "nombreDueño": "dgfdg",
-      "nombreMascota": "fdsdf",
-      "raza": "gato",
-      "fecha": "2022-04-19",
-      "horario": "12:00",
-      "veterinario": "Vet A",
-      "id": 4
     }
   ]
 }

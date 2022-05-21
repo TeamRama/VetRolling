@@ -10,11 +10,11 @@ const Usuario = ({ usuario , URL, getApi }) => {
   const handleDelete = (id) => {
 
     Swal.fire({
-      title: 'Are you sure?',
-      text: "You won't be able to revert this!",
+      title: 'Estas Seguro/a ?',
+      text: "Los  Datos Se borraran!",
       icon: 'warning',
       showCancelButton: true,
-      confirmButtonText: 'eliminado ',
+      confirmButtonText: 'Eliminar ',
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
@@ -41,9 +41,7 @@ const Usuario = ({ usuario , URL, getApi }) => {
   }
   return (
 
-
     <tr>
-      <td>{usuario.id}</td>
       <td>{usuario.email}</td>
       <td>{usuario.nombreDueño}</td>
       <td>{usuario.nombreMascota}</td>

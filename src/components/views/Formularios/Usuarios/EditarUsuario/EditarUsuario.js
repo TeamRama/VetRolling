@@ -50,7 +50,7 @@ const EditarTurno = ({ URL, getApi }) => {
             !validateFecha(usuario.fecha) ||
             !validateCelular(celularRef.current.value)
         ) {
-            Swal.fire("Ops!", " Datos incorrectos .", "error");
+            Swal.fire("Ops!", " Algun dato es incorrecto .", "error");
             return;
         }
 
@@ -65,8 +65,8 @@ const EditarTurno = ({ URL, getApi }) => {
         };
 
         Swal.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
+            title: 'Seguro que quieres editar los Datos?',
+            text: "No podras volver a Editar !",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonText: 'Editado ',

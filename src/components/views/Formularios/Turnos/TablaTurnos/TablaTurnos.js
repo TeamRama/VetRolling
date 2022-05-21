@@ -24,7 +24,7 @@ const TablaTurnos = ({ turnos, URL, getApi }) => {
         </div>
         <hr />
         {/* Tabla de turnos */}
-        {turnos.length  > 0 ?
+        {turnos.length > 0 ?
           <Table bordered hover responsive
             className="align-middle mt-3">
             <thead>
@@ -52,6 +52,9 @@ const TablaTurnos = ({ turnos, URL, getApi }) => {
             <h1>🐾🐕  No hay Turnos Reservados 🐈🐾 </h1>
           </div>
         }
+        <div className="text-end">
+        <Link to="/PagAdmin/" className="btn-reservar text-decoration-none text-center">  Menu  </Link>
+        </div>
       </Container>
     </div>
 

@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import { Col, Container, Form, Row } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
+import { useNavigate , Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import { validateNombreDueño, validateNombreMascota, validateRaza, validateVeterinario, validateHorario, validateFecha } from "../../../../helpers/ValidateFields";
 import "../../../../../Styles/GeneralStyles.css";
@@ -23,7 +23,7 @@ const CrearTurno = ({ URL, getApi }) => {
   const navigate = useNavigate()
   const handleClick = () => {
 
-  }
+}
 
 
 
@@ -38,8 +38,6 @@ const CrearTurno = ({ URL, getApi }) => {
   const veterinarioRef = useRef();
 
 
-
-  // let horasVeta = []
 
   // Arreglo de horarios
 
@@ -194,10 +192,10 @@ const CrearTurno = ({ URL, getApi }) => {
 
   return (
     <div  >
-      <Container className="py-5 DatosContacto">
+      <Container className="py-5 DatosTurno">
         <h1>Elegir Turno para una Consulta </h1>
         <hr />
-        {/* Form Turnos */}
+        {/* Formulario de  Turnos */}
         <div className='Form-Turno'>
           <Form className="p-3 m-3" onSubmit={handleSubmit}>
             <Row>
@@ -222,9 +220,9 @@ const CrearTurno = ({ URL, getApi }) => {
               </Col>
               <Col md={6}>
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                  <Form.Label>Tipo Raza</Form.Label>
+                  <Form.Label>Tipo de Especie</Form.Label>
                   <Form.Select onChange={({ target }) => setRaza(target.value)} >
-                    <option value="">Tipo de Raza</option>
+                    <option value="">Tipo de Especie</option>
                     <option value="perro">Perro</option>
                     <option value="gato">Gato</option>
                     <option value="ave">Ave</option>
@@ -254,10 +252,10 @@ const CrearTurno = ({ URL, getApi }) => {
                     <option value="">Veterinario</option>
                     <option
                       ref={vetaRef}
-                      value="Vet A">Vet A</option>
+                      value="Vet A">Dr Perez, Ramiro</option>
                     <option
                       ref={vetbRef}
-                      value="Vet B">Vet B</option>
+                      value="Vet B">Dr Romero, Pablo</option>
                   </Form.Select>
                 </Form.Group>
               </Col>
@@ -272,11 +270,11 @@ const CrearTurno = ({ URL, getApi }) => {
                     {horas.map((hora, index) => {
                       return <Time hora={hora} key={index} />;
                     })}
-                    
+
 
                   </Form.Select>
                 </Form.Group>
-                </Col>
+              </Col>
             </Row>
 
             <div className="text-end">
@@ -285,7 +283,11 @@ const CrearTurno = ({ URL, getApi }) => {
             </div>
           </Form>
         </div >
+        <div className="text-end">
+        <Link to="/turno/tabla/" className="btn-reservar text-decoration-none text-center">  Atras  </Link>
+      </div>
       </Container >
+
     </div >
   );
 };

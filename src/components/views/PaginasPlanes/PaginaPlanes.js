@@ -11,9 +11,10 @@ import { Link } from "react-router-dom";
 const Ss = () => {
   return (
     <div>
-      <Container className="py-5">
+ 
+      <Container className="margen">
 
-        <h1 className="TituloPlanes">Nuestros Planes para tu Mascorta 🐾 </h1>
+        <h1 className="TituloPlanes mt-5">Nuestros Planes para tu Mascota 🐾 </h1>
         <hr />
         <div className="Logo-vet py-5 ">
         <img src={image4} />
@@ -101,6 +102,7 @@ const Ss = () => {
         <hr />
 
       </Container >
+ 
     </div >
   );
 };

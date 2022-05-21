@@ -1,8 +1,9 @@
 .Form-Contacto{
-    box-shadow: 0 0 20px 1px rgb(131, 131, 131);
-    margin: 100px;
+   box-shadow: 0 0 20px 1px rgb(131, 131, 131);
+    
 }
 
 .DatosContacto{
     text-align: center;
-    }
+    padding-top: 101px;
+}

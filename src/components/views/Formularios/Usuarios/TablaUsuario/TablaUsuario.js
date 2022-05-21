@@ -40,10 +40,13 @@ const TablaUsuario = ({usuario , URL, getApi}) => {
           </Table>
           :
           <div className="no-products-found d-flex align-items-center justify-content-center">
-            {/* No usuarios  creaados */}
-            <h1> No hay usuario creados  </h1>
+            {/* No usuarios  creados */}
+            <h1>🐾🐕  No hay Usuarios Registrados 🐈🐾</h1>
           </div> 
         }
+        <div className="text-end">
+        <Link to="/PagAdmin/" className="btn-reservar text-decoration-none text-center">  Menu  </Link>
+        </div>
       </Container>
     </div>
         

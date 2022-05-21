@@ -1,58 +1,82 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Container, Card } from 'react-bootstrap';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./PagAdmin.css";
 import "../../../Styles/GeneralStyles.css";
-import usuario from '../../Assets/ImgLogin/usuario.png';
-import turnos from '../../Assets/ImgLogin/turnos.png';
-import consultas from '../../Assets/ImgLogin/consultas.png';
+import usuarios from '../../Assets/ImgLogin/gato1.jpg';
+import turnos from '../../Assets/ImgLogin/perro1.jpg';
+import consultas from '../../Assets/ImgLogin/conejo1.jpg';
+
+
 
 const PagAdmin = () => {
+
+
+
+    const redirect = useNavigate();
+    const session = JSON.parse(sessionStorage.getItem("stateSession")) || false;
+
+    const checkSession = () => {
+        if (!session) {
+            redirect("/login");
+        }
+    }
+
+    useEffect(() => {
+        checkSession();
+    }, []);
+
     return (
-        <div className='box '>
-            <Container className="">
-                <div className='Boxadm'>
-                    <Card className="text-center">
 
-                        <Card.Body className='opcion1'>
-                            <img
-                                className="usuario "
-                                src={usuario}
-                            />
-                            <Card.Title>Usuarios Registrados </Card.Title>
-                            <Link to="/usuario/tabla" className="btn-reservar text-decoration-none text-center">Usuarios </Link>
-                        </Card.Body>
+        <div className='boxadm'>
+            <Container>
 
-                    </Card>
-                    <Card className="text-center">
+                
+                <div className='Boxadm mt-4'>
 
+                    <Card className='cardsadm m-4' style={{ width: '30rem' }}>
+                        <Card.Img  src={usuarios} />
                         <Card.Body>
-                            <img
-                                className="turnos "
-                                src={turnos}
-                            />
-                            <Card.Title>Turnos Reservados </Card.Title>
-
-                            <Link to="/turno/tabla" className="btn-reservar text-decoration-none text-center">Turnos </Link>
+                            <Card.Title>Usuarios Registrados</Card.Title>
+                            <Card.Text>
+                                Some quick example text to build on the card title and make up the bulk of
+                                the card's content.
+                            </Card.Text>
+                            <hr />
+                            <Link to="/usuario/tabla/" className="btn-adm text-decoration-none text-center">  Ver Usuarios  </Link>
                         </Card.Body>
-
                     </Card>
-                    <Card className="text-center">
-
+      
+                    <Card className='cardsadm m-3' style={{ width: '30rem' }}>
+                        <Card.Img src={turnos}  />
                         <Card.Body>
-                            <img
-                                className="consultas "
-                                src={consultas}
-                            />
-                            <Card.Title>Consultas Realizadas</Card.Title>
-
-                            <Link to="/PaginaContacto/" className="btn-reservar text-decoration-none text-center">Consultas </Link>
+                            <Card.Title>Turnos Reservados</Card.Title>
+                            <Card.Text>
+                                Some quick example text to build on the card title and make up the bulk of
+                                the card's content.
+                            </Card.Text>
+                            <hr />
+                            <Link to="/turno/tabla/" className="btn-adm text-decoration-none text-center">  Ver Turnos  </Link>
                         </Card.Body>
-
                     </Card>
+
+                    <Card className='cardsadm m-4' style={{ width: '30rem' }}>
+                        <Card.Img src={consultas} />
+                        <Card.Body>
+                            <Card.Title>Consultas Registradas</Card.Title>
+                            <Card.Text>
+                                Some quick example text to build on the card title and make up the bulk of
+                                the card's content.
+                            </Card.Text>
+                            <hr />
+                            <Link to="/PaginaContacto/" className="btn-adm text-decoration-none text-center">  Ver Consultas  </Link>
+                        </Card.Body>
+                    </Card>
+
                 </div>
             </Container>
         </div>
+
     );
 };
 

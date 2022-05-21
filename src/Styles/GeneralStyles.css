@@ -78,6 +78,40 @@
   background: #53c0ff;
 }
 
+/* boton adm */
+
+.btn-adm {
+  min-width: 130px;
+  height: 40px;
+  color: black;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 5px;
+  z-index: 1;
+  background: black;
+  border: 2px solid #838383;
+  color: #838383;
+}
+.btn-adm:hover {
+  color: black;
+}
+.btn-adm:hover:after {
+  width: 100%;
+}
+.btn-adm:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+ left: 0;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background: #838383;
+}
 /* boton borrar */
 
 .btn-borrar {
@@ -203,6 +237,27 @@ color:  white!important;
 color: #feba0b !important;
 }
 
+.dropdown-toggle{
+  color:  white!important;
+}
+
+.dropdown-toggle:hover{
+  color: #feba0b !important;
+}
+
+.dropdown-menu {
+  background-color: rgb(0, 0, 0 ) !important;
+  color: white !important;
+}
+
+.dropdown-item{
+color: white;
+}
+.dropdown-item:hover{
+  color: #feba0b !important;
+  background-color: rgb(0, 0, 0 , 0.70) !important;
+}
+
 
 
 .navbar-brand{
@@ -216,11 +271,17 @@ border-width: 2px;
 }
 
 
+
+
+
 /* Footter */
 
 .footer {
  background-color: rgb(0, 0, 0 , 0.70);
  width: 100%;
+}
+.colfooter{
+ padding: 0; 
 }
 
 .copyr{
@@ -245,5 +306,6 @@ text-align: center;
 .Acercade{
 text-align: center;
 color: white;
+width: 100%;
 }
 

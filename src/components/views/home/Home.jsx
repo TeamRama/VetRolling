@@ -8,9 +8,12 @@ import Servicio from "./servicios/Servicio"
 import Opiniones from './Opiniones';
 import Profesionales from './profesionales/Profesionales';
 
+
+
 const Home = () => {
     return (
         <div>
+
             <Portada></Portada>
             <main className='container'>
             <InformacionGralHome></InformacionGralHome>
@@ -21,6 +24,7 @@ const Home = () => {
             <Opiniones></Opiniones>
             <Profesionales></Profesionales>
             </main>
+
         </div>
     );
 };

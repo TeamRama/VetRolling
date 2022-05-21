@@ -1,7 +1,5 @@
 import React from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
-import Navigation from './components/layout/Navigation';
-import Footer from './components/layout/Footer';
 import Ingreso from './components/views/Login/Ingreso/Ingreso';
 import TablaTurnos from './components/views/Formularios/Turnos/TablaTurnos/TablaTurnos';
 import CrearTurno from './components/views/Formularios/Turnos/CrearTurno/CrearTurno';
@@ -18,6 +16,8 @@ import PagAdmin from './components/views/PaginaAdmin/PagAdmin';
 import './App.css';
 import { BrowserRouter , Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
+import Navigation from './components/layout/Navigation';
+import Footer from './components/layout/Footer';
 
 
 
@@ -31,8 +31,6 @@ function App() {
   useEffect(() => {
     getApi();
 
-  
-
   }, [])
 
   const getApi = async () => {
@@ -40,7 +38,7 @@ function App() {
       const res = await fetch(URL);
       const turnoApi = await res.json();
       
-       setTurnos(turnoApi);
+      setUsuario(turnoApi);
 
     } catch (error) {
       console.log(error);
@@ -52,16 +50,16 @@ function App() {
     return (
 
 
-    <div>
+    <div className='Contenedorglobal'>
       <BrowserRouter>
-        <Navigation />
-        <main>
+      <Navigation/>
+      <main>
           <Routes>
             <Route exact path="/" element={<Home turnos={turnos} />} />
             <Route exact path="/turno/tabla" element={<TablaTurnos turnos={turnos} URL={URL} getApi={getApi} />} />
             <Route exact path="/turno/crear/" element={<CrearTurno URL={URL} getApi={getApi} />} />
             <Route exact path="/turno/editar/:id" element={<EditarTurno URL={URL} getApi={getApi} />} />
-            <Route exact path="/usuario/editar/" element={<EditarUsuario URL={URL} getApi={getApi} />} />
+            <Route exact path="/usuario/editar/:id" element={<EditarUsuario URL={URL} getApi={getApi} />} />
             <Route exact path="/usuario/crear/" element={<CrearUsuario URL={URL} getApi={getApi} />} />
             <Route exact path="/usuario/tabla/" element={<TablaUsuario  usuario={usuario} URL={URL} getApi={getApi} />} />
             <Route exact path="/login/" element={<Ingreso />} />
@@ -74,7 +72,7 @@ function App() {
 
           </Routes>
         </main>
-        <Footer />
+        <Footer/>
       </BrowserRouter>
 
     </div>

@@ -1,10 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import error from "../../Assets/Img404/error.jpg";
+
 import "./Pagina404.css";
 
 
 const Pagina404 = () => {
+
   return (
     <div>
       <div className="E404">

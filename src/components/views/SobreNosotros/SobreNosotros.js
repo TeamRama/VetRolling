@@ -7,10 +7,13 @@ import Intro from './intro/Intro';
 const SobreNosotros = () => {
     return (
         <div>
+
             <Intro/>
             <Ramiro/>
             <Pablo/>
+  
         </div>
+
     );
 };
 
