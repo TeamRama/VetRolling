@@ -7,7 +7,7 @@
     align-items: center;
 }
 
-.portada-textos{
+.portada-textos {
     width: 70%;
     margin: auto;
     display: flex;
@@ -17,7 +17,7 @@
     text-align: center;
 }
 
-.img-portada{
+.img-portada {
     width: 100%;
     height: 100vh;
     object-fit: cover ;
@@ -25,13 +25,13 @@
     z-index: -1;
 }
 
-.portada-h1{
+.portada-h1 {
     font-size: 50px;
     font-weight: 900;
     color: white;
 }
 
-.portada-h2{
+.portada-h2 {
     font-size: 50px;
     font-weight: 900;
     color: #feba0b;
@@ -52,7 +52,7 @@
 }
 
 /* Publicidad video */
-.publicidadVideoHome{
+.publicidadVideoHome {
     display: block;
     margin: 0 auto;
     width: 100%;
@@ -61,7 +61,7 @@
 
 
 /* Carousel Opiniones clientes */
-.texto-sombra{
+.texto-sombra {
     text-shadow: 7px 4px 5px black;
 }
 

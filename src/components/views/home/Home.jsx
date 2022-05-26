@@ -9,21 +9,23 @@ import Opiniones from './Opiniones';
 import Profesionales from './profesionales/Profesionales';
 import PlanesTabbed from '../entradas/PlanesTabbed';
 import ServiciosTabbed from '../entradas/ServiciosTabbed';
+import Publicidad2 from './Publicidad2';
 
 const Home = () => {
     return (
         <div>
             <Portada></Portada>
             <main className='container'>
-            <InformacionGralHome></InformacionGralHome>
-            <Publicidad></Publicidad>
-            <Productos></Productos>
-            <Planes></Planes>
-            <Servicio></Servicio>
-            <Opiniones></Opiniones>
-            <Profesionales></Profesionales>
-            <PlanesTabbed></PlanesTabbed>
-            <ServiciosTabbed></ServiciosTabbed>
+                <InformacionGralHome></InformacionGralHome>
+                <Publicidad></Publicidad>
+                <Productos></Productos>
+                <Planes></Planes>
+                <Servicio></Servicio>
+                <Publicidad2></Publicidad2>
+                <Opiniones></Opiniones>
+                <Profesionales></Profesionales>
+                <PlanesTabbed></PlanesTabbed>
+                <ServiciosTabbed></ServiciosTabbed>
             </main>
         </div>
     );

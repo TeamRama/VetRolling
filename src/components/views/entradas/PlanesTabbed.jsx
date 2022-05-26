@@ -5,9 +5,9 @@ const PlanesTabbed = () => {
     return (
         <div>
             <div className="text-center">
-            <h1 className="fw-bold my-5">NUESTROS PLANES PARA VOS Y TU MASCOTA</h1>
-            <img className="mb-5" src={logo} alt="logo vet" />
-            </div>   
+                <h1 className="fw-bold my-5">NUESTROS PLANES PARA VOS Y TU MASCOTA</h1>
+                <img className="mb-5" src={logo} alt="logo vet" />
+            </div>
             <Tabs defaultActiveKey="Plan Primeros Pasos" id="uncontrolled-tab-example" className="mb-3">
                 <Tab eventKey="Plan Primeros Pasos" title="Plan Primeros Pasos">
                     <div className="d-flex justify-content-center">
@@ -54,7 +54,7 @@ const PlanesTabbed = () => {
                     </div>
                 </Tab>
                 <Tab eventKey="Plan Adultos" title="Plan Adultos" >
-                <div className="d-flex justify-content-center">
+                    <div className="d-flex justify-content-center">
                         <img height={800} width={800} className="img-fluid" alt="mascotas" src="https://www.65ymas.com/uploads/s1/56/03/51/bigstock-dog-and-cat-under-white-blanke-361477333.jpeg"></img>
                     </div>
                     <h3 className="my-3 fw-bold text-warning text-center my-5">PLAN ADULTOS</h3>
@@ -75,6 +75,7 @@ const PlanesTabbed = () => {
                         <li>Clavos/cerclajes</li>
                         <li>Fijadores externos</li>
                         <li>Placas de osteosíntesis</li>
+                        <button className="bg-warning text-white border">Ver mas</button>
                     </ul>
                     <div>
                         <img className="img-fluid my-5" src="https://www.purina-latam.com/sites/g/files/auxxlc391/files/BANNER_PROPLAN_PERRO-GATO-ADULTO.jpg" alt="publicidad" />

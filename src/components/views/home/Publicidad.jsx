@@ -17,6 +17,7 @@ const Publicidad = () => {
             autoPlay
             loop
             muted
+            controls
           ></video>
         </div>
       </div>
