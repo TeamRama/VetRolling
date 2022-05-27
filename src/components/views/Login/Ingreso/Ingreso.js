@@ -6,7 +6,7 @@ import { faGoogle, faFacebook } from '@fortawesome/free-brands-svg-icons';
 import { Link, useNavigate } from "react-router-dom";
 import { validateEmail, validateContraseña } from "../../../helpers/ValidateFields";
 import Swal from "sweetalert2";
-import { faEye } from "@fortawesome/free-solid-svg-icons";
+import {  faEyeSlash , faEye } from "@fortawesome/free-solid-svg-icons";
 import "../../../../Styles/GeneralStyles.css";
 
 
@@ -22,22 +22,31 @@ const Ingreso = () => {
   const [contraseña, setContraseña] = useState("");
   const [type, setType] = useState("password");
   const [icon, setIcon] = useState("faEye");
+  
+  
 
 
   let session = false;
   const navigate = useNavigate()
+  
   const handleClick = () => {
-
   }
-
+ 
+ 
 
   const handleToggle = () => {
+     
     if (type === 'password') {
-      setIcon(faEye);
+      setIcon(faEyeSlash);
       setType('text');
+      document.getElementById('icon1').style.display = 'none';
+      document.getElementById('icon1').style.display = 'block';
+      
     } else {
-      setIcon(faEye);
-      setType('password')
+      setIcon(faEyeSlash);
+      setType('password');
+      document.getElementById('icon1').style.display = 'block'; 
+      document.getElementById('icon1').style.display = 'none';    
     }
   }
 
@@ -100,8 +109,15 @@ const Ingreso = () => {
                           required />
                         <FontAwesomeIcon
                           className='icon'
+                          id='icon1'
+                          icon={faEyeSlash}
+                          onClick={handleToggle}
+                           />
+                           <FontAwesomeIcon
+                          className='iconvisible'
                           icon={faEye}
-                          onClick={handleToggle} />
+                          onClick={handleToggle}
+                          />
                       </div>
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicCheckbox">

@@ -73,6 +73,14 @@ cursor: pointer;
 position: relative;
 top: 11px;
 left: -30px;
+
+}
+
+.iconvisible{
+cursor: pointer;
+position: relative;
+top: 11px;
+left: -30px;
 }
 
 .usuario{
