@@ -1,0 +1,13 @@
+{
+  "turnos": [
+    {
+      "email": "ramiro@gmail.com",
+      "nombreDueño": "Ramiro Nahuel Perez",
+      "nombreMascota": "Afro",
+      "contraseña": "154064742aS",
+      "fecha": "1993-03-06",
+      "celular": "3815436000",
+      "id": 1
+    }
+  ]
+}

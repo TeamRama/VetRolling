@@ -11,9 +11,12 @@ import PlanesTabbed from '../entradas/PlanesTabbed';
 import ServiciosTabbed from '../entradas/ServiciosTabbed';
 import Publicidad2 from './Publicidad2';
 
+
+
 const Home = () => {
     return (
         <div>
+
             <Portada></Portada>
             {/* <Clima></Clima> */}
             <main className='container'>
@@ -28,6 +31,7 @@ const Home = () => {
                 <PlanesTabbed></PlanesTabbed>
                 <ServiciosTabbed></ServiciosTabbed>
             </main>
+
         </div>
     );
 };

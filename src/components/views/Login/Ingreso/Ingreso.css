@@ -1,0 +1,130 @@
+
+
+.box{
+ 
+  background-color: white;
+  box-shadow: 0 0 20px 1px rgb(131, 131, 131);
+  margin-top: 10px;
+}
+
+.FormLogin{
+display: grid;
+}
+
+
+
+.Opcionesdeingreso{
+text-align: center;
+font-size: 20px;
+}
+
+.IconL{
+position: relative;
+font-size: 40px;
+cursor: pointer;
+}
+
+.fontAIconL{
+text-align: center;
+color:rgb(131, 131, 131);
+}
+
+.checkboxL{
+color: black;
+
+}
+.form-check-input:checked {
+background-color: #feba0b;
+border: #feba0b;
+}
+
+
+.btn-ingresar{
+  background-color: #feba0b;
+  color: white;
+  min-width: 130px;
+  height: 40px;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 5px;
+  z-index: 0;
+  overflow: hidden;
+  border: 2px solid #feba0b;
+}
+
+.btn-ingresar:hover{
+background-color: white;
+color: #feba0b;
+}
+
+.contraseña{
+display: flex;
+flex-direction: row;
+cursor: pointer;
+}
+
+.icon{
+cursor: pointer;
+position: relative;
+top: 11px;
+left: -30px;
+
+}
+
+.iconvisible{
+cursor: pointer;
+position: relative;
+top: 11px;
+left: -30px;
+}
+
+.usuario{
+margin-right: 20px;
+}
+
+.botoningresar{
+  text-align: center;
+}
+
+.btn-registro{
+  background-color: #feba0b;
+  color: white;
+  min-width: 130px;
+  height: 40px;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 5px;
+  z-index: 0;
+  overflow: hidden;
+  border: 2px solid #feba0b;
+ text-align: center;
+ font-size: 16px;
+}
+
+.btn-registro:hover{
+background-color: white;
+color: #feba0b;
+}
+
+.email{
+cursor: pointer;
+}
+
+.nav-link{
+color: #feba0b;
+}
+
+.TituloIngreso{
+padding-top: 101px;
+text-align: center;
+}
