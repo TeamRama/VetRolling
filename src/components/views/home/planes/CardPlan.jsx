@@ -17,7 +17,7 @@ const CardPlan = ({ imagen, nombre, descripcion }) => {
           <Col sm={12} md={12} lg={6} className="mt-2">
             <h3 className="text-warning fw-bold">{nombre}</h3>
             <p className="lead">{descripcion}</p>
-            <Button className="bg-warning">Seguir leyendo</Button>
+            <Button className="bg-warning">Descubre Nuestros Planes</Button>
           </Col>
         </Row>
       </Container>

@@ -7,21 +7,26 @@ import Planes from './planes/Planes';
 import Servicio from "./servicios/Servicio"
 import Opiniones from './Opiniones';
 import Profesionales from './profesionales/Profesionales';
-import Clima from './Clima';
+import PlanesTabbed from '../entradas/PlanesTabbed';
+import ServiciosTabbed from '../entradas/ServiciosTabbed';
+import Publicidad2 from './Publicidad2';
 
 const Home = () => {
     return (
         <div>
             <Portada></Portada>
-            <Clima></Clima>
+            {/* <Clima></Clima> */}
             <main className='container'>
-            <InformacionGralHome></InformacionGralHome>
-            <Planes></Planes>
-            <Publicidad></Publicidad>
-            <Productos></Productos>
-            <Servicio></Servicio>
-            <Opiniones></Opiniones>
-            <Profesionales></Profesionales>
+                <InformacionGralHome></InformacionGralHome>
+                <Publicidad></Publicidad>
+                <Productos></Productos>
+                <Planes></Planes>
+                <Servicio></Servicio>
+                <Publicidad2></Publicidad2>
+                <Opiniones></Opiniones>
+                <Profesionales></Profesionales>
+                <PlanesTabbed></PlanesTabbed>
+                <ServiciosTabbed></ServiciosTabbed>
             </main>
         </div>
     );
