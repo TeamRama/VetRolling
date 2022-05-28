@@ -7,14 +7,13 @@ import "../../../../../Styles/GeneralStyles.css";
 import "../CrearTurno/CrearTurno.css";
 
 
-const EditarTurno = ({ URL, getApi }) => {
+const EditarTurno = ({ DBT, getTurno }) => {
 
-
+    // Parametro
+    const { id } = useParams();
 
     const [turno, setTurno] = useState({});
 
-
-    const { id } = useParams();
 
     const nombreDueñoRef = useRef("")
     const nombreMascotaRef = useRef("")
@@ -24,7 +23,7 @@ const EditarTurno = ({ URL, getApi }) => {
 
     useEffect(async () => {
         try {
-            const res = await fetch(`${URL}/${id}`);
+            const res = await fetch(`${DBT}/${id}`);
             const turnoApi = await res.json();
             setTurno(turnoApi);
         } catch (error) {
@@ -69,7 +68,7 @@ const EditarTurno = ({ URL, getApi }) => {
         }).then(async (result) => {
             if (result.isConfirmed) {
                 try {
-                    const res = await fetch(`${URL}/${id}`, {
+                    const res = await fetch(`${DBT}/${id}`, {
                         method: "PUT",
                         headers: {
                             "Content-Type": "application/json",
@@ -78,7 +77,7 @@ const EditarTurno = ({ URL, getApi }) => {
                     });
                     if (res.status === 200) {
                         Swal.fire('Modificado ', 'Su turno fue modificado con exito !!.', 'success');
-                        getApi();
+                        getTurno();
                         navigate("/turno/tabla");
                     }
 

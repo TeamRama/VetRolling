@@ -4,16 +4,7 @@ import { Link } from "react-router-dom";
 import Turno from "./Turno/Turno";
 import "../../../../../Styles/GeneralStyles.css";
 
-
-
-
-
-
-
-
-const TablaTurnos = ({ turnos, URL, getApi }) => {
-
-
+const TablaTurnos = ({ DBT, turnos, getTurno }) => {
 
   return (
     <div>
@@ -40,9 +31,9 @@ const TablaTurnos = ({ turnos, URL, getApi }) => {
             <tbody>
               {turnos.map((turno) => (
                 <Turno key={turno.id}
+                  DBT={DBT}
                   turno={turno}
-                  URL={URL}
-                  getApi={getApi} />
+                  getTurno={getTurno} />
               ))}
             </tbody>
           </Table>
@@ -53,7 +44,7 @@ const TablaTurnos = ({ turnos, URL, getApi }) => {
           </div>
         }
         <div className="text-end">
-        <Link to="/PagAdmin/" className="btn-reservar text-decoration-none text-center">  Menu  </Link>
+          <Link to="/PagAdmin/" className="btn-reservar text-decoration-none text-center">  Menu  </Link>
         </div>
       </Container>
     </div>

@@ -16,7 +16,7 @@ const TablaUsuario = ({usuario , URL, getApi}) => {
         </div>
         <hr />
         {/* Tabla de turnos */}
-        {usuario.length != 0 ?
+        {usuario.length !== 0 ?
           <Table bordered hover responsive
             className="align-middle mt-3">
             <thead>

@@ -26,20 +26,18 @@ function App() {
   const [turnos, setTurnos] = useState([]);
   const [usuario, setUsuario] = useState([]);
 
-  const URL = process.env.REACT_APP_API_VETROLLING;
+  const DBT = process.env.REACT_APP_API_TURNOS;
 
   useEffect(() => {
-    getApi();
+    getTurno();
 
   }, [])
 
-  const getApi = async () => {
+  const getTurno = async () => {
     try {
-      const res = await fetch(URL);
+      const res = await fetch(DBT);
       const turnoApi = await res.json();
-      
-      setUsuario(turnoApi);
-
+      setTurnos(turnoApi);
     } catch (error) {
       console.log(error);
 }
@@ -56,12 +54,12 @@ function App() {
       <main>
           <Routes>
             <Route exact path="/" element={<Home turnos={turnos} />} />
-            <Route exact path="/turno/tabla" element={<TablaTurnos turnos={turnos} URL={URL} getApi={getApi} />} />
-            <Route exact path="/turno/crear/" element={<CrearTurno URL={URL} getApi={getApi} />} />
-            <Route exact path="/turno/editar/:id" element={<EditarTurno URL={URL} getApi={getApi} />} />
-            <Route exact path="/usuario/editar/:id" element={<EditarUsuario URL={URL} getApi={getApi} />} />
-            <Route exact path="/usuario/crear/" element={<CrearUsuario URL={URL} getApi={getApi} />} />
-            <Route exact path="/usuario/tabla/" element={<TablaUsuario  usuario={usuario} URL={URL} getApi={getApi} />} />
+            <Route exact path="/turno/tabla" element={<TablaTurnos turnos={turnos} DBT={DBT} getTurno={getTurno} />} />
+            <Route exact path="/turno/crear/" element={<CrearTurno DBT={DBT} getTurno={getTurno} />} />
+            <Route exact path="/turno/editar/:id" element={<EditarTurno DBT={DBT} getTurno={getTurno} />} />
+            <Route exact path="/usuario/editar/:id" element={<EditarUsuario DBT={DBT} getTurno={getTurno} />} />
+            <Route exact path="/usuario/crear/" element={<CrearUsuario  />} />
+            <Route exact path="/usuario/tabla/" element={<TablaUsuario  usuario={usuario}  />} />
             <Route exact path="/login/" element={<Ingreso />} />
             <Route exact path="/PaginaPlanes/" element={<PaginaPlanes />} />
             <Route exact path="/PaginaContacto/" element={<PaginaContacto />} />

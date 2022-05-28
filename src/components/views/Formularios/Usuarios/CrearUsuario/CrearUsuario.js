@@ -63,7 +63,7 @@ const CrearUsuario = ({ URL, getApi }) => {
                 try {
                     const res = await fetch(URL, {
                         method: "POST",
-                        headers: {git
+                        headers: {
                             "Content-Type": "application/json",
                         },
                         body: JSON.stringify(newUsuario)

@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import { Col, Container, Form, Row } from "react-bootstrap";
-import { useNavigate , Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import { validateNombreDueño, validateNombreMascota, validateRaza, validateVeterinario, validateHorario, validateFecha } from "../../../../helpers/ValidateFields";
 import "../../../../../Styles/GeneralStyles.css";
@@ -9,7 +9,7 @@ import Time from "../Time";
 
 
 
-const CrearTurno = ({ URL, getApi }) => {
+const CrearTurno = ({ DBT, getTurno }) => {
   //States 
   const [nombreDueño, setNombreDueño] = useState("");
   const [nombreMascota, setNombreMascota] = useState("");
@@ -17,30 +17,24 @@ const CrearTurno = ({ URL, getApi }) => {
   const [veterinario, setVeterinario] = useState("");
   const [fecha, setFecha] = useState("");
   const [horario, setHorario] = useState("");
-
+  const [turnos, setTurnos] = useState([]);
+  const [horas, setHoras] = useState([]);
+  const [horasVeta, setHorasVeta] = useState([]);
+  const [horasVetb, setHorasVetb] = useState([]);
 
   // Navigate 
   const navigate = useNavigate()
   const handleClick = () => {
 
-}
+  }
 
-
-
-  const [turnos, setTurnos] = useState([]);
-  const [horas, setHoras] = useState([]);
-  const [horasVeta, setHorasVeta] = useState([]);
-  const [horasVetb, setHorasVetb] = useState([]);
   // Ref
   const horarioRef = useRef();
   const vetaRef = useRef();
   const vetbRef = useRef();
   const veterinarioRef = useRef();
 
-
-
   // Arreglo de horarios
-
   const timePicker = [
     "09:00",
     "10:00",
@@ -51,6 +45,7 @@ const CrearTurno = ({ URL, getApi }) => {
     "19:00",
     "20:00",
   ];
+
   // veterinarios
   const veta = "Vet A";
   const vetb = "Vet B";
@@ -64,7 +59,7 @@ const CrearTurno = ({ URL, getApi }) => {
 
   useEffect(async () => {
     try {
-      const res = await fetch(URL);
+      const res = await fetch(DBT);
       const resultado = await res.json();
       // Guardamos la db en un state
       setTurnos(resultado);
@@ -80,15 +75,13 @@ const CrearTurno = ({ URL, getApi }) => {
     const busquedaFechas = turnos.filter((fechas) => fechas.fecha === e.target.value
     );
 
-    // Nuevo filtrado de veterianrios y horas
+    // Nuevo filtrado de veterinarios y horas
     const buscarVeterinario = busquedaFechas.filter((doc) => doc.veterinario === veta);
     const buscarVeterinario1 = buscarVeterinario.map((horas) => horas.horario);
     setHorasVeta(buscarVeterinario1);
     const buscarVeterinarioI = busquedaFechas.filter((doc) => doc.veterinario === vetb);
     const buscarVeterinario2 = buscarVeterinarioI.map((horas) => horas.horario);
     setHorasVetb(buscarVeterinario2);
-
-
 
     if (buscarVeterinario.length >= 9) {
       vetaRef.current.disabled = true;
@@ -148,7 +141,6 @@ const CrearTurno = ({ URL, getApi }) => {
 
 
     // Enviar los datos para guardarlos 
-
     const newTurno = {
       nombreDueño,
       nombreMascota,
@@ -158,8 +150,6 @@ const CrearTurno = ({ URL, getApi }) => {
       veterinario
 
     }
-
-
     Swal.fire({
       title: 'Seguro que eliges este turno?',
       text: "No podras elegir otro !",
@@ -169,7 +159,7 @@ const CrearTurno = ({ URL, getApi }) => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          const res = await fetch(URL, {
+          const res = await fetch(DBT, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -178,7 +168,7 @@ const CrearTurno = ({ URL, getApi }) => {
           });
           if (res.status === 201) {
             Swal.fire('Turno Guardado!', ' Tu turno fue reservado .', 'success');
-            getApi();
+            getTurno();
             navigate("/turno/tabla");
 
           }
@@ -270,8 +260,6 @@ const CrearTurno = ({ URL, getApi }) => {
                     {horas.map((hora, index) => {
                       return <Time hora={hora} key={index} />;
                     })}
-
-
                   </Form.Select>
                 </Form.Group>
               </Col>
@@ -284,8 +272,8 @@ const CrearTurno = ({ URL, getApi }) => {
           </Form>
         </div >
         <div className="text-end">
-        <Link to="/turno/tabla/" className="btn-reservar text-decoration-none text-center">  Atras  </Link>
-      </div>
+          <Link to="/turno/tabla/" className="btn-reservar text-decoration-none text-center">  Atras  </Link>
+        </div>
       </Container >
 
     </div >
