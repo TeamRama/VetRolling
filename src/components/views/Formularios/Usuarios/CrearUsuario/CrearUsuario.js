@@ -19,7 +19,7 @@ const CrearUsuario = ({ URL, getApi }) => {
     // Navigate 
     const navigate = useNavigate()
     const handleClick = () => {
-
+        
     }
 
     // Funcion para guardar los datos o crear el producto 
@@ -63,7 +63,7 @@ const CrearUsuario = ({ URL, getApi }) => {
                 try {
                     const res = await fetch(URL, {
                         method: "POST",
-                        headers: {git
+                        headers: {
                             "Content-Type": "application/json",
                         },
                         body: JSON.stringify(newUsuario)
