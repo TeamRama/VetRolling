@@ -2,7 +2,7 @@ import { Tabs, Tab } from "react-bootstrap";
 
 const ServiciosTabbed = () => {
     return (
-        <div>
+        <div className="container">
             <div className="text-center">
                 <img src="https://www.clinicaveterinariaperales.com/uploads/wyVYlPns/767x0_1170x0/banner.jpg" alt="portada veterinaria prestigio y calidad" />
                 <h1 className="fw-bold my-5">NUESTROS SERVICIOS PARA TU MASCOTA</h1>

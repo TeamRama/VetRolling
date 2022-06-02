@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Turno from "./Turno/Turno";
 import "../../../../../Styles/GeneralStyles.css";
 
-const TablaTurnos = ({ DBT, turnos, getTurno }) => {
+const TablaTurnos = ({ turnos, DBT, getTurno }) => {
 
   return (
     <div>
@@ -30,9 +30,10 @@ const TablaTurnos = ({ DBT, turnos, getTurno }) => {
             </thead>
             <tbody>
               {turnos.map((turno) => (
-                <Turno key={turno.id}
-                  DBT={DBT}
+                <Turno 
+                  key={turno.id}
                   turno={turno}
+                  DBT={DBT}
                   getTurno={getTurno} />
               ))}
             </tbody>

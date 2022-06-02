@@ -6,13 +6,15 @@ import CardPlan from "./CardPlan";
 const Planes = () => {
   const [planes, setPlanes] = useState(null);
 
+  const DBPLANES = process.env.REACT_APP_API_PLANES;
+
   useEffect(() => {
     getPlanes();
   }, []);
 
   const getPlanes = async () => {
     try {
-      const res = await fetch("http://localhost:4001/planes");
+      const res = await fetch(DBPLANES);
       const planesApi = await res.json();
       setPlanes(planesApi);
     } catch (error) {

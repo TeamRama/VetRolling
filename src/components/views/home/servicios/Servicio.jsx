@@ -5,13 +5,15 @@ import ServicioCard from "./ServicioCard";
 const Servicio = () => {
     //state 
     const [servicios, setServicios] = useState(null);
+
+    const DBSERVICE = process.env.REACT_APP_API_SERVICIOS;
   
     useEffect(() => {
       getServicios();
     }, [])
     const getServicios = async () => {  
        try{
-          const res = await fetch("http://localhost:4001/servicios")
+          const res = await fetch(DBSERVICE)
           const serviciosApi = await res.json()
           setServicios(serviciosApi)
       } catch (error) {

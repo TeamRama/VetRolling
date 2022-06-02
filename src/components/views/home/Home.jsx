@@ -28,8 +28,6 @@ const Home = () => {
                 <Publicidad2></Publicidad2>
                 <Opiniones></Opiniones>
                 <Profesionales></Profesionales>
-                <PlanesTabbed></PlanesTabbed>
-                <ServiciosTabbed></ServiciosTabbed>
             </main>
 
         </div>

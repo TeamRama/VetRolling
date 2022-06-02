@@ -50,8 +50,8 @@ const PaginaContacto = () => {
 return (
     <div>
         
-        <Container className="DatosContacto mb-5">
-            <h1 className="mt-5">Quiero Informacion !</h1>
+        <Container className="DatosContacto ">
+            <h1 className="fw-bold">Consulta por tu plan!</h1>
             <hr className="my-5"/>
             {/* Form Contacto */}
             <div className='Form-Contacto'>

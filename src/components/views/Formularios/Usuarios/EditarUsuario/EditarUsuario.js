@@ -7,7 +7,7 @@ import "../../../../../Styles/GeneralStyles.css";
 
 
 
-const EditarTurno = ({ URL, getApi }) => {
+const EditarUsuario = ({ DBU, getUsuario }) => {
 
 
 
@@ -28,7 +28,7 @@ const EditarTurno = ({ URL, getApi }) => {
 
     useEffect(async () => {
         try {
-            const res = await fetch(`${URL}/${id}`);
+            const res = await fetch(`${DBU}/${id}`);
             const usuarioApi = await res.json();
             setUsuario(usuarioApi);
         } catch (error) {
@@ -73,7 +73,7 @@ const EditarTurno = ({ URL, getApi }) => {
         }).then(async (result) => {
             if (result.isConfirmed) {
                 try {
-                    const res = await fetch(`${URL}/${id}`, {
+                    const res = await fetch(`${DBU}/${id}`, {
                         method: "PUT",
                         headers: {
                             "Content-Type": "application/json",
@@ -82,7 +82,7 @@ const EditarTurno = ({ URL, getApi }) => {
                     });
                     if (res.status === 200) {
                         Swal.fire('Editado ', 'Sus datos de usuarios fueron editados .', 'success');
-                        getApi();
+                        getUsuario();
                         navigate("/usuario/tabla");
                     }
 
@@ -158,4 +158,4 @@ const EditarTurno = ({ URL, getApi }) => {
     );
 };
 
-export default EditarTurno;
+export default EditarUsuario;

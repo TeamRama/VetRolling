@@ -1,15 +1,11 @@
 import React from 'react';
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 
-const Turno = ({ turno, getTurno, DTB }) => {
+const Turno = ({ turno, DBT, getTurno }) => {
 
-  // Parametro
-  const { id } = useParams();
-
-  const handleDelete = () => {
-
+  const handleDelete = (id) => {
     Swal.fire({
       title: 'Estas Seguro/a ?',
       text: "Perderas el turno elegido !!",
@@ -19,18 +15,16 @@ const Turno = ({ turno, getTurno, DTB }) => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          const res = await fetch(`${DTB}/${id}`, {
+          const res = await fetch(`${DBT}/${id}`, {
             method: "DELETE",
             headers: {
               "Content-Type": "application/json",
             },
-
           });
           if (res.status === 200) {
             Swal.fire('Eliminado !', 'Su turno fue Carcelado!', 'success');
             getTurno();
           }
-
         } catch (error) {
           console.log(error);
         }
@@ -51,7 +45,7 @@ const Turno = ({ turno, getTurno, DTB }) => {
         <div className="d-flex justify-content-center">
           <Link to={`/turno/editar/${turno._id}`} className="btn-editar  text-decoration-none text-center mx-1">Editar Turno</Link>
           <button className="btn-borrar text-decoration-none text-center mx-1"
-            onClick={() => handleDelete(turno.id)} >
+            onClick={() => handleDelete(turno._id)} >
             Borrar turno</button>
         </div>
       </td>

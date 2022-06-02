@@ -6,7 +6,7 @@ import "../../../../../Styles/GeneralStyles.css";
 import Swal from "sweetalert2";
 import './CrearUsuario.css';
 
-const CrearUsuario = ({ URL, getApi }) => {
+const CrearUsuario = ({ DBU, getUsuario }) => {
 
     //States 
     const [email, setEmail] = useState("");
@@ -27,7 +27,6 @@ const CrearUsuario = ({ URL, getApi }) => {
         e.preventDefault();
 
         // validar los campos
-
         if (
             !validateEmail(email) ||
             !validateNombreDueño(nombreDueño) ||
@@ -41,7 +40,6 @@ const CrearUsuario = ({ URL, getApi }) => {
         }
 
         // Enviar los datos para guardarlos 
-
         const newUsuario = {
             email,
             nombreDueño,
@@ -61,7 +59,7 @@ const CrearUsuario = ({ URL, getApi }) => {
         }).then(async (result) => {
             if (result.isConfirmed) {
                 try {
-                    const res = await fetch(URL, {
+                    const res = await fetch(DBU, {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json",
@@ -70,7 +68,7 @@ const CrearUsuario = ({ URL, getApi }) => {
                     });
                     if (res.status === 201) {
                         Swal.fire(' Registrado !', ' Tus datos fueron Guardados .', 'success');
-                        getApi();
+                        getUsuario();
                         navigate("/usuario/tabla");
                     }
                 } catch (error) {

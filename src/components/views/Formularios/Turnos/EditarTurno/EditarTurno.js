@@ -29,7 +29,6 @@ const EditarTurno = ({ DBT, getTurno }) => {
         } catch (error) {
             console.log(error);
         }
-
     }, []);
 
 

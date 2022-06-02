@@ -3,6 +3,8 @@ import CardProducto from "./CardProducto";
 
 const Productos = () => {
     const [productos, setProductos] = useState(null);
+
+    const DBP = process.env.REACT_APP_API_PRODUCTOS;
   
     useEffect(() => {
       getProductos();
@@ -10,7 +12,7 @@ const Productos = () => {
     
     const getProductos = async () => {
        try{
-          const res = await fetch("http://localhost:4001/productos")
+          const res = await fetch(DBP)
           const productosApi = await res.json()
           setProductos(productosApi)
       } catch (error) {

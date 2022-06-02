@@ -1,6 +1,8 @@
 import React from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "../../../style/home.css"
+import "../../../../Styles/GeneralStyles.css"
 
 const CardPlan = ({ imagen, nombre, descripcion }) => {
   return (
@@ -17,7 +19,7 @@ const CardPlan = ({ imagen, nombre, descripcion }) => {
           <Col sm={12} md={12} lg={6} className="mt-2">
             <h3 className="text-warning fw-bold">{nombre}</h3>
             <p className="lead">{descripcion}</p>
-            <Button className="bg-warning">Descubre Nuestros Planes</Button>
+            <Link className="btn-reservar text-decoration-none" to="/PlanesTabbed">Descubre Nuestros Planes</Link>
           </Col>
         </Row>
       </Container>

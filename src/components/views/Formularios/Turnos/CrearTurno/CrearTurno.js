@@ -7,8 +7,6 @@ import "../../../../../Styles/GeneralStyles.css";
 import "./CrearTurno.css";
 import Time from "../Time";
 
-
-
 const CrearTurno = ({ DBT, getTurno }) => {
   //States 
   const [nombreDueño, setNombreDueño] = useState("");
@@ -51,7 +49,6 @@ const CrearTurno = ({ DBT, getTurno }) => {
   const vetb = "Vet B";
 
   // UseEffect
-
   useEffect(() => {
     horarioRef.current.disabled = true;
     veterinarioRef.current.disabled = true;
@@ -67,7 +64,6 @@ const CrearTurno = ({ DBT, getTurno }) => {
       console.log(error);
     }
   }, []);
-
 
 
   function handleDateChange(e) {
@@ -138,8 +134,6 @@ const CrearTurno = ({ DBT, getTurno }) => {
       return;
     }
 
-
-
     // Enviar los datos para guardarlos 
     const newTurno = {
       nombreDueño,
@@ -148,7 +142,6 @@ const CrearTurno = ({ DBT, getTurno }) => {
       fecha,
       horario,
       veterinario
-
     }
     Swal.fire({
       title: 'Seguro que eliges este turno?',

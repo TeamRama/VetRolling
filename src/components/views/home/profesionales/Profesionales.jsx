@@ -4,6 +4,8 @@ import CardProfesional from "./CardProfesional";
 const Profesionales = () => {
   const [veterinarios, setVeterinarios] = useState(null);
 
+  const URL = process.env.REAC_APP_API_VETERINARIOS;
+
   useEffect(() => {
     getVeterinarios();
   }, [])

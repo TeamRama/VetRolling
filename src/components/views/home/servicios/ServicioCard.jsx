@@ -1,5 +1,6 @@
 import React from 'react';
-import { Card, Col, Button} from "react-bootstrap";
+import { Card, Col} from "react-bootstrap";
+import { Link } from 'react-router-dom';
 
 const ServicioCard = ({ servicios }) => {
     return (
@@ -12,7 +13,7 @@ const ServicioCard = ({ servicios }) => {
                 
               </Card.Body>
               <div className='d-flex justify-content-end m-3'>
-              <Button variant="warning" className='text-white'>Mas informacion</Button>
+              <Link to="/ServiciosTabbed" variant="warning" className='btn-reservar text-decoration-none'>Mas informacion</Link>
               </div>
             </Card>
           </Col>

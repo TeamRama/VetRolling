@@ -1,11 +1,11 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 
 
 
 
-const Usuario = ({ usuario , URL, getApi }) => {
+const Usuario = ({ usuario, DBU, getUsuario }) => {
 
   const handleDelete = (id) => {
 
@@ -18,7 +18,7 @@ const Usuario = ({ usuario , URL, getApi }) => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          const res = await fetch(`${URL}/${id}`, {
+          const res = await fetch(`${DBU}/${id}`, {
             method: "DELETE",
             headers: {
               "Content-Type": "application/json",
@@ -27,8 +27,7 @@ const Usuario = ({ usuario , URL, getApi }) => {
           });
           if (res.status === 200) {
             Swal.fire('Eliminado  !', ' Sus datos fueron elimandos !.', 'success');
-            getApi();
-
+            getUsuario();
           }
 
         } catch (error) {
@@ -50,9 +49,9 @@ const Usuario = ({ usuario , URL, getApi }) => {
       <td>{usuario.celular}</td>
       <td className="w-25">
         <div className="d-flex justify-content-center">
-          <Link to={`/usuario/editar/${usuario.id}`} className="btn-editar   text-decoration-none text-center mx-1">Editar Usuario</Link>
+          <Link to={`/usuario/editar/${usuario._id}`} className="btn-editar   text-decoration-none text-center mx-1">Editar Usuario</Link>
           <button className="btn-borrar text-decoration-none text-center mx-1"
-            onClick={() => handleDelete(usuario.id)} >
+            onClick={() => handleDelete(usuario._id)} >
             Borrar Usuario</button>
         </div>
       </td>

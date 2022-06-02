@@ -6,7 +6,7 @@ import "../../../../../Styles/GeneralStyles.css";
 
 
 
-const TablaUsuario = ({usuario , URL, getApi}) => {
+const TablaUsuario = ({usuario, DBU, getUsuario}) => {
     return (
         <div>
              <Container className="py-5">
@@ -33,8 +33,8 @@ const TablaUsuario = ({usuario , URL, getApi}) => {
               {usuario.map((usuario) => (
                 <Usuario key={usuario.id}
                 usuario={usuario}
-                  URL={URL}
-                  getApi={getApi} />
+                DBU={DBU}
+                getUsuario={getUsuario} />
               ))}
             </tbody>
           </Table>
