@@ -38,7 +38,7 @@ function App() {
       const res = await fetch(URL);
       const turnoApi = await res.json();
       
-      setUsuario(turnoApi);
+      setTurnos(turnoApi);
 
     } catch (error) {
       console.log(error);

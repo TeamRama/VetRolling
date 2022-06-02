@@ -1,13 +1,22 @@
 {
   "turnos": [
     {
-      "email": "ramiro@gmail.com",
-      "nombreDueño": "Ramiro Nahuel Perez",
-      "nombreMascota": "Afro",
-      "contraseña": "154064742aS",
-      "fecha": "1993-03-06",
-      "celular": "3815436000",
+      "nombreDueño": "ramiro",
+      "nombreMascota": "rocco",
+      "raza": "gato",
+      "fecha": "2022-06-02",
+      "horario": "09:00",
+      "veterinario": "Vet A",
       "id": 1
+    },
+    {
+      "nombreDueño": "pablo",
+      "nombreMascota": "rocco",
+      "raza": "perro",
+      "fecha": "2022-06-03",
+      "veterinario": "Vet A",
+      "horario": "09:00",
+      "id": 2
     }
   ]
 }

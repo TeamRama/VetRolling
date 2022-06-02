@@ -238,8 +238,9 @@ const CrearTurno = ({ URL, getApi }) => {
                     type="date"
                     placeholder="Escoje el dia del turno"
                     onChange={({ target }) => setFecha(target.value)}
-                    min="2022-04-01"
-                    onBlur={handleDateChange} />
+                    min="2022-06-01"
+                    onBlur={handleDateChange} 
+                    />
                 </Form.Group>
               </Col>
               <Col md={6}>
