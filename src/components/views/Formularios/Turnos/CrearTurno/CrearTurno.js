@@ -1,11 +1,13 @@
 import React, { useRef, useState, useEffect } from "react";
 import { Col, Container, Form, Row } from "react-bootstrap";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate , Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import { validateNombreDueño, validateNombreMascota, validateRaza, validateVeterinario, validateHorario, validateFecha } from "../../../../helpers/ValidateFields";
 import "../../../../../Styles/GeneralStyles.css";
 import "./CrearTurno.css";
 import Time from "../Time";
+
+
 
 const CrearTurno = ({ DBT, getTurno }) => {
   //States 
@@ -15,24 +17,30 @@ const CrearTurno = ({ DBT, getTurno }) => {
   const [veterinario, setVeterinario] = useState("");
   const [fecha, setFecha] = useState("");
   const [horario, setHorario] = useState("");
-  const [turnos, setTurnos] = useState([]);
-  const [horas, setHoras] = useState([]);
-  const [horasVeta, setHorasVeta] = useState([]);
-  const [horasVetb, setHorasVetb] = useState([]);
+
 
   // Navigate 
   const navigate = useNavigate()
   const handleClick = () => {
 
-  }
+}
 
+
+
+  const [turnos, setTurnos] = useState([]);
+  const [horas, setHoras] = useState([]);
+  const [horasVeta, setHorasVeta] = useState([]);
+  const [horasVetb, setHorasVetb] = useState([]);
   // Ref
   const horarioRef = useRef();
   const vetaRef = useRef();
   const vetbRef = useRef();
   const veterinarioRef = useRef();
 
+
+
   // Arreglo de horarios
+
   const timePicker = [
     "09:00",
     "10:00",
@@ -43,12 +51,12 @@ const CrearTurno = ({ DBT, getTurno }) => {
     "19:00",
     "20:00",
   ];
-
   // veterinarios
   const veta = "Vet A";
   const vetb = "Vet B";
 
   // UseEffect
+
   useEffect(() => {
     horarioRef.current.disabled = true;
     veterinarioRef.current.disabled = true;
@@ -66,18 +74,21 @@ const CrearTurno = ({ DBT, getTurno }) => {
   }, []);
 
 
+
   function handleDateChange(e) {
     // Realizamos filtrado de fecha
     const busquedaFechas = turnos.filter((fechas) => fechas.fecha === e.target.value
     );
 
-    // Nuevo filtrado de veterinarios y horas
+    // Nuevo filtrado de veterianrios y horas
     const buscarVeterinario = busquedaFechas.filter((doc) => doc.veterinario === veta);
     const buscarVeterinario1 = buscarVeterinario.map((horas) => horas.horario);
     setHorasVeta(buscarVeterinario1);
     const buscarVeterinarioI = busquedaFechas.filter((doc) => doc.veterinario === vetb);
     const buscarVeterinario2 = buscarVeterinarioI.map((horas) => horas.horario);
     setHorasVetb(buscarVeterinario2);
+
+
 
     if (buscarVeterinario.length >= 9) {
       vetaRef.current.disabled = true;
@@ -128,13 +139,16 @@ const CrearTurno = ({ DBT, getTurno }) => {
       !validateRaza(raza) ||
       !validateFecha(fecha) ||
       !validateHorario(horario) ||
-      !validateVeterinario(veterinario)
+      !validateVeterinario(veterinario) 
     ) {
       Swal.fire("Ops!", " Datos incorrectos .", "error");
       return;
     }
 
+
+
     // Enviar los datos para guardarlos 
+
     const newTurno = {
       nombreDueño,
       nombreMascota,
@@ -142,7 +156,10 @@ const CrearTurno = ({ DBT, getTurno }) => {
       fecha,
       horario,
       veterinario
+
     }
+
+
     Swal.fire({
       title: 'Seguro que eliges este turno?',
       text: "No podras elegir otro !",
@@ -221,8 +238,9 @@ const CrearTurno = ({ DBT, getTurno }) => {
                     type="date"
                     placeholder="Escoje el dia del turno"
                     onChange={({ target }) => setFecha(target.value)}
-                    min="2022-04-01"
-                    onBlur={handleDateChange} />
+                    min="2022-06-01"
+                    onBlur={handleDateChange} 
+                    />
                 </Form.Group>
               </Col>
               <Col md={6}>
@@ -253,6 +271,8 @@ const CrearTurno = ({ DBT, getTurno }) => {
                     {horas.map((hora, index) => {
                       return <Time hora={hora} key={index} />;
                     })}
+
+
                   </Form.Select>
                 </Form.Group>
               </Col>
@@ -265,8 +285,8 @@ const CrearTurno = ({ DBT, getTurno }) => {
           </Form>
         </div >
         <div className="text-end">
-          <Link to="/turno/tabla/" className="btn-reservar text-decoration-none text-center">  Atras  </Link>
-        </div>
+        <Link to="/turno/tabla/" className="btn-reservar text-decoration-none text-center">  Atras  </Link>
+      </div>
       </Container >
 
     </div >

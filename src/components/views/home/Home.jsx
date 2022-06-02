@@ -7,8 +7,6 @@ import Planes from './planes/Planes';
 import Servicio from "./servicios/Servicio"
 import Opiniones from './Opiniones';
 import Profesionales from './profesionales/Profesionales';
-import PlanesTabbed from '../entradas/PlanesTabbed';
-import ServiciosTabbed from '../entradas/ServiciosTabbed';
 import Publicidad2 from './Publicidad2';
 
 

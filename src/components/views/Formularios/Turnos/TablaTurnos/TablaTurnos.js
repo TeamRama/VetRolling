@@ -4,7 +4,16 @@ import { Link } from "react-router-dom";
 import Turno from "./Turno/Turno";
 import "../../../../../Styles/GeneralStyles.css";
 
+
+
+
+
+
+
+
 const TablaTurnos = ({ turnos, DBT, getTurno }) => {
+
+
 
   return (
     <div>
@@ -30,8 +39,7 @@ const TablaTurnos = ({ turnos, DBT, getTurno }) => {
             </thead>
             <tbody>
               {turnos.map((turno) => (
-                <Turno 
-                  key={turno.id}
+                <Turno key={turno.id}
                   turno={turno}
                   DBT={DBT}
                   getTurno={getTurno} />
@@ -45,7 +53,7 @@ const TablaTurnos = ({ turnos, DBT, getTurno }) => {
           </div>
         }
         <div className="text-end">
-          <Link to="/PagAdmin/" className="btn-reservar text-decoration-none text-center">  Menu  </Link>
+        <Link to="/PagAdmin/" className="btn-reservar text-decoration-none text-center">  Menu  </Link>
         </div>
       </Container>
     </div>

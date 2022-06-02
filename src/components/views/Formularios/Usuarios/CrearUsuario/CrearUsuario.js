@@ -19,7 +19,7 @@ const CrearUsuario = ({ DBU, getUsuario }) => {
     // Navigate 
     const navigate = useNavigate()
     const handleClick = () => {
-
+        
     }
 
     // Funcion para guardar los datos o crear el producto 

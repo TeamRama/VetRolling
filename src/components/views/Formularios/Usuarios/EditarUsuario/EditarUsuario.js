@@ -106,7 +106,7 @@ const EditarUsuario = ({ DBU, getUsuario }) => {
                         <Form.Control type="email"
                             placeholder="Correo electronico"
                             defaultValue={usuario.email}
-                            ref={nombreDueñoRef}
+                            ref={emailRef}
                         />
                          </Form.Group>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
