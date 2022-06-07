@@ -1,5 +1,4 @@
 import React from "react";
-import "..//home.css"
 
 const CardProfesional = ({ imagen, nombre, apellido, descripcion }) => {
   return (

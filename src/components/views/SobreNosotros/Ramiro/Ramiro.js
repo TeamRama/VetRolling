@@ -13,14 +13,10 @@ const Ramiro = () => {
       <div className="a-right">
         <h1 className="a-title">Ramiro Nahuel Perez</h1>
         <p className="a-sub">
-          It is a long established fact that a reader will be distracted by the
-          readable content.
+         Doctor en Medicina Veterinaria y zootécnia
         </p>
         <p className="a-desc">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat duis aute irure dolor in reprehende.
+          Responsable del servicio de Laserterapia, hospitalizacion, laboratorio externo y asistente en consultas. Siempre estoy interesado en seguir mejorando mi formacion para poder abrir otras lineas de trabajo relacionadas con el mundo animal. 
         </p>
       </div>
     </div>

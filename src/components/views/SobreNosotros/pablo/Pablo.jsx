@@ -11,16 +11,12 @@ const Pablo = () => {
         </div>
       </div>
       <div className="b-right">
-        <h1 className="b-title">Pablo Romero</h1>
+        <h1 className="b-title">Pablo Romero Abadie</h1>
         <p className="b-sub">
-          It is a long established fact that a reader will be distracted by the
-          readable content.
+        Doctor en Medicina Veterinaria y zootécnia
         </p>
         <p className="b-desc">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat duis aute irure dolor in reprehende.
+        Empecé trabajando como especialista en peluquería canina y felina, además de ser durante años encargado de mantener la estética de la Clínica.  Además, he asistido a distintos congresos dirigidos a ATVs. He realizado el curso Experto en Monitorización y Ventilación Anestésica impartido por MINDRAY. A día de hoy soy el responsable de la gestión de los planes de Salud Vetplan, enfocados en la prevención de enfermedades y protección de la salud.
         </p>
       </div>
     </div>

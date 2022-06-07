@@ -9,7 +9,7 @@ const Intro = () => {
           <h2 className="i-intro">Hola, Bienvenido</h2>
           <h1 className="i-name">¿Quienes somos?</h1>
           <p className="i-desc amarelo">
-            Veterinaria Rolling es una de las tantas veterinarias que se encuentra situado en la provincia de Tucuman. Es una Empresa pionera en Medicina Veternaria pensada paea mejorar la calidad de vida de las mascotas y su reconocimiento definitivo como un miembro de la familia, cuidando su salud, su estética, su alimentación y logrando una vida saludable.
+            Veterinaria Rolling es una veterinaria que se encuentra situada en la provincia de Tucuman. Es una Empresa pionera en Medicina Veterinaria pensada para mejorar la calidad de vida de las mascotas y su reconocimiento definitivo como un miembro de la familia, cuidando su salud, su estética, su alimentación y logrando una vida saludable.
           </p>
         </div>
         <svg
