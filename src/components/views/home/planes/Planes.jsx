@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import CardPlan from "./CardPlan";
+import "../home.css";
 
 
 const Planes = () => {
@@ -23,7 +24,7 @@ const Planes = () => {
   };
 
   return (
-    <div>
+    <div className="margin-components">
       <h2 className="text-center display-4 fw-bold mt-5">
         Nuestros Planes:
       </h2>

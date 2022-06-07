@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import CardProfesional from "./CardProfesional";
+import "../home.css"
 
 const Profesionales = () => {
   const [veterinarios, setVeterinarios] = useState(null);
@@ -21,7 +22,7 @@ const Profesionales = () => {
 }
 
   return (
-    <div className="container">
+    <div className="container margin-components">
         <h2 className="text-black display-4 mt-5 text-center fw-bold">Licenciados Rolling Vet</h2>
       <div className="d-flex justify-content-center">
         <div className="row">

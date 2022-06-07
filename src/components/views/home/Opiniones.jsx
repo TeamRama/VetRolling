@@ -1,11 +1,11 @@
 import React from "react";
 import { Carousel } from "react-bootstrap";
 import imagen from "../../Assets/media/carousel.jpg"
-import "../../style/home.css";
+import "./home.css";
 
 const Opiniones = () => {
   return (
-    <div>
+    <div className="margin-components">
       <h3 className="text-center fw-bold display-3 mt-5">Clientes satisfechos</h3>
       <Carousel>
         <Carousel.Item>

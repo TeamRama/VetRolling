@@ -8,6 +8,8 @@ import Servicio from "./servicios/Servicio"
 import Opiniones from './Opiniones';
 import Profesionales from './profesionales/Profesionales';
 import Publicidad2 from './Publicidad2';
+import "../../../Styles/GeneralStyles.css"
+import "./home.css"
 
 
 
@@ -17,14 +19,14 @@ const Home = () => {
             <Portada></Portada>
             {/* <Clima></Clima> */}
             <main className='container'>
-                <InformacionGralHome></InformacionGralHome>
+                <InformacionGralHome ></InformacionGralHome>
                 <Publicidad></Publicidad>
-                <Productos></Productos>
-                <Planes></Planes>
-                <Servicio></Servicio>
-                <Publicidad2></Publicidad2>
-                <Opiniones></Opiniones>
-                <Profesionales></Profesionales>
+                <Productos ></Productos>
+                <Planes ></Planes>
+                <Servicio ></Servicio>
+                <Publicidad2 ></Publicidad2>
+                <Opiniones ></Opiniones>
+                <Profesionales ></Profesionales>
             </main>
 
         </div>

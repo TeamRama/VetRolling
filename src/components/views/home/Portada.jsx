@@ -1,6 +1,6 @@
 import React from 'react';
 import portada from "../../Assets/media/Portada.jpg"
-import "../../style/home.css";
+import "./home.css";
 
 const Portada = () => {
     return (

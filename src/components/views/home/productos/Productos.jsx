@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import CardProducto from "./CardProducto";
+import "../home.css";
 
 const Productos = () => {
     const [productos, setProductos] = useState(null);
@@ -21,7 +22,7 @@ const Productos = () => {
   }
   
     return (
-      <div className="container">
+      <div className="container margin-components">
           <h1 className="text-center display-4 fw-bold mt-5">Productos para tus mascotas</h1>
           <div>
         <div className="row ">

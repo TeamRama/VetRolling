@@ -71,3 +71,8 @@
     border-radius: 20px;
     box-shadow: 2px 2px 9px #999;
 }
+
+/* Margin entre componentes del home */
+.margin-components {
+    margin-top: 150px;
+}

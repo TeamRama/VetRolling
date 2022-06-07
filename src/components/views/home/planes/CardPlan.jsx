@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import "../../../style/home.css"
+import "../home.css"
 import "../../../../Styles/GeneralStyles.css"
 
 const CardPlan = ({ imagen, nombre, descripcion }) => {

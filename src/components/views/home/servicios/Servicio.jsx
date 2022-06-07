@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Container, Row } from "react-bootstrap";
 import ServicioCard from "./ServicioCard";
-
+import "../home.css"
 const Servicio = () => {
     //state 
     const [servicios, setServicios] = useState(null);
@@ -22,7 +22,7 @@ const Servicio = () => {
   }
   
     return (
-      <div>
+      <div className="margin-components">
         <h2 className="text-center display-4 fw-bold mt-5">Nuestros Servicios</h2>
         <Container>
           <Row>

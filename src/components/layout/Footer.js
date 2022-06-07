@@ -8,8 +8,8 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className="bg-dark">
-      <Container className=" py-5">
+    <div className="bg-dark Margin-top-home">
+      <Container className=" mt-5 py-5">
         <Row className="text-center">
           <Col sm={12} md={4}><Link to="/">
             <img className="logoFooter" src={logo}></img></Link>
