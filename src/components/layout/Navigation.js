@@ -60,14 +60,12 @@ const Navigation = () => {
                   <Nav.Link className="nav-link na mx-4  text-decoration-none text-center" href="/SobreNosotros">Sobre Nosotros</Nav.Link>
                   <NavDropdown title=" Administrador" id="basic-nav-dropdown"  href="/PagAdmin" className=" mx-4  text-decoration-none text-center" >
                     <NavDropdown.Item  href="/PagAdmin"> 👤 Perfil </NavDropdown.Item>
-                    <NavDropdown.Item href="/PagAdmin"> ⚙️ Configuracion </NavDropdown.Item>
-                    <NavDropdown.Item href="/PagAdmin"> ✉️ Mensaje</NavDropdown.Item>
-
+                    <NavDropdown.Item href="*"> ⚙️ Configuracion </NavDropdown.Item>
+                    <NavDropdown.Item href="*"> ✉️ Mensaje</NavDropdown.Item>
                     <NavDropdown.Divider />
                     <Nav.Link onClick={handleLogOut}
                     className="nav-link na mx-3  text-decoration-none text-center" >Cerrar Seccion</Nav.Link>
                   </NavDropdown>
-                 
                 </>
               ) : (
                 <>

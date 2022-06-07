@@ -1,15 +1,15 @@
 import { Tabs, Tab } from "react-bootstrap";
-import logo from "../../media/logo-vetplan-basico.png"
+import logo from "../../Assets/media/logo-vetplan-basico.png"
 import PaginaContacto from "../Formularios/PaginaContacto/PaginaContacto";
 
 const PlanesTabbed = () => {
     return (
-        <div className="container">
+        <div className="container"> 
             <div className="text-center">
                 <h1 className="fw-bold my-5">NUESTROS PLANES PARA VOS Y TU MASCOTA</h1>
                 <img className="mb-5" src={logo} alt="logo vet" />
             </div>
-            <Tabs defaultActiveKey="Plan Primeros Pasos" id="uncontrolled-tab-example" className="mb-3">
+            <Tabs defaultActiveKey="Plan Primeros Pasos" id="plan_primeros_pasos" className="mb-3">
                 <Tab eventKey="Plan Primeros Pasos" title="Plan Primeros Pasos">
                     <div className="d-flex justify-content-center">
                         <img height={800} width={800} className="img-fluid" alt="mascotas" src="https://s1.1zoom.me/b5050/279/430766-svetik_1600x1200.jpg"></img>

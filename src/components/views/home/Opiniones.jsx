@@ -1,6 +1,6 @@
 import React from "react";
 import { Carousel } from "react-bootstrap";
-import imagen from "../../media/carousel.jpg"
+import imagen from "../../Assets/media/carousel.jpg"
 import "../../style/home.css";
 
 const Opiniones = () => {

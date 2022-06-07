@@ -14,7 +14,6 @@ import Publicidad2 from './Publicidad2';
 const Home = () => {
     return (
         <div>
-
             <Portada></Portada>
             {/* <Clima></Clima> */}
             <main className='container'>

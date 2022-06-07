@@ -2,9 +2,8 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
-
 const Turno = ({ turno, DBT, getTurno }) => {
-
+  // Funcion para eliminar turno
   const handleDelete = (id) => {
     Swal.fire({
       title: 'Estas Seguro/a ?',

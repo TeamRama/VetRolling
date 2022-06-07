@@ -34,7 +34,7 @@ function App() {
   useEffect(() => {
     getTurno();
     getUsuario();
-  }, [])
+  },[])
 
   const getTurno = async () => {
     try {
@@ -56,7 +56,6 @@ function App() {
     }
   }
   return (
-    <div className='Contenedorglobal'>
       <BrowserRouter>
         <Navigation />
         <main>
@@ -80,7 +79,6 @@ function App() {
         </main>
         <Footer />
       </BrowserRouter>
-    </div>
   )
 };
 

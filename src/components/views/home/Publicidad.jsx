@@ -1,5 +1,5 @@
 import React from "react";
-import publicidad from "../../media/publicidad.video.mp4";
+import publicidad from "../../Assets/media/publicidad.video.mp4";
 import "../../style/home.css";
 
 const Publicidad = () => {

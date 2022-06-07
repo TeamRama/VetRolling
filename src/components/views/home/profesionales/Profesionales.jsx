@@ -4,7 +4,7 @@ import CardProfesional from "./CardProfesional";
 const Profesionales = () => {
   const [veterinarios, setVeterinarios] = useState(null);
 
-  const URL = process.env.REAC_APP_API_VETERINARIOS;
+  const DBVET = process.env.REACT_APP_API_VETERINARIOS;
 
   useEffect(() => {
     getVeterinarios();
@@ -12,7 +12,7 @@ const Profesionales = () => {
   
   const getVeterinarios = async () => {
      try{
-        const res = await fetch("http://localhost:4001/veterinarios")
+        const res = await fetch(DBVET)
         const serviciosApi = await res.json()
         setVeterinarios(serviciosApi)
     } catch (error) {

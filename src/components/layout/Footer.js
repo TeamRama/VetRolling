@@ -1,6 +1,6 @@
 import React from "react";
 import "../../Styles/GeneralStyles.css";
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, Container } from 'react-bootstrap';
 import logo from "../Assets/ImgLogin/Logo.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram, faFacebook, faTwitter, faTiktok } from '@fortawesome/free-brands-svg-icons';
@@ -8,46 +8,40 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-
-    <div className="footer">
-
-
-      <div className='main-Ftr'>
-        <Row ClassName='mt-5'>
-          <Col className='px-5 pt-5 f1' sm={12} md={4}>
-            <img className="logoFooter pt-3"
-              src={logo} />
+    <div className="bg-dark">
+      <Container className=" py-5">
+        <Row className="text-center">
+          <Col sm={12} md={4}><Link to="/">
+            <img className="logoFooter" src={logo}></img></Link>
           </Col>
-          <Col className=' px-5 pt-5  f2' sm={12} md={4} >
-             <p className=" fs-5 Acercade ">Acerca de : </p>
-             <li className="nav-item pb-3">
-             <Link to="/PaginaPlanes" className="temas text-decoration-none text-center">Planes  </Link> </li>
-              <li className="nav-item pb-3 ">
-              <Link to="*" className="temas text-decoration-none text-center">Pet Shop </Link> </li>
-              <li className="nav-item pb-3 ">
-              <Link to="*" className="temas text-decoration-none text-center">Guarderia Mascotera </Link> </li>
-              <li className="nav-item pb-3 ">
-              <Link to="/PaginaContacto" className="temas text-decoration-none text-center">Contacto </Link></li>
+          <Col sm={12} md={4}>
+            <ul className="text-white list-style p-2">A cerca de:
+            <li className="p-2"><Link className="text-decoration-none text-white" to="/PlanesTabbed">Planes</Link></li>
+            <li className="p-2"><Link className="text-decoration-none text-white" to="*">Pet shop</Link></li>
+            <li className="p-2"><Link className="text-decoration-none text-white" to="/PaginaContacto">Contacto</Link></li>          
+            </ul>
           </Col>
-          <Col className='px-5 pt-5  f3' sm={12} md={4}>
-          <p className=" fs-5 Acercade ">Puedes encontrarnos en: </p>
-              <div className='fontAIconL'>
-                <FontAwesomeIcon to="/PaginaContacto" className='IconL p-3 ' icon={faInstagram}  />
-                <FontAwesomeIcon className='IconL p-3' icon={faFacebook} />
-                <FontAwesomeIcon className='IconL p-3' icon={faTwitter} />
-                <FontAwesomeIcon className='IconL p-3' icon={faTiktok} />
-              </div>
-              <p className="my-5 fs-5 text-center  copyr">
-              Vet Rolling. All rights reserved &copy;
-            </p>
+          <Col sm={12} md={4}>
+            <p className="text-white">Podes encontrarnos en:</p>
+            <div>
+              <Link to="*">
+              <FontAwesomeIcon className='text-white fa-2x p-2' icon={faInstagram}  />
+              </Link>
+              <Link to="*">
+              <FontAwesomeIcon className='text-white fa-2x p-2' icon={faFacebook} />
+              </Link>
+              <Link to="*">
+              <FontAwesomeIcon className='text-white fa-2x p-2' icon={faTwitter} />
+              </Link>
+              <Link to="*">
+              <FontAwesomeIcon className='text-white fa-2x p-2' icon={faTiktok} />
+              </Link>
+            </div>
+            <p className="text-white my-2">Vet Rolling. All rights reserved &copy;</p>
           </Col>
-
         </Row>
-      </div>
-
+      </Container>
     </div>
-
-
   );
 };
 

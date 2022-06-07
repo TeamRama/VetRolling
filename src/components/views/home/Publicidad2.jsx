@@ -1,4 +1,4 @@
-import publicidad2 from "../../media/publicidad-2.mp4";
+import publicidad2 from "../../Assets/media/publicidad-2.mp4";
 import "../../style/home.css";
 
 const Publicidad2 = () => {

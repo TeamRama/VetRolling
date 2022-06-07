@@ -1,5 +1,5 @@
 import React from 'react';
-import portada from "../../media/Portada.jpg"
+import portada from "../../Assets/media/Portada.jpg"
 import "../../style/home.css";
 
 const Portada = () => {
