@@ -20,6 +20,7 @@ import Navigation from './components/layout/Navigation';
 import Footer from './components/layout/Footer';
 import ServiciosTabbed from './components/views/entradas/ServiciosTabbed';
 import PlanesTabbed from './components/views/entradas/PlanesTabbed';
+import Contacto from './components/views/contacto/Contacto';
 
 
 
@@ -75,6 +76,7 @@ function App() {
             <Route exact path="/PagAdmin/" element={<PagAdmin />} />
             <Route exact path="/ServiciosTabbed" element={<ServiciosTabbed></ServiciosTabbed>}></Route>
             <Route exact path="/PlanesTabbed" element={<PlanesTabbed></PlanesTabbed>}></Route>
+            <Route exact path="/Contacto" element={<Contacto></Contacto>}></Route>
           </Routes>
         </main>
         <Footer />

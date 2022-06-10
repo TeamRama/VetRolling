@@ -9,33 +9,22 @@ import Swal from "sweetalert2";
 import {  faEyeSlash , faEye } from "@fortawesome/free-solid-svg-icons";
 import "../../../../Styles/GeneralStyles.css";
 
-
-
-
-
+const url = 'http://localhost:4001/usuarios/login'
 
 const Ingreso = () => {
-
-
 
   const [email, setEmail] = useState("");
   const [contraseña, setContraseña] = useState("");
   const [type, setType] = useState("password");
   const [icon, setIcon] = useState("faEye");
-  
-  
-
 
   let session = false;
   const navigate = useNavigate()
   
   const handleClick = () => {
   }
- 
- 
 
   const handleToggle = () => {
-     
     if (type === 'password') {
       setIcon(faEyeSlash);
       setType('text');
@@ -50,11 +39,8 @@ const Ingreso = () => {
     }
   }
 
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
-
     if(
       !validateEmail(email) ||
       !validateContraseña(contraseña) 
@@ -63,29 +49,40 @@ const Ingreso = () => {
           return;
       }
         session = true;
-        sessionStorage.setItem("stateSession", JSON.stringify(session));
-        Swal.fire(
-          'Bienvenido "ADMINISTRADOR"!',
-          "Veterinaria PawsAndClaws v.2.0.0",
-          "success"
-        );
-        setTimeout(() => {
-          navigate("/PagAdmin");
-        }, 1000);
+        const res = await fetch(url, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({email: email, contraseña: contraseña})
+        });
+        console.log(res);
+          if (res.status === 200) {
+            sessionStorage.setItem("stateSession", JSON.stringify(session));
+            Swal.fire(
+              'Bienvenido "ADMINISTRADOR"!',
+              "Veterinaria Rolling 2022",
+              "success"
+            );
+            setTimeout(() => {
+              navigate("/PagAdmin");
+            }, 1000);
+          }else{
+            Swal.fire(
+              'ERROR!',
+              "Los datos ingresados son incorrectos",
+              "error"
+            );
+          }
         };
-
-
 
   return (
     <div>
-  
       <Container>
-
         <div className="d-flex flex-column justify-content-center boxc py-5 mx-5">
-          <h1 className="mx-5 TituloIngreso">Bienvenidos !! </h1>
+          <h1 className="mx-5 TituloIngreso">Bienvenidos! </h1>
           <hr />
           <div>
-
             <div className='box'>
               <Form className='FormLogin p-3 m-3' onSubmit={handleSubmit}>
                 <Row>
@@ -155,17 +152,7 @@ const Ingreso = () => {
           </div>
         </div>
       </Container>
-
     </div>
-
-
   );
-
-
 };
-
-
-
-
-
 export default Ingreso;

@@ -1,6 +1,8 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import "./home.css";
+import "../../../Styles/GeneralStyles.css"
+import { Link } from "react-router-dom";
 
 const InformacionGralHome = () => {
   return (
@@ -18,6 +20,7 @@ const InformacionGralHome = () => {
               para proporcionarle a tu mascota una atención veterinaria de la
               máxima calidad.
             </p>
+            <Link to="/Contacto" className="btn-reservar text-decoration-none" >Contactanos</Link>
           </Col>
         </Row>
       </Container>

@@ -5,13 +5,11 @@ import "./PagAdmin.css";
 import "../../../Styles/GeneralStyles.css";
 import usuarios from '../../Assets/ImgLogin/gato1.jpg';
 import turnos from '../../Assets/ImgLogin/perro1.jpg';
-import consultas from '../../Assets/ImgLogin/conejo1.jpg';
+// import consultas from '../../Assets/ImgLogin/conejo1.jpg';
 
 
 
 const PagAdmin = () => {
-
-
 
     const redirect = useNavigate();
     const session = JSON.parse(sessionStorage.getItem("stateSession")) || false;
@@ -27,13 +25,9 @@ const PagAdmin = () => {
     }, []);
 
     return (
-
         <div className='boxadm'>
             <Container>
-
-                
                 <div className='Boxadm mt-4'>
-
                     <Card className='cardsadm m-4' style={{ width: '30rem' }}>
                         <Card.Img  src={usuarios} />
                         <Card.Body>
@@ -60,7 +54,7 @@ const PagAdmin = () => {
                         </Card.Body>
                     </Card>
 
-                    <Card className='cardsadm m-4' style={{ width: '30rem' }}>
+                    {/* <Card className='cardsadm m-4' style={{ width: '30rem' }}>
                         <Card.Img src={consultas} />
                         <Card.Body>
                             <Card.Title>Consultas Registradas</Card.Title>
@@ -71,12 +65,10 @@ const PagAdmin = () => {
                             <hr />
                             <Link to="/PaginaContacto/" className="btn-adm text-decoration-none text-center">  Ver Consultas  </Link>
                         </Card.Body>
-                    </Card>
-
+                    </Card> */}
                 </div>
             </Container>
         </div>
-
     );
 };
 

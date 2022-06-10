@@ -8,13 +8,8 @@ import "../../../../../Styles/GeneralStyles.css";
 
 
 const EditarUsuario = ({ DBU, getUsuario }) => {
-
-
-
     const [usuario, setUsuario] = useState({});
-
     const { id } = useParams();
-
 
     const emailRef = useRef("")
     const nombreDueñoRef = useRef("")
@@ -22,9 +17,7 @@ const EditarUsuario = ({ DBU, getUsuario }) => {
     const contraseñaRef = useRef("")
     const celularRef = useRef("")
 
-
     const navigate = useNavigate()
-
 
     useEffect(async () => {
         try {
@@ -34,14 +27,10 @@ const EditarUsuario = ({ DBU, getUsuario }) => {
         } catch (error) {
             console.log(error);
         }
-
     }, []);
-
-
 
     const handleSubmit = (e) => {
         e.preventDefault()
-
         if (
             !validateEmail(emailRef.current.value) ||
             !validateNombreDueño(nombreDueñoRef.current.value) ||
@@ -53,8 +42,6 @@ const EditarUsuario = ({ DBU, getUsuario }) => {
             Swal.fire("Ops!", " Algun dato es incorrecto .", "error");
             return;
         }
-
-
         const usuarioUpdated = {
             email: emailRef.current.value,
             nombreDueño: nombreDueñoRef.current.value,
@@ -63,7 +50,6 @@ const EditarUsuario = ({ DBU, getUsuario }) => {
             fecha: usuario.fecha,
             celular: celularRef.current.value,
         };
-
         Swal.fire({
             title: 'Seguro que quieres editar los Datos?',
             text: "No podras volver a Editar !",
@@ -90,7 +76,6 @@ const EditarUsuario = ({ DBU, getUsuario }) => {
                     console.log(error);
                 }
             }
-
         });
     };
 
@@ -108,52 +93,51 @@ const EditarUsuario = ({ DBU, getUsuario }) => {
                             defaultValue={usuario.email}
                             ref={emailRef}
                         />
-                         </Form.Group>
-                        <Form.Group className="mb-3" controlId="formBasicEmail">
-                            <Form.Label>Nombre Del Dueño</Form.Label>
-                            <Form.Control type="text"
-                                placeholder="nombre completo"
-                                defaultValue={usuario.nombreDueño}
-                                ref={nombreDueñoRef}
-                            />
-                        </Form.Group>
-                        <Form.Group className="mb-3" controlId="formBasicEmail">
-                            <Form.Label>Nombre de la Mascota</Form.Label>
-                            <Form.Control type="text"
-                                placeholder="nombre o apodo"
-                                defaultValue={usuario.nombreMascota}
-                                ref={nombreMascotaRef}
-                            />
-                        </Form.Group>
-                        <Form.Group className="mb-3" controlId="formBasicEmail">
-                            <Form.Label>Contraseña </Form.Label>
-                            <Form.Control type="password"
-                                placeholder="contraseña"
-                                defaultValue={usuario.contraseña}
-                                ref={contraseñaRef}
-                            />
-                        </Form.Group>                     
+                    </Form.Group>
+                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Label>Nombre Del Dueño</Form.Label>
+                        <Form.Control type="text"
+                            placeholder="nombre completo"
+                            defaultValue={usuario.nombreDueño}
+                            ref={nombreDueñoRef}
+                        />
+                    </Form.Group>
+                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Label>Nombre de la Mascota</Form.Label>
+                        <Form.Control type="text"
+                            placeholder="nombre o apodo"
+                            defaultValue={usuario.nombreMascota}
+                            ref={nombreMascotaRef}
+                        />
+                    </Form.Group>
+                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Label>Contraseña </Form.Label>
+                        <Form.Control type="password"
+                            placeholder="contraseña"
+                            defaultValue={usuario.contraseña}
+                            ref={contraseñaRef}
+                        />
+                    </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Fecha de Nacimiento </Form.Label>
                         <Form.Control
                             type="date"
-                            value={usuario.fecha} 
+                            value={usuario.fecha}
                             onChange={({ target }) => setUsuario({ ...usuario, fecha: target.value })} />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
-                            <Form.Label>Celular </Form.Label>
-                            <Form.Control type="tel"
-                                placeholder="Celular"
-                                defaultValue={usuario.celular}
-                                ref={celularRef}
-                            />
-                        </Form.Group>                     
+                        <Form.Label>Celular </Form.Label>
+                        <Form.Control type="tel"
+                            placeholder="Celular"
+                            defaultValue={usuario.celular}
+                            ref={celularRef}
+                        />
+                    </Form.Group>
                     <div className="text-end">
                         <button className="btn-reservar">Modificar</button>
                     </div>
                 </Form>
             </Container>
-
         </div>
     );
 };

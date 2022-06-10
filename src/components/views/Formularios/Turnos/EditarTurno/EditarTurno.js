@@ -7,16 +7,11 @@ import "../../../../../Styles/GeneralStyles.css";
 import "../CrearTurno/CrearTurno.css";
 import Time from "../Time";
 
-
-
 const EditarTurno = ({ DBT, getTurno }) => {
-
     // state
     const [turno, setTurno] = useState({});
     const [turnos, setTurnos] = useState([]);
     const [horas, setHoras] = useState([]);
-    
-
 
     const timePicker = [
         "09:00",
@@ -30,13 +25,12 @@ const EditarTurno = ({ DBT, getTurno }) => {
     ];
 
     //Parametros
-
     const { id } = useParams();
 
     // Ref
     const nombreDueñoRef = useRef("");
     const nombreMascotaRef = useRef("");
-    const veterinarioRef  = useRef("");
+    const veterinarioRef = useRef("");
     const fechaRef = useRef("");// fecha 
     const horarioRef = useRef(""); // horario
     const vetaRef = useRef("");
@@ -49,9 +43,7 @@ const EditarTurno = ({ DBT, getTurno }) => {
     const veta = "Vet A"; // aca va lo que ponga como value
     const vetb = "Vet B";
 
-
     // UseEffect
-
     useEffect(async () => {
         try {
             const res = await fetch(`${DBT}/${id}`);
@@ -64,85 +56,66 @@ const EditarTurno = ({ DBT, getTurno }) => {
         }
     }, []);
 
-
-    const searchAtDb=( async ()=>{
-         try {
-          const res = await fetch(DBT);
-          const resultado= await res.json()
-          setTurnos(resultado);
-          console.log(turnos)
-          const busquedaFechas = turnos.filter(
-            (fechas) => fechas.fecha === fechaRef.current.value );
+    const searchAtDb = (async () => {
+        try {
+            const res = await fetch(DBT);
+            const resultado = await res.json()
+            setTurnos(resultado);
+            console.log(turnos)
+            const busquedaFechas = turnos.filter(
+                (fechas) => fechas.fecha === fechaRef.current.value);
             console.log(fechaRef.current.value)
             console.log(busquedaFechas)
-           
             const buscarveterio = busquedaFechas.map((turnos) => turnos.veterinario);
             console.log(buscarveterio)
-           
             const filtradovet1 = buscarveterio.filter((buscada) => {
-              return buscada === veta;
+                return buscada === veta;
             });
-           
             const filtradovet2 = buscarveterio.filter((buscado) => {
-              return buscado === vetb;
+                return buscado === vetb;
             });
-           
+
             if (filtradovet1.length >= 9) {
-              vetaRef.current.disabled = true;
+                vetaRef.current.disabled = true;
             } else if (filtradovet2.length >= 9) {
-              vetbRef.current.disabled = true;
+                vetbRef.current.disabled = true;
             }
-           
             const buscarHoras = busquedaFechas.map((turno) => turno.horario);
             const filtradoHoras = timePicker.filter(
-              (hora) => !buscarHoras.includes(hora)
+                (hora) => !buscarHoras.includes(hora)
             );
-            console.log(filtradoHoras)
-             
-           
             setHoras(filtradoHoras);
-              
         } catch (error) {
-          console.log(error);
+            console.log(error);
         }
-       
-       })
+    })
 
-       const handleDateChange =  (e) => {
-        console.log(turnos)
-    
+    const handleDateChange = (e) => {
         const busquedaFechas = turnos.filter(
-          (fechas) => fechas.fecha === e.target.value
+            (fechas) => fechas.fecha === e.target.value
         );
-       
         // Buscamos por veterinario en esa fecha
         const buscarveterio = busquedaFechas.map((turno) => turno.veterinario);
-    
         const filtradovet1 = buscarveterio.filter((buscada) => {
-          return buscada === veta;
+            return buscada === veta;
         });
-    
         const filtradovet2 = buscarveterio.filter((buscado) => {
-          return buscado === vetb;
+            return buscado === vetb;
         });
-    
         if (filtradovet1.length >= 9) {
-          vetaRef.current.disabled = true;
+            vetaRef.current.disabled = true;
         } else if (filtradovet2.length >= 9) {
-          vetbRef.current.disabled = true;
+            vetbRef.current.disabled = true;
         }
-    
         const buscarHoras = busquedaFechas.map((turno) => turno.horario);
         const filtradoHoras = timePicker.filter(
-          (hora) => !buscarHoras.includes(hora)
+            (hora) => !buscarHoras.includes(hora)
         );
         setHoras(filtradoHoras);
-      };
-
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault()
-
         if (
             !validateNombreDueño(nombreDueñoRef.current.value) ||
             !validateNombreMascota(nombreMascotaRef.current.value) ||
@@ -154,8 +127,6 @@ const EditarTurno = ({ DBT, getTurno }) => {
             Swal.fire("Ops!", " Algun dato es incorrecto .", "error");
             return;
         }
-
-
         const turnoUpdated = {
             nombreDueño: nombreDueñoRef.current.value,
             nombreMascota: nombreMascotaRef.current.value,
@@ -163,9 +134,7 @@ const EditarTurno = ({ DBT, getTurno }) => {
             fecha: turno.fecha,
             veterinario: turno.veterinario,
             horario: turno.horario
-
         };
-
         Swal.fire({
             title: 'Seguro que quieres cambiar el turno?',
             text: "No podras volver a cambiar !",
@@ -187,16 +156,12 @@ const EditarTurno = ({ DBT, getTurno }) => {
                         getTurno();
                         navigate("/turno/tabla");
                     }
-
                 } catch (error) {
                     console.log(error);
                 }
             }
-
         });
     };
-
-
 
     return (
         <div>
@@ -248,10 +213,10 @@ const EditarTurno = ({ DBT, getTurno }) => {
                                 onChange={({ target }) => setTurno({ ...turno, veterinario: target.value })}>
                                 <option value="">Elegir Veterinario</option>
                                 <option
-                                ref={vetaRef} 
+                                    ref={vetaRef}
                                     value="Vet A">Dr Perez, Ramiro</option>
                                 <option
-                                  ref={vetbRef} 
+                                    ref={vetbRef}
                                     value="Vet B">Dr Romero, Pablo</option>
                             </Form.Select>
                         </Form.Group>
@@ -276,7 +241,6 @@ const EditarTurno = ({ DBT, getTurno }) => {
                     <Link to="/turno/tabla/" className="btn-reservar text-decoration-none text-center">  Atras  </Link>
                 </div>
             </Container>
-
         </div>
     );
 };

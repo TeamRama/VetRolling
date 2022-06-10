@@ -9,8 +9,10 @@ const SobreNosotros = () => {
         <div>
 
             <Intro/>
+            <div className='container'>
             <Ramiro/>
             <Pablo/>
+            </div>
   
         </div>
 

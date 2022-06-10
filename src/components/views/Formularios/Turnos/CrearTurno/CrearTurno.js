@@ -1,13 +1,11 @@
 import React, { useRef, useState, useEffect } from "react";
 import { Col, Container, Form, Row } from "react-bootstrap";
-import { useNavigate , Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import { validateNombreDueño, validateNombreMascota, validateRaza, validateVeterinario, validateHorario, validateFecha } from "../../../../helpers/ValidateFields";
 import "../../../../../Styles/GeneralStyles.css";
 import "./CrearTurno.css";
 import Time from "../Time";
-
-
 
 const CrearTurno = ({ DBT, getTurno }) => {
   //States 
@@ -18,14 +16,11 @@ const CrearTurno = ({ DBT, getTurno }) => {
   const [fecha, setFecha] = useState("");
   const [horario, setHorario] = useState("");
 
-
   // Navigate 
   const navigate = useNavigate()
   const handleClick = () => {
 
-}
-
-
+  }
 
   const [turnos, setTurnos] = useState([]);
   const [horas, setHoras] = useState([]);
@@ -37,10 +32,7 @@ const CrearTurno = ({ DBT, getTurno }) => {
   const vetbRef = useRef();
   const veterinarioRef = useRef();
 
-
-
   // Arreglo de horarios
-
   const timePicker = [
     "09:00",
     "10:00",
@@ -51,12 +43,12 @@ const CrearTurno = ({ DBT, getTurno }) => {
     "19:00",
     "20:00",
   ];
+
   // veterinarios
   const veta = "Vet A";
   const vetb = "Vet B";
 
   // UseEffect
-
   useEffect(() => {
     horarioRef.current.disabled = true;
     veterinarioRef.current.disabled = true;
@@ -73,13 +65,10 @@ const CrearTurno = ({ DBT, getTurno }) => {
     }
   }, []);
 
-
-
   function handleDateChange(e) {
     // Realizamos filtrado de fecha
     const busquedaFechas = turnos.filter((fechas) => fechas.fecha === e.target.value
     );
-
     // Nuevo filtrado de veterianrios y horas
     const buscarVeterinario = busquedaFechas.filter((doc) => doc.veterinario === veta);
     const buscarVeterinario1 = buscarVeterinario.map((horas) => horas.horario);
@@ -87,12 +76,8 @@ const CrearTurno = ({ DBT, getTurno }) => {
     const buscarVeterinarioI = busquedaFechas.filter((doc) => doc.veterinario === vetb);
     const buscarVeterinario2 = buscarVeterinarioI.map((horas) => horas.horario);
     setHorasVetb(buscarVeterinario2);
-
-
-
     if (buscarVeterinario.length >= 9) {
       vetaRef.current.disabled = true;
-
     } else {
       vetaRef.current.disabled = false;
     }
@@ -102,12 +87,9 @@ const CrearTurno = ({ DBT, getTurno }) => {
       vetbRef.current.disabled = false;
     }
 
-
-
     //  Habilitar el input de horas
     veterinarioRef.current.disabled = false;
   }
-
 
   const handleVetChange = (e) => {
 
@@ -126,29 +108,22 @@ const CrearTurno = ({ DBT, getTurno }) => {
 
   }
 
-
   // Funcion para guardar los datos o crear el producto 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     // validar los campos
-
     if (
       !validateNombreDueño(nombreDueño) ||
       !validateNombreMascota(nombreMascota) ||
       !validateRaza(raza) ||
       !validateFecha(fecha) ||
       !validateHorario(horario) ||
-      !validateVeterinario(veterinario) 
+      !validateVeterinario(veterinario)
     ) {
       Swal.fire("Ops!", " Datos incorrectos .", "error");
       return;
     }
-
-
-
     // Enviar los datos para guardarlos 
-
     const newTurno = {
       nombreDueño,
       nombreMascota,
@@ -156,9 +131,7 @@ const CrearTurno = ({ DBT, getTurno }) => {
       fecha,
       horario,
       veterinario
-
     }
-
 
     Swal.fire({
       title: 'Seguro que eliges este turno?',
@@ -180,12 +153,10 @@ const CrearTurno = ({ DBT, getTurno }) => {
             Swal.fire('Turno Guardado!', ' Tu turno fue reservado .', 'success');
             getTurno();
             navigate("/turno/tabla");
-
           }
         } catch (error) {
           console.log(error);
         }
-        console.log(newTurno.horario)
       }
     });
   };
@@ -239,8 +210,8 @@ const CrearTurno = ({ DBT, getTurno }) => {
                     placeholder="Escoje el dia del turno"
                     onChange={({ target }) => setFecha(target.value)}
                     min="2022-06-01"
-                    onBlur={handleDateChange} 
-                    />
+                    onBlur={handleDateChange}
+                  />
                 </Form.Group>
               </Col>
               <Col md={6}>
@@ -271,13 +242,10 @@ const CrearTurno = ({ DBT, getTurno }) => {
                     {horas.map((hora, index) => {
                       return <Time hora={hora} key={index} />;
                     })}
-
-
                   </Form.Select>
                 </Form.Group>
               </Col>
             </Row>
-
             <div className="text-end">
               <button className="btn-reservar"
                 onClick={handleClick}>Reservar</button>
@@ -285,10 +253,9 @@ const CrearTurno = ({ DBT, getTurno }) => {
           </Form>
         </div >
         <div className="text-end">
-        <Link to="/turno/tabla/" className="btn-reservar text-decoration-none text-center">  Atras  </Link>
-      </div>
+          <Link to="/turno/tabla/" className="btn-reservar text-decoration-none text-center">  Atras  </Link>
+        </div>
       </Container >
-
     </div >
   );
 };

@@ -4,15 +4,13 @@ import { Link } from "react-router-dom";
 import Usuario from "./Usuario/Usuario";
 import "../../../../../Styles/GeneralStyles.css";
 
-
-
 const TablaUsuario = ({usuario, DBU, getUsuario}) => {
     return (
         <div>
              <Container className="py-5">
         <div className="d-flex align-items-center justify-content-between">
           <h1>Tabla de Clientes</h1>
-          <Link to="/usuario/crear" className="btn-reservar text-decoration-none text-center">Crear Usuario </Link>
+          <Link to="/usuario/crear" className="btn-reservar text-decoration-none text-center">Crear Usuario</Link>
         </div>
         <hr />
         {/* Tabla de turnos */}
@@ -49,7 +47,6 @@ const TablaUsuario = ({usuario, DBU, getUsuario}) => {
         </div>
       </Container>
     </div>
-        
     );
 };
 

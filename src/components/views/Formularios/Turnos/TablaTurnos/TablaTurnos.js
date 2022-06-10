@@ -5,7 +5,6 @@ import Turno from "./Turno/Turno";
 import "../../../../../Styles/GeneralStyles.css";
 
 const TablaTurnos = ({ turnos, DBT, getTurno }) => {
-
   return (
     <div>
       <Container className="py-5">

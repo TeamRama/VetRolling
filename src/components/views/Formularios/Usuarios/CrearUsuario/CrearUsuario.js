@@ -7,7 +7,6 @@ import Swal from "sweetalert2";
 import './CrearUsuario.css';
 
 const CrearUsuario = ({ DBU, getUsuario }) => {
-
     //States 
     const [email, setEmail] = useState("");
     const [nombreDueño, setNombreDueño] = useState("");
@@ -19,13 +18,11 @@ const CrearUsuario = ({ DBU, getUsuario }) => {
     // Navigate 
     const navigate = useNavigate()
     const handleClick = () => {
-        
     }
 
     // Funcion para guardar los datos o crear el producto 
     const handleSubmit = (e) => {
         e.preventDefault();
-
         // validar los campos
         if (
             !validateEmail(email) ||
@@ -38,7 +35,6 @@ const CrearUsuario = ({ DBU, getUsuario }) => {
             Swal.fire("Ops!", " Datos incorrectos .", "error");
             return;
         }
-
         // Enviar los datos para guardarlos 
         const newUsuario = {
             email,
@@ -48,8 +44,6 @@ const CrearUsuario = ({ DBU, getUsuario }) => {
             fecha,
             celular
         }
-
-
         Swal.fire({
             title: 'Estan Correctos todos tus Datos ?',
             text: "No podras volver atras !",
@@ -69,12 +63,11 @@ const CrearUsuario = ({ DBU, getUsuario }) => {
                     if (res.status === 201) {
                         Swal.fire(' Registrado !', ' Tus datos fueron Guardados .', 'success');
                         getUsuario();
-                        navigate("/usuario/tabla");
+                        navigate("/login");
                     }
                 } catch (error) {
                     console.log(error);
                 }
-
             }
         });
     };
@@ -156,7 +149,6 @@ const CrearUsuario = ({ DBU, getUsuario }) => {
                 <div className="text-end">
                     <Link to="/usuario/tabla/" className="btn-reservar text-decoration-none text-center">  Atras  </Link>
                 </div>
-
             </Container>
         </div >
 

@@ -1,5 +1,6 @@
 /* boton reservar */
 .btn-reservar {
+  /* width: 130px; */
   min-width: 130px;
   height: 40px;
   color: #fff;
@@ -185,7 +186,7 @@
     z-index: 2;
     height: 0.3125em;
     border-radius: 0.125em;
-    background-color: #c02942 !important;
+    background-color: #1b792b !important;
   }
   
   .swal2-icon.swal2-warning {
