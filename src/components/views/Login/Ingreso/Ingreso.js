@@ -13,6 +13,10 @@ const url = 'http://localhost:4001/usuarios/login'
 
 const Ingreso = () => {
 
+  // const gmail = process.env.email;
+  // const password = process.env.contraseña;
+
+
   const [email, setEmail] = useState("");
   const [contraseña, setContraseña] = useState("");
   const [type, setType] = useState("password");
