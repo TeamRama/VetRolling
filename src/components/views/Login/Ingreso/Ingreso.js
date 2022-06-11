@@ -26,16 +26,14 @@ const Ingreso = () => {
 
   const handleToggle = () => {
     if (type === 'password') {
-      setIcon(faEyeSlash);
+      setIcon(faEye);
       setType('text');
-      document.getElementById('icon1').style.display = 'none';
-      document.getElementById('icon1').style.display = 'block';
+      /*document.getElementById('icon1').style.display = 'none';*/
       
     } else {
-      setIcon(faEyeSlash);
+      setIcon(faEye);
       setType('password');
-      document.getElementById('icon1').style.display = 'block'; 
-      document.getElementById('icon1').style.display = 'none';    
+
     }
   }
 
@@ -96,9 +94,9 @@ const Ingreso = () => {
                         onChange={({ target }) => setEmail(target.value)}
                         required />
                     </Form.Group>
+                      <div>
                     <Form.Group className="mb-3 Contraseña" controlId="formBasicPassword">
                       <Form.Label>Password</Form.Label>
-                      <div className="contraseña">
                         <Form.Control className='contraseña'
                           type={type}
                           placeholder="Contraseña"
@@ -106,17 +104,13 @@ const Ingreso = () => {
                           required />
                         <FontAwesomeIcon
                           className='icon'
-                          id='icon1'
-                          icon={faEyeSlash}
-                          onClick={handleToggle}
-                           />
-                           <FontAwesomeIcon
-                          className='iconvisible'
+                          id='icon'
                           icon={faEye}
                           onClick={handleToggle}
-                          />
-                      </div>
+                           />
+
                     </Form.Group>
+                      </div>
                     <Form.Group className="mb-3" controlId="formBasicCheckbox">
                       <Form.Check
                         className='checkboxL'

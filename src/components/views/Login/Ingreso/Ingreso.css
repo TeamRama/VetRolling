@@ -71,22 +71,10 @@ cursor: pointer;
 .icon{
 cursor: pointer;
 position: relative;
-top: 11px;
-left: -30px;
+top: -32.5px;
+left: 525px;
 
 }
-
-.iconvisible{
-cursor: pointer;
-position: relative;
-top: 11px;
-left: -30px;
-}
-
-.usuario{
-margin-right: 20px;
-}
-
 .botoningresar{
   text-align: center;
 }
