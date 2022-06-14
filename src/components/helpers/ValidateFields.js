@@ -13,6 +13,7 @@ const regExpNombreApellido = /^[A-Za-z\s?]+$/;
 const regExpFecha = /^\d{4}([\-/.])(0?[1-9]|1[1-2])\1(3[01]|[12][0-9]|0?[1-9])$/;
 const regExpCelular = /[0-9]+$/;
 const regExpPlan =/^[A-Za-z\s?]+$/;
+const regExpConsulta =/^[A-Za-z\s?]+$/;
 
 
 
@@ -181,5 +182,16 @@ export const validatePlan = (field) => {
     return false;
   }
 };
+
+export const validateConsulta = (field) => {
+  if( 
+    regExpConsulta.test(field) &&
+    field.trim() !== "" 
+  ){
+    return true
+  } else {
+    return false;
+  }
+}
 
 
