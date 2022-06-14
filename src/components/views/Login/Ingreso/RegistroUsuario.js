@@ -6,13 +6,11 @@ import Swal from 'sweetalert2';
 import "../../../../Styles/GeneralStyles.css";
 import { validateContraseña, validateEmail, validateNombreDueño } from '../../../helpers/ValidateFields';
 
-const RegistroUsuario = ( { getRegistro }) => {
+const RegistroUsuario = ( { DBR }) => {
     //States
     const [nombreApellido, setNombreApellido] = useState("");
     const [email, setEmail] = useState("");
     const [contraseña, setContraseña] = useState("");
-
-    const url = "http://localhost:4001/registro"
 
     //Navigate
     const navigate = useNavigate();
@@ -38,14 +36,14 @@ const RegistroUsuario = ( { getRegistro }) => {
         }
 
         Swal.fire({
-            title: 'Estan Correctos todos tus Datos?',
-            icon: 'warning',
+            title: 'Datos ingresados correctamente',
+            icon: 'success',
             showCancelButton: true,
-            confirmButtonText: 'Datos Guardados ',
+            confirmButtonText: 'Guardar datos',
         }).then(async (result) => {
             if (result.isConfirmed) {
                 try {
-                    const res = await fetch(url, {
+                    const res = await fetch(DBR, {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json",
@@ -54,7 +52,6 @@ const RegistroUsuario = ( { getRegistro }) => {
                     });
                     if (res.status === 201) {
                         Swal.fire(' Registrado !', ' Tus datos fueron Guardados .', 'success');
-                        getRegistro();
                         navigate("/login");
                     }
                 } catch (error) {
