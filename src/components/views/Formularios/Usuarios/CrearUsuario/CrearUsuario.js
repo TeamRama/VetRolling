@@ -81,7 +81,6 @@ const CrearUsuario = ({ DBU, getUsuario }) => {
                     </h1>
                 </div>
                 <hr />
-                <div className='Form-Registro'>
                     <Form className='RForm p-3 m-3' onSubmit={handleSubmit}>
                         <Row ClassName='RowUsuario' >
                             <Col md={6}>
@@ -142,10 +141,9 @@ const CrearUsuario = ({ DBU, getUsuario }) => {
                         </Row>
                         <div className="text-end">
                             <button className="btn-reservar"
-                                onClick={handleClick}>Registrame</button>
+                                onClick={handleClick}>Crear paciente</button>
                         </div>
                     </Form >
-                </div>
                 <div className="text-end">
                     <Link to="/usuario/tabla/" className="btn-reservar text-decoration-none text-center">  Atras  </Link>
                 </div>

@@ -31,13 +31,12 @@ const PagAdmin = () => {
                     <Card className='cardsadm m-4' style={{ width: '30rem' }}>
                         <Card.Img  src={usuarios} />
                         <Card.Body>
-                            <Card.Title>Usuarios Registrados</Card.Title>
+                            <Card.Title>Pacientes Registrados</Card.Title>
                             <Card.Text>
-                                Some quick example text to build on the card title and make up the bulk of
-                                the card's content.
+                                Haga click aqui para ver la tabla de pacientes.
                             </Card.Text>
                             <hr />
-                            <Link to="/usuario/tabla/" className="btn-adm text-decoration-none text-center">  Ver Usuarios  </Link>
+                            <Link to="/usuario/tabla/" className="btn-adm text-decoration-none text-center">  Ver Pacientes  </Link>
                         </Card.Body>
                     </Card>
       
@@ -46,8 +45,7 @@ const PagAdmin = () => {
                         <Card.Body>
                             <Card.Title>Turnos Reservados</Card.Title>
                             <Card.Text>
-                                Some quick example text to build on the card title and make up the bulk of
-                                the card's content.
+                                Haga click aqui para ver los turnos reservados.
                             </Card.Text>
                             <hr />
                             <Link to="/turno/tabla/" className="btn-adm text-decoration-none text-center">  Ver Turnos  </Link>

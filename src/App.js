@@ -21,6 +21,7 @@ import Footer from './components/layout/Footer';
 import ServiciosTabbed from './components/views/entradas/ServiciosTabbed';
 import PlanesTabbed from './components/views/entradas/PlanesTabbed';
 import Contacto from './components/views/contacto/Contacto';
+import RegistroUsuario from './components/views/Login/Ingreso/RegistroUsuario';
 
 
 
@@ -28,13 +29,16 @@ function App() {
 
   const [turnos, setTurnos] = useState([]);
   const [usuario, setUsuario] = useState([]);
+  const [registro, setRegistro] = useState([]);
 
   const DBT = process.env.REACT_APP_API_TURNOS;
   const DBU = process.env.REACT_APP_API_USUARIO;
+  const DBR = process.env.REACT_APP_API_REGISTRO;
 
   useEffect(() => {
     getTurno();
     getUsuario();
+    getRegistro();
   },[])
 
   const getTurno = async () => {
@@ -52,6 +56,16 @@ function App() {
       const res = await fetch(DBU);
       const usuarioApi = await res.json();
       setUsuario(usuarioApi);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  const getRegistro = async () => {
+    try {
+      const res = await fetch(DBR);
+      const registroApi = await res.json();
+      setRegistro(registroApi);
     } catch (error) {
       console.log(error);
     }
@@ -77,6 +91,7 @@ function App() {
             <Route exact path="/ServiciosTabbed" element={<ServiciosTabbed></ServiciosTabbed>}></Route>
             <Route exact path="/PlanesTabbed" element={<PlanesTabbed></PlanesTabbed>}></Route>
             <Route exact path="/Contacto" element={<Contacto></Contacto>}></Route>
+            <Route exact path="/RegistroUsuario" element={<RegistroUsuario DBR={DBR} getRegistro={getRegistro}></RegistroUsuario>}></Route>
           </Routes>
         </main>
         <Footer />

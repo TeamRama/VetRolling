@@ -48,7 +48,7 @@ const Navigation = () => {
             <img className="imglogo px-4" src={logo} />
             {" "}
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Toggle className="bg-warning mb-2" aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav" >
             <Nav className="ms-auto">
               {session ? (

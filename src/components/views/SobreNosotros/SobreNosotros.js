@@ -11,6 +11,7 @@ const SobreNosotros = () => {
             <Intro/>
             <div className='container'>
             <Ramiro/>
+            <hr />
             <Pablo/>
             </div>
   

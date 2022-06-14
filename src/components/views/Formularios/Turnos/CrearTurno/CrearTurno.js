@@ -167,7 +167,6 @@ const CrearTurno = ({ DBT, getTurno }) => {
         <h1>Elegir Turno para una Consulta </h1>
         <hr />
         {/* Formulario de  Turnos */}
-        <div className='Form-Turno'>
           <Form className="p-3 m-3" onSubmit={handleSubmit}>
             <Row>
               <Col md={6}>
@@ -250,8 +249,7 @@ const CrearTurno = ({ DBT, getTurno }) => {
               <button className="btn-reservar"
                 onClick={handleClick}>Reservar</button>
             </div>
-          </Form>
-        </div >
+          </Form> 
         <div className="text-end">
           <Link to="/turno/tabla/" className="btn-reservar text-decoration-none text-center">  Atras  </Link>
         </div>

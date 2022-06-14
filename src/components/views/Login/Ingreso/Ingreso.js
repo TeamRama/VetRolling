@@ -9,7 +9,7 @@ import Swal from "sweetalert2";
 import {  faEyeSlash , faEye } from "@fortawesome/free-solid-svg-icons";
 import "../../../../Styles/GeneralStyles.css";
 
-const url = 'http://localhost:4001/usuarios/login'
+const url = 'http://localhost:4001/registro/login'
 
 const Ingreso = () => {
 
@@ -112,7 +112,6 @@ const Ingreso = () => {
                           icon={faEye}
                           onClick={handleToggle}
                            />
-
                     </Form.Group>
                       </div>
                     <Form.Group className="mb-3" controlId="formBasicCheckbox">
@@ -122,7 +121,7 @@ const Ingreso = () => {
                         name="terminos"
                         id="terminos"
                         label="Recordar mis datos"
-                        required />
+                         />
                     </Form.Group>
                     <div className="botoningresar">
                       <button className="btn-registro"
@@ -140,7 +139,7 @@ const Ingreso = () => {
                         </div>
                       <hr className='mt-5' />
                       <div className="botoningresar">
-                      <Link className="btn-registro  text-decoration-none text-center mt-1" to="/usuario/crear">Registrarme</Link>
+                      <Link className="btn-registro  text-decoration-none text-center mt-1" to="/registroUsuario">Registrarme</Link>
                       </div>
                       </div>
                     </Col>
