@@ -4,7 +4,7 @@ import { Container, Form, Row, Col } from "react-bootstrap";
 import "./PaginaContacto.css";
 import "../../../../Styles/GeneralStyles.css";
 import Swal from "sweetalert2";
-import { validateNombreDueño, validateEmail, validateCelular, validatePlan } from "../../../helpers/ValidateFields";
+import { validateNombreDueño, validateEmail, } from "../../../helpers/ValidateFields";
 import { useNavigate } from "react-router-dom";
 
 
@@ -12,8 +12,6 @@ const PaginaContacto = () => {
 
     const [nombreDueño, setNombreDueño] = useState("");
     const [email, setEmail] = useState("");
-    const [celular, setCelular] = useState("");
-    const [plan, setPlan] = useState("");
 
     const navigate = useNavigate()
     const handleClick = () => {
@@ -29,9 +27,7 @@ const PaginaContacto = () => {
             });
         if (
             !validateNombreDueño(nombreDueño) ||
-            !validateEmail(email) ||
-            !validateCelular(celular) ||
-            !validatePlan(plan)
+            !validateEmail(email) 
         ) {
             Swal.fire("Datos Incorrectos !", "Intenta Nuevamente.", "error");
             return;
@@ -49,74 +45,55 @@ const PaginaContacto = () => {
     return (
         <div>
 
-            <Container className="DatosContacto ">
+            <Container>
                 <h1 className="fw-bold">Consulta por tu plan!</h1>
-                <hr className="my-5" />
+                <hr  />
                 {/* Form Contacto */}
-                <div className='Form-Contacto'>
-                    <Form className="p-3 m-3" onSubmit={handleSubmit}>
-                        <Row ClassName='RowContacto mt-3' >
-                            <Col md={6}>
-                                <Form.Group className="my-3  groupcontacto" controlId="formBasicEmail"
-                                >
-                                    <Form.Label>Nombre y Apellido</Form.Label>
-                                    <Form.Control
-                                        className="imputcontacto"
-                                        type="text"
-                                        placeholder=" Nombre Completo"
-                                        name="nombreCompleto"
-                                        onChange={({ target }) => setNombreDueño(target.value)} />
-                                </Form.Group>
-                            </Col>
-                            <Col md={6}>
-                                <Form.Group className="my-3 groupcontacto" controlId="formBasicPassword">
-                                    <Form.Label>Email de Contacto </Form.Label>
-                                    <Form.Control
-                                        className="imputcontacto"
-                                        type="Email"
-                                        placeholder="Correo Electronico"
-                                        name="email"
-                                        onChange={({ target }) => setEmail(target.value)} />
+                <div className='Form-Contacto px-5'>
+                <Form  onSubmit={handleSubmit}>
+                            <Row>
+                                <Col sm={12} className="my-3">
+                                    <Form.Group>
+                                        <Form.Label>Nombre y Apellido</Form.Label>
+                                        <Form.Control
+                                          className="imputcontacto"
+                                          type="text"
+                                          placeholder=" Nombre Completo"
+                                          name="nombreCompleto"
+                                          onChange={({ target }) => setNombreDueño(target.value)}>
 
-                                </Form.Group>
-                            </Col>
-                            <Col md={6}>
+                                        </Form.Control>
+                                    </Form.Group>
+                                </Col>
+                                <Col sm={12} className="my-3">
+                                    <Form.Group>
+                                        <Form.Label>Email de Contacto</Form.Label>
+                                        <Form.Control
+                                            className="imputcontacto"
+                                            type="Email"
+                                            placeholder="Correo Electronico"
+                                            name="email"
+                                            onChange={({ target }) => setEmail(target.value)}>
 
-                                <Form.Group className="my-3 groupcontacto" controlId="formBasicPassword">
-                                    <Form.Label>Celular de Contacto</Form.Label>
-                                    <Form.Control
-                                        className="imputcontacto"
-                                        type="tel"
-                                        placeholder="Celular de Contacto"
-                                        name="celular"
-                                        onChange={({ target }) => setCelular(target.value)}
-                                    />
-                                </Form.Group>
-                            </Col>
-                            <Col md={6}>
-                                <Form.Group className="my-3 groupcontacto" controlId="formBasicCheckbox">
-                                    <Form.Label>Tipo de Plan</Form.Label>
-                                    <Form.Select
-                                        className="imputcontacto"
-                                        name="plan"
-                                        onChange={({ target }) => setPlan(target.value)}
-                                    >
-                                        <option value="">Me interesa el Plan </option>
-                                        <option value="cachorro">Primeros Pasos</option>
-                                        <option value="maduro">Madurando</option>
-                                        <option value="adulto">Adulto</option>
-
-                                    </Form.Select>
-                                </Form.Group>
-                            </Col>
-                            <div className="text-end">
-                                <button className="btn-reservar"
-                                    type="submit" value="Send"
-                                    onClick={handleClick} >
-                                    Enviar Email</button>
-                            </div>
-                        </Row>
-                    </Form>
+                                        </Form.Control>
+                                    </Form.Group>
+                                </Col>
+                                <Col sm={12} className="my-3">
+                                    <Form.Group>
+                                        <label for="exampleFormControlTextarea1" class="form-label">Ingrese su consulta</label>
+                                        <textarea class="form-control" id="exampleFormControlTextarea1" placeholder='Escriba aqui su consulta' rows="3"></textarea>
+                                    </Form.Group>
+                                </Col>
+                                <div className='text-center'>
+                                <button 
+                                className='btn-reservar text-center 
+                                 my-2'
+                                  type='submit' 
+                                  value="send"
+                                  onClick={handleClick}>Enviar</button>
+                                </div>
+                            </Row>
+                        </Form>
                 </div>
             </Container>
         </div>
