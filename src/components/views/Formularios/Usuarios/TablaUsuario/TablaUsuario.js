@@ -9,8 +9,8 @@ const TablaUsuario = ({usuario, DBU, getUsuario}) => {
         <div>
              <Container className="py-5">
         <div className="d-flex align-items-center justify-content-between">
-          <h1>Tabla de Clientes</h1>
-          <Link to="/usuario/crear" className="btn-reservar text-decoration-none text-center">Crear Usuario</Link>
+          <h1>Tabla de Pacientes</h1>
+          <Link to="/usuario/crear" className="btn-reservar text-decoration-none text-center">Crear Paciente</Link>
         </div>
         <hr />
         {/* Tabla de turnos */}
@@ -19,12 +19,12 @@ const TablaUsuario = ({usuario, DBU, getUsuario}) => {
             className="align-middle mt-3">
             <thead>
               <tr>
-                <th>email </th>
-                <th>Nombre Completo del dueño</th>
-                <th>Nombre o Apodo de Mascota</th>
-                <th>Contraseña</th>
-                <th>Fecha de Nacimiento</th>
+                <th>Email </th>
+                <th>Nombre del dueño</th>
                 <th>Celular</th>
+                <th>Nombre o Apodo de la Mascota</th>
+                <th>Tipo de Especie</th>
+                <th>Raza</th>
               </tr>
             </thead>
             <tbody>
@@ -39,7 +39,7 @@ const TablaUsuario = ({usuario, DBU, getUsuario}) => {
           :
           <div className="no-products-found d-flex align-items-center justify-content-center">
             {/* No usuarios  creados */}
-            <h1>🐾🐕  No hay Usuarios Registrados 🐈🐾</h1>
+            <h1>🐾🐕  No hay Pacientes Registrados 🐈🐾</h1>
           </div> 
         }
         <div className="text-end">

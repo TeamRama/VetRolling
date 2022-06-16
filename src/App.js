@@ -8,7 +8,6 @@ import TablaUsuario from './components/views/Formularios/Usuarios/TablaUsuario/T
 import CrearUsuario from './components/views/Formularios/Usuarios/CrearUsuario/CrearUsuario';
 import EditarUsuario from './components/views/Formularios/Usuarios/EditarUsuario/EditarUsuario';
 import Home from "./components/views/home/Home";
-import PaginaPlanes from "./components/views/PaginasPlanes/PaginaPlanes";
 import Pagina404 from './components/views/Pag404/Pagina404';
 import SobreNosotros from './components/views/SobreNosotros/SobreNosotros';
 import PagAdmin from './components/views/PaginaAdmin/PagAdmin';
@@ -85,7 +84,6 @@ function App() {
             <Route exact path="/usuario/tabla/" element={<TablaUsuario DBU={DBU} getUsuario={getUsuario} usuario={usuario} />} />
             <Route exact path="/usuario/editar/:id" element={<EditarUsuario DBU={DBU} getUsuario={getUsuario} />} />
             <Route exact path="/login/" element={<Ingreso />} />
-            <Route exact path="/PaginaPlanes/" element={<PaginaPlanes />} />
             <Route exact path="/SobreNosotros/" element={<SobreNosotros />} />
             <Route exact path="*" element={<Pagina404 />} />
             <Route exact path="/PagAdmin/" element={<PagAdmin />} />
