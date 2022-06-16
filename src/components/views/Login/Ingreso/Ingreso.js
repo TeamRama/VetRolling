@@ -13,8 +13,8 @@ const url = 'http://localhost:4001/registro/login'
 
 const Ingreso = () => {
 
-  // const gmail = process.env.email;
-  // const password = process.env.contraseña;
+  const gmail = process.env.REACT_APP_GMAIL;
+  const password = process.env.REACT_APP_CLAVE;
 
 
   const [email, setEmail] = useState("");
@@ -37,7 +37,6 @@ const Ingreso = () => {
     } else {
       setIcon(faEye);
       setType('password');
-
     }
   }
 
@@ -51,15 +50,8 @@ const Ingreso = () => {
           return;
       }
         session = true;
-        const res = await fetch(url, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({email: email, contraseña: contraseña})
-        });
-        console.log(res);
-          if (res.status === 200) {
+        console.log(email, gmail, contraseña, password);
+        if (email === gmail && contraseña === password) {
             sessionStorage.setItem("stateSession", JSON.stringify(session));
             Swal.fire(
               'Bienvenido "ADMINISTRADOR"!',
@@ -134,8 +126,12 @@ const Ingreso = () => {
                       <div className='Opcionesdeingreso'>
                         <p className="text-secondary my-4">O ingresá con</p>
                         <div className='fontAIconL'>
-                          <FontAwesomeIcon className='IconL px-3' icon={faGoogle} />
+                          <Link to="*" >
+                          <FontAwesomeIcon className="IconL px-3" icon={faGoogle} />
+                          </Link>
+                          <Link to="*">
                           <FontAwesomeIcon className='IconL px-3' icon={faFacebook} />
+                          </Link>
                         </div>
                       <hr className='mt-5' />
                       <div className="botoningresar">

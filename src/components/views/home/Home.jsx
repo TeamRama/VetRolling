@@ -8,6 +8,7 @@ import Servicio from "./servicios/Servicio"
 import Opiniones from './Opiniones';
 import Profesionales from './profesionales/Profesionales';
 import Publicidad2 from './Publicidad2';
+import Clima from "./Clima"
 import "../../../Styles/GeneralStyles.css"
 import "./home.css"
 
@@ -17,7 +18,7 @@ const Home = () => {
     return (
         <div>
             <Portada></Portada>
-            {/* <Clima></Clima> */}
+             <Clima></Clima> 
             <main className='container'>
                 <InformacionGralHome ></InformacionGralHome>
                 <Publicidad></Publicidad>

@@ -1,4 +1,5 @@
 import { Tabs, Tab } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const ServiciosTabbed = () => {
     return (
@@ -24,6 +25,9 @@ const ServiciosTabbed = () => {
                         <li>Regeneración de tejidos o cicatrización</li>
                         <li>Eficaz rehabilitación de problemas traumatológico</li>
                     </ul>
+                    <div className="d-flex justify-content-center">
+                        <Link className="btn-reservar text-decoration-none my-3" to="/Contacto">Hace click para realizar tu consulta</Link>
+                    </div>
                 </Tab>
                 <Tab eventKey="Electroacupuntura" title="Electroacupuntura">
                     <div className="d-flex justify-content-center">
@@ -35,6 +39,9 @@ const ServiciosTabbed = () => {
                         Con la Electroacupuntura obtenemos unas mejores ventajas que nos aportaba la acupuntura convencional, conseguimos un efecto más fácil de realizar, más fácil de controlar y de estandarizar que los métodos de manipulación manual. Además, es objetivamente medible y produce menos traumatización de los tejidos que la manipulación manual.
                         <br></br>
                         La Electroacupuntura produce una estimulación eléctrica de los puntos de acupuntura a través de las agujas. Después de que las agujas se insertan y la electricidad pasa a través de pares de agujas para dar una estimulación continua, generalmente durante 20-30 minutos.</p>
+                    <div className="d-flex justify-content-center">
+                        <Link className="btn-reservar text-decoration-none my-3" to="/Contacto">Hace click para realizar tu consulta</Link>
+                    </div>
                 </Tab>
                 <Tab eventKey="Oftalmologia" title="Oftalmologia">
                     <div className="d-flex justify-content-center">
@@ -47,6 +54,9 @@ const ServiciosTabbed = () => {
                         Disponemos de equipamiento para examinar las distintas estructuras oculares de tu mascota y así poder llegar a un diagnóstico certero y realizar los tratamientos médicos y/o quirúrgicos necesarios para preservar la visión y el buen estado de estos delicados órganos.
                         <br></br>
                         Para determinar si tu mascota padece algún tipo de enfermedad ocular realizamos un examen específico haciendo uso de equipamiento especializado que nos permita detectar la patología de tu animal.</p>
+                    <div className="d-flex justify-content-center">
+                        <Link className="btn-reservar text-decoration-none my-3" to="/Contacto">Hace click para realizar tu consulta</Link>
+                    </div>
                 </Tab>
             </Tabs>
         </div>

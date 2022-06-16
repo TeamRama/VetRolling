@@ -36,7 +36,7 @@ const Consulta = ({ consulta, DBC, getConsulta }) => {
             <td className="w-25">
                 <div className="d-flex justify-content-center">
                     <button className="btn-borrar text-decoration-none text-center mx-1"
-                        onClick={() => handleDelete(consulta._id)} >
+                        onClick={() => handleDelete(consulta._id)}>
                         Borrar Consulta</button>
                 </div>
             </td>
