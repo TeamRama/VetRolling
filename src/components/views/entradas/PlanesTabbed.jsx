@@ -1,6 +1,6 @@
 import { Tabs, Tab } from "react-bootstrap";
 import logo from "../../Assets/media/logo-vetplan-basico.png"
-import PaginaContacto from "../Formularios/PaginaContacto/PaginaContacto";
+
 
 const PlanesTabbed = () => {
     return (
@@ -24,7 +24,7 @@ const PlanesTabbed = () => {
                         <li><strong>Desparasitaciones externas:</strong> Se aplicarán mensualmente en su centro veterinario asociado los tratamientos necesarios para la prevención de pulgas y garrapatas previniendo así también las enfermedades transmitidas por éstas.</li>
                         <li><strong>Revisión anual:</strong> Incluida una revisión veterinaria anual de su mascota junto con un análisis sanguíneo de control de los principales parámetros hematológicos y bioquímicos para la detección temprana de posibles alteraciones en su salud</li>
                     </ul>
-                    <PaginaContacto></PaginaContacto>
+                    
                     <div>
                         <img className="container my-5" src="https://www.purina-latam.com/sites/g/files/auxxlc391/files/purina-pro-plan-puppy.jpg" alt="publicidad" />
                     </div>
@@ -51,7 +51,7 @@ const PlanesTabbed = () => {
                         <li><strong>Realización de biopsias cutáneas para envío a laboratorio anatomopatológico (no incluidos los costes del laboratorio externo)</strong></li>
                         <li><strong>Aspiraciones simples para análisis microscópico</strong></li>
                     </ul>
-                    <PaginaContacto></PaginaContacto>
+                
                     <div>
                         <img className="container my-5" src="https://www.purina-latam.com/sites/g/files/auxxlc391/files/Pro-Plan-La-nueva-imagen.png" alt="publicidad" />
                     </div>
@@ -79,7 +79,7 @@ const PlanesTabbed = () => {
                         <li>Fijadores externos</li>
                         <li>Placas de osteosíntesis</li>
                     </ul>
-                    <PaginaContacto></PaginaContacto>
+              
                     <div>
                         <img className="container my-5" src="https://www.purina-latam.com/sites/g/files/auxxlc391/files/BANNER_PROPLAN_PERRO-GATO-ADULTO.jpg" alt="publicidad" />
                     </div>

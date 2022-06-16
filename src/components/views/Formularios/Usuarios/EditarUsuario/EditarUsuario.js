@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Container, Form } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
-import { validateEmail, validateNombreDueño, validateNombreMascota, validateContraseña, validateFecha, validateCelular } from "../../../../helpers/ValidateFields";
+import { validateEmail, validateNombreDueño, validateNombreMascota, validateEspecie, validateRaza, validateCelular } from "../../../../helpers/ValidateFields";
 import "../../../../../Styles/GeneralStyles.css";
 
 
@@ -14,8 +14,8 @@ const EditarUsuario = ({ DBU, getUsuario }) => {
     const emailRef = useRef("")
     const nombreDueñoRef = useRef("")
     const nombreMascotaRef = useRef("")
-    const contraseñaRef = useRef("")
     const celularRef = useRef("")
+    const especieRef = useRef("")
 
     const navigate = useNavigate()
 
@@ -34,10 +34,10 @@ const EditarUsuario = ({ DBU, getUsuario }) => {
         if (
             !validateEmail(emailRef.current.value) ||
             !validateNombreDueño(nombreDueñoRef.current.value) ||
+            !validateCelular(celularRef.current.value)||
             !validateNombreMascota(nombreMascotaRef.current.value) ||
-            !validateContraseña(contraseñaRef.current.value) ||
-            !validateFecha(usuario.fecha) ||
-            !validateCelular(celularRef.current.value)
+            !validateEspecie(especieRef.current.value) ||
+            !validateRaza(usuario.Raza) 
         ) {
             Swal.fire("Ops!", " Algun dato es incorrecto .", "error");
             return;
@@ -45,10 +45,10 @@ const EditarUsuario = ({ DBU, getUsuario }) => {
         const usuarioUpdated = {
             email: emailRef.current.value,
             nombreDueño: nombreDueñoRef.current.value,
-            nombreMascota: nombreMascotaRef.current.value,
-            contraseña: contraseñaRef.current.value,
-            fecha: usuario.fecha,
             celular: celularRef.current.value,
+            nombreMascota: nombreMascotaRef.current.value,
+            especie: especieRef.current.value,
+            raza: usuario.raza,
         };
         Swal.fire({
             title: 'Seguro que quieres editar los Datos?',
@@ -103,6 +103,14 @@ const EditarUsuario = ({ DBU, getUsuario }) => {
                         />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Label>Celular </Form.Label>
+                        <Form.Control type="tel"
+                            placeholder="Celular"
+                            defaultValue={usuario.celular}
+                            ref={celularRef}
+                        />
+                    </Form.Group>
+                    <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Nombre de la Mascota</Form.Label>
                         <Form.Control type="text"
                             placeholder="nombre o apodo"
@@ -111,28 +119,28 @@ const EditarUsuario = ({ DBU, getUsuario }) => {
                         />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>Contraseña </Form.Label>
-                        <Form.Control type="password"
-                            placeholder="contraseña"
-                            defaultValue={usuario.contraseña}
-                            ref={contraseñaRef}
+                        <Form.Label>Especie </Form.Label>
+                        <Form.Control type="text"
+                            placeholder="Especie"
+                            defaultValue={usuario.especie}
+                            ref={especieRef}
                         />
                     </Form.Group>
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>Fecha de Nacimiento </Form.Label>
-                        <Form.Control
-                            type="date"
-                            value={usuario.fecha}
-                            onChange={({ target }) => setUsuario({ ...usuario, fecha: target.value })} />
-                    </Form.Group>
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>Celular </Form.Label>
-                        <Form.Control type="tel"
-                            placeholder="Celular"
-                            defaultValue={usuario.celular}
-                            ref={celularRef}
-                        />
-                    </Form.Group>
+                    <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                                <Form.Label>Tipo de Especie</Form.Label>
+                                <Form.Select
+                                value={usuario.raza}
+                                onChange={({ target }) => setUsuario({ ...usuario, raza: target.value })}>
+                                <option value="">Tipo de Raza</option>
+                                <option value="perro">Perro</option>
+                                <option value="gato">Gato</option>
+                                <option value="ave">Ave</option>
+                                <option value="reptil">Reptil</option>
+                                <option value="otro">Otro</option>
+                            </Form.Select>
+                            </Form.Group>
+                   
+                    
                     <div className="text-end">
                         <button className="btn-reservar">Modificar</button>
                     </div>

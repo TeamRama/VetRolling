@@ -41,7 +41,7 @@ const Ss = () => {
             los tratamientos necesarios para la prevención de pulgas y garrapatas
             previniendo así también las enfermedades transmitidas por éstas.
           </p>
-          <Link to="/PaginaContacto" className="btn-Planes1 text-decoration-none text-center"> Me Interesa </Link>
+        
 
          </div>
         <hr />
@@ -63,7 +63,7 @@ const Ss = () => {
             envío a laboratorio anatomopatológico (no incluidos los costes del
             laboratorio externo) Aspiraciones simples para análisis microscópico
           </p>
-          <Link to="/PaginaContacto" className="btn-Planes2 text-decoration-none text-center"> Me Interesa </Link>
+       
 
         </div>
         <hr />
@@ -96,7 +96,7 @@ const Ss = () => {
             múltiples Extirpación de cadenas mamarias Amputación extremidad
             Uretrotomía perro
           </p>
-          <Link to="/PaginaContacto" className="btn-Planes3 text-decoration-none text-center"> Me Interesa </Link>
+          
 
         </div>
         <hr />

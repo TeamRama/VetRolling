@@ -2,18 +2,16 @@
 
 // Reg expressions
 const regExpNombreDueño = /^[A-Za-z\s?]+$/;
-const regExpApellidoDueño = /^[A-Za-z\s?]+$/;
 const regExpNombreMascota = /^[A-Za-z\s?]+$/;
 const regExpVeterinario = /^[A-Za-z\s?]+$/;
 const regExpRaza =/^[A-Za-z\s?]+$/;
 const regExpHorario = /[0-9]+$/;
 const regExpEmail = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
 const regExpContraseña =  /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/;
-const regExpNombreApellido = /^[A-Za-z\s?]+$/;
 const regExpFecha = /^\d{4}([\-/.])(0?[1-9]|1[1-2])\1(3[01]|[12][0-9]|0?[1-9])$/;
 const regExpCelular = /[0-9]+$/;
-const regExpPlan =/^[A-Za-z\s?]+$/;
 const regExpConsulta =/^[A-Za-z\s?]+$/;
+const regExpEspecie = /^[A-Za-z\s?]+$/;
 
 
 
@@ -22,19 +20,6 @@ export const validateNombreDueño = (field) => {
 
   if (
     regExpNombreDueño.test(field)  && field.trim() !== "" ) {
-      
-    return true;
-    
-  } else {
-
-    return false;
-    
-  }
-};
-export const validateApellidoDueño = (field) => {
-
-  if (
-    regExpApellidoDueño.test(field)  && field.trim() !== "" ) {
       
     return true;
     
@@ -125,21 +110,6 @@ export const validateContraseña = (field) => {
 };
 
 
-export const validateNombreApellido = (field) => {
-  if (
-    regExpNombreApellido.test(field)  && field.trim() !== "" ) {
-    
-    return true;
- 
-  } else {
-
-    return false;
-    
-  }
-};
-
-
-
 export const validateFecha = (field) => {
   if (
     regExpFecha.test(field)  && field.trim() !== "" ) {
@@ -152,7 +122,6 @@ export const validateFecha = (field) => {
     
   }
 };
-
 
 
 export const validateCelular = (field) => {
@@ -169,20 +138,6 @@ export const validateCelular = (field) => {
 };
 
 
-export const validatePlan = (field) => {
-  if (
-    regExpPlan.test(field) &&
-    field.trim() !== "" &&
-    (field === "cachorro" ||
-    field === "maduro" ||
-      field === "adulto")
-  ) {
-    return true;
-  } else {
-    return false;
-  }
-};
-
 export const validateConsulta = (field) => {
   if( 
     regExpConsulta.test(field) &&
@@ -192,6 +147,21 @@ export const validateConsulta = (field) => {
   } else {
     return false;
   }
-}
+};
+
+export const validateEspecie = (field) => {
+  if (
+    regExpEspecie.test(field)  && field.trim() !== "" ) {
+    
+    return true;
+ 
+  } else {
+
+    return false;
+    
+  }
+};
+
+
 
 
