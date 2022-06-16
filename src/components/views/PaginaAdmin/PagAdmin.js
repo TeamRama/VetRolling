@@ -5,7 +5,7 @@ import "./PagAdmin.css";
 import "../../../Styles/GeneralStyles.css";
 import usuarios from '../../Assets/ImgLogin/gato1.jpg';
 import turnos from '../../Assets/ImgLogin/perro1.jpg';
-// import consultas from '../../Assets/ImgLogin/conejo1.jpg';
+import consultas from '../../Assets/ImgLogin/conejo1.jpg';
 
 
 
@@ -52,18 +52,17 @@ const PagAdmin = () => {
                         </Card.Body>
                     </Card>
 
-                    {/* <Card className='cardsadm m-4' style={{ width: '30rem' }}>
+                    <Card className='cardsadm m-4' style={{ width: '30rem' }}>
                         <Card.Img src={consultas} />
                         <Card.Body>
                             <Card.Title>Consultas Registradas</Card.Title>
                             <Card.Text>
-                                Some quick example text to build on the card title and make up the bulk of
-                                the card's content.
+                                Haga click para ver las consultas generales de pacientes.
                             </Card.Text>
                             <hr />
-                            <Link to="/PaginaContacto/" className="btn-adm text-decoration-none text-center">  Ver Consultas  </Link>
+                            <Link to="/tabla/consulta" className="btn-adm text-decoration-none text-center">  Ver Consultas  </Link>
                         </Card.Body>
-                    </Card> */}
+                    </Card>
                 </div>
             </Container>
         </div>
