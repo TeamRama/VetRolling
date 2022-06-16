@@ -6,7 +6,7 @@ import { faGoogle, faFacebook } from '@fortawesome/free-brands-svg-icons';
 import { Link, useNavigate } from "react-router-dom";
 import { validateEmail, validateContraseña } from "../../../helpers/ValidateFields";
 import Swal from "sweetalert2";
-import {  faEyeSlash , faEye } from "@fortawesome/free-solid-svg-icons";
+import { faEye } from "@fortawesome/free-solid-svg-icons";
 import "../../../../Styles/GeneralStyles.css";
 
 const url = 'http://localhost:4001/registro/login'
@@ -32,8 +32,6 @@ const Ingreso = () => {
     if (type === 'password') {
       setIcon(faEye);
       setType('text');
-      /*document.getElementById('icon1').style.display = 'none';*/
-      
     } else {
       setIcon(faEye);
       setType('password');
@@ -77,22 +75,22 @@ const Ingreso = () => {
           <h1 className="mx-5 TituloIngreso">Bienvenidos! </h1>
           <hr />
           <div>
-            <div className='box'>
-              <Form className='FormLogin p-3 m-3' onSubmit={handleSubmit}>
-                <Row>
-                  <Col md={6} className="colingreso">
-                    <Form.Group className="usuario" controlId="formBasicEmail">
-                      <Form.Label>Email</Form.Label>
-                      <Form.Control
-                        className="email"
-                        type="email"
-                        placeholder=" Email"
-                        onChange={({ target }) => setEmail(target.value)}
-                        required />
-                    </Form.Group>
-                      <div>
+            <Form className='FormLogin p-3 m-3' onSubmit={handleSubmit}>
+              <Row>
+                <Col md={6} className="colingreso">
+                  <Form.Group className="usuario" controlId="formBasicEmail">
+                    <Form.Label>Email</Form.Label>
+                    <Form.Control
+                      className="email"
+                      type="email"
+                      placeholder=" Email"
+                      onChange={({ target }) => setEmail(target.value)}
+                      required />
+                  </Form.Group>
+                  <div>
                     <Form.Group className="mb-3 Contraseña" controlId="formBasicPassword">
                       <Form.Label>Password</Form.Label>
+                      <div className="container-contraseña">
                         <Form.Control className='contraseña'
                           type={type}
                           placeholder="Contraseña"
@@ -103,45 +101,45 @@ const Ingreso = () => {
                           id='icon'
                           icon={faEye}
                           onClick={handleToggle}
-                           />
-                    </Form.Group>
+                        />
                       </div>
-                    <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                      <Form.Check
-                        className='checkboxL'
-                        type="checkbox"
-                        name="terminos"
-                        id="terminos"
-                        label="Recordar mis datos"
-                         />
                     </Form.Group>
-                    <div className="botoningresar">
-                      <button className="btn-registro"
-                        onClick={handleClick}>
-                        Ingresar</button>
+                  </div>
+                  <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                    <Form.Check
+                      className='checkboxL'
+                      type="checkbox"
+                      name="terminos"
+                      id="terminos"
+                      label="Recordar mis datos"
+                    />
+                  </Form.Group>
+                  <div className="botoningresar">
+                    <button className="btn-registro"
+                      onClick={handleClick}>
+                      Ingresar</button>
+                  </div>
+                  <Link className="nav-link login" to="*">Olvide mi Contraseña</Link>
+                </Col>
+                <Col md={6} className="botoningresar mt-2" >
+                  <div className='Opcionesdeingreso'>
+                    <p className="text-secondary my-4">O ingresá con</p>
+                    <div className='fontAIconL'>
+                      <Link to="*" >
+                        <FontAwesomeIcon className="IconL px-3" icon={faGoogle} />
+                      </Link>
+                      <Link to="*">
+                        <FontAwesomeIcon className='IconL px-3' icon={faFacebook} />
+                      </Link>
                     </div>
-                    <Link className="nav-link login" to="*">Olvide mi Contraseña</Link>
-                    </Col>
-                    <Col md={6} className="botoningresar mt-2" >
-                      <div className='Opcionesdeingreso'>
-                        <p className="text-secondary my-4">O ingresá con</p>
-                        <div className='fontAIconL'>
-                          <Link to="*" >
-                          <FontAwesomeIcon className="IconL px-3" icon={faGoogle} />
-                          </Link>
-                          <Link to="*">
-                          <FontAwesomeIcon className='IconL px-3' icon={faFacebook} />
-                          </Link>
-                        </div>
-                      <hr className='mt-5' />
-                      <div className="botoningresar">
+                    <hr className='mt-5' />
+                    <div className="botoningresar">
                       <Link className="btn-registro  text-decoration-none text-center mt-1" to="/registroUsuario">Registrarme</Link>
-                      </div>
-                      </div>
-                    </Col>
-                </Row>
-              </Form>
-              </div>
+                    </div>
+                  </div>
+                </Col>
+              </Row>
+            </Form>
           </div>
         </div>
       </Container>

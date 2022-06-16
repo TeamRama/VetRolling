@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Container, Form } from "react-bootstrap";
+import { Container, Form, Row, Col } from "react-bootstrap";
 import { useNavigate, useParams, Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import { validateNombreDueño, validateNombreMascota, validateRaza, validateVeterinario, validateHorario, validateFecha } from "../../../../helpers/ValidateFields";
@@ -40,8 +40,8 @@ const EditarTurno = ({ DBT, getTurno }) => {
     const navigate = useNavigate()
 
     // veterinarios
-    const veta = "Vet A"; // aca va lo que ponga como value
-    const vetb = "Vet B";
+    const veta = "Dr Ramiro Perez"; // aca va lo que ponga como value
+    const vetb = "Dr Romero Pablo";
 
     // UseEffect
     useEffect(async () => {
@@ -165,13 +165,15 @@ const EditarTurno = ({ DBT, getTurno }) => {
 
     return (
         <div>
-            <Container className="py-5 DatosTurno">
+            <Container className="py-5">
                 <h1>Editar Turno</h1>
                 <hr />
                 {/* formulario para editar  Turnos */}
-                <div className='Form-Turno'>
+                <Row>
+                    <div className="d-flex justify-content-center">
+                    <Col sm={12} md={8}>
                     <Form className="my-5" onSubmit={handleSubmit}>
-                        <Form.Group className="mx-5 px-5" controlId="formBasicEmail">
+                        <Form.Group className="" controlId="formBasicEmail">
                             <Form.Label>Nombre Del Dueño</Form.Label>
                             <Form.Control type="text"
                                 placeholder="Nombre"
@@ -214,10 +216,10 @@ const EditarTurno = ({ DBT, getTurno }) => {
                                 <option value="">Elegir Veterinario</option>
                                 <option
                                     ref={vetaRef}
-                                    value="Vet A">Dr Perez, Ramiro</option>
+                                    value="Dr Perez Ramiro">Dr Perez, Ramiro</option>
                                 <option
                                     ref={vetbRef}
-                                    value="Vet B">Dr Romero, Pablo</option>
+                                    value="Dr Romero Pablo">Dr Romero, Pablo</option>
                             </Form.Select>
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formBasicCheckbox">
@@ -236,7 +238,11 @@ const EditarTurno = ({ DBT, getTurno }) => {
                             <button className="btn-reservar">Modificar</button>
                         </div>
                     </Form>
-                </div>
+                    </Col>
+                    </div>
+                    
+                </Row>
+                    
                 <div className="text-end">
                     <Link to="/turno/tabla/" className="btn-reservar text-decoration-none text-center">  Atras  </Link>
                 </div>

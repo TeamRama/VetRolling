@@ -45,8 +45,8 @@ const CrearTurno = ({ DBT, getTurno }) => {
   ];
 
   // veterinarios
-  const veta = "Vet A";
-  const vetb = "Vet B";
+  const veta = "Dr Perez Ramiro";
+  const vetb = "Dr Romero Pablo";
 
   // UseEffect
   useEffect(() => {
@@ -223,10 +223,10 @@ const CrearTurno = ({ DBT, getTurno }) => {
                     <option value="">Veterinario</option>
                     <option
                       ref={vetaRef}
-                      value="Vet A">Dr Perez, Ramiro</option>
+                      value="Dr Perez Ramiro">Dr Perez, Ramiro</option>
                     <option
                       ref={vetbRef}
-                      value="Vet B">Dr Romero, Pablo</option>
+                      value="Dr Romero Pablo">Dr Romero, Pablo</option>
                   </Form.Select>
                 </Form.Group>
               </Col>

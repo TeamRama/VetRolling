@@ -62,19 +62,24 @@ background-color: white;
 color: #feba0b;
 }
 
+.container-contraseña {
+  position: relative;
+}
+
 .contraseña{
 display: flex;
 flex-direction: row;
 cursor: pointer;
 }
 
-.icon{
-cursor: pointer;
-position: relative;
-top: -32.5px;
-left: 525px;
-
+.icon {
+  position: absolute;
+  right: 8px;
+  top: 9.5px;
+  height: 50%;
+ 
 }
+
 .botoningresar{
   text-align: center;
 }

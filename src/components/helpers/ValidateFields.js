@@ -62,8 +62,8 @@ export const validateVeterinario = (field) => {
   if (
     regExpVeterinario.test(field) &&
     field.trim() !== "" &&
-    (field === "Vet A" ||
-      field === "Vet B")
+    (field === "Dr Perez Ramiro" ||
+      field === "Dr Romero Pablo")
   ) {
     return true;
   } else {
