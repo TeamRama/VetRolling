@@ -1,5 +1,3 @@
-
-
 // Reg expressions
 const regExpNombreDueño = /^[A-Za-z\s?]+$/;
 const regExpNombreMascota = /^[A-Za-z\s?]+$/;

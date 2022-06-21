@@ -8,11 +8,11 @@ import "./Pagina404.css";
 const Pagina404 = () => {
 
   return (
-    <div>
+    <div className="my-5">
       <div className="E404">
-        <img className=" Error404 my-3" src={error} />
-        <div>
-          <Link to="/" className="btn-ingresar text-decoration-none text-center my-2">Volver </Link>
+        <img className="Error404 my-3" src={error} alt="error 404 pagina no disponible"/>
+        <div className="text-center">
+          <Link to="/" className="btn-ingresar text-decoration-none  my-2">Volver </Link>
         </div>
       </div>
     </div>

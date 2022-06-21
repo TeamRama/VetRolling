@@ -9,8 +9,6 @@ import Swal from "sweetalert2";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 import "../../../../Styles/GeneralStyles.css";
 
-const url = 'http://localhost:4001/registro/login'
-
 const Ingreso = () => {
 
   const gmail = process.env.REACT_APP_GMAIL;

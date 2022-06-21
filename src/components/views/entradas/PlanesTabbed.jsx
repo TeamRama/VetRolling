@@ -5,7 +5,7 @@ import "../../../Styles/GeneralStyles.css"
 
 const PlanesTabbed = () => {
     return (
-        <div className="container"> 
+        <div className="container mt-5"> 
             <div className="text-center">
                 <h1 className="fw-bold my-5">NUESTROS PLANES PARA VOS Y TU MASCOTA</h1>
                 <img className="mb-5" src={logo} alt="logo vet" />

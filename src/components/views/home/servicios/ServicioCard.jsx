@@ -13,7 +13,7 @@ const ServicioCard = ({ servicios }) => {
                 
               </Card.Body>
               <div className='d-flex justify-content-end m-3'>
-              <Link to="/ServiciosTabbed" variant="warning" className='btn-reservar text-decoration-none'>Mas informacion</Link>
+              <Link to="/Servicios/Tabbed" variant="warning" className='btn-reservar text-decoration-none'>Mas informacion</Link>
               </div>
             </Card>
           </Col>

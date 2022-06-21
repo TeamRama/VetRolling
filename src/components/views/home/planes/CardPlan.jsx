@@ -19,7 +19,7 @@ const CardPlan = ({ imagen, nombre, descripcion }) => {
           <Col sm={12} md={12} lg={6} className="mt-2">
             <h3 className="text-warning fw-bold">{nombre}</h3>
             <p className="lead">{descripcion}</p>
-            <Link className="btn-reservar text-decoration-none" to="/PlanesTabbed">Descubre Nuestros Planes</Link>
+            <Link className="btn-reservar text-decoration-none" to="/Planes/Tabbed">Descubre Nuestros Planes</Link>
           </Col>
         </Row>
       </Container>

@@ -22,14 +22,11 @@ import Contacto from './components/views/contacto/Contacto';
 import RegistroUsuario from './components/views/Login/Ingreso/RegistroUsuario';
 import TablaConsulta from './components/views/consultas/TablaConsulta';
 
-
-
 function App() {
 
   const [turnos, setTurnos] = useState([]);
   const [usuario, setUsuario] = useState([]);
   const [consulta, setConsulta] = useState([]);
-
 
   const DBT = process.env.REACT_APP_API_TURNOS;
   const DBU = process.env.REACT_APP_API_USUARIO;
@@ -71,6 +68,7 @@ function App() {
       console.log(error);
     }
   }
+  
   return (
       <BrowserRouter>
         <Navigation />
@@ -87,8 +85,8 @@ function App() {
             <Route exact path="/SobreNosotros/" element={<SobreNosotros />} />
             <Route exact path="*" element={<Pagina404 />} />
             <Route exact path="/PagAdmin/" element={<PagAdmin />} />
-            <Route exact path="/ServiciosTabbed" element={<ServiciosTabbed></ServiciosTabbed>}></Route>
-            <Route exact path="/PlanesTabbed" element={<PlanesTabbed></PlanesTabbed>}></Route>
+            <Route exact path="/Servicios/Tabbed" element={<ServiciosTabbed></ServiciosTabbed>}></Route>
+            <Route exact path="/Planes/Tabbed" element={<PlanesTabbed></PlanesTabbed>}></Route>
             <Route exact path="/Contacto" element={<Contacto></Contacto>}></Route>
             <Route exact path="/RegistroUsuario" element={<RegistroUsuario DBR={DBR}></RegistroUsuario>}></Route>
             <Route exact path="/tabla/consulta" element={<TablaConsulta getConsulta={getConsulta} consulta={consulta} DBC={DBC}></TablaConsulta>}></Route>
