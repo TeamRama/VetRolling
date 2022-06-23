@@ -17,8 +17,8 @@ const Footer = () => {
           <Col sm={12} md={4}>
             <ul className="text-white list-style p-2">A cerca de:
             <li className="p-2"><Link className="text-decoration-none text-white" to="/Planes/Tabbed">Planes</Link></li>
-            <li className="p-2"><Link className="text-decoration-none text-white" to="*">Pet shop</Link></li>
-            <li className="p-2"><Link className="text-decoration-none text-white" to="/PaginaContacto">Contacto</Link></li>          
+            <li className="p-2"><Link className="text-decoration-none text-white" to="/Servicios/Tabbed">Servicios</Link></li>
+            <li className="p-2"><Link className="text-decoration-none text-white" to="/Contacto">Contacto</Link></li>          
             </ul>
           </Col>
           <Col sm={12} md={4}>

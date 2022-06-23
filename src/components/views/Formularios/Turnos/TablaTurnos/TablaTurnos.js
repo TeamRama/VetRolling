@@ -6,7 +6,7 @@ import "../../../../../Styles/GeneralStyles.css";
 
 const TablaTurnos = ({ turnos, DBT, getTurno }) => {
   return (
-    <div>
+    <div className='container'>
       <Container className="py-5">
         <div className="d-flex align-items-center justify-content-between">
           <h1>Tabla de Turnos</h1>
@@ -39,7 +39,7 @@ const TablaTurnos = ({ turnos, DBT, getTurno }) => {
           :
           <div className="no-products-found d-flex align-items-center justify-content-center">
             {/* No turno found message */}
-            <h1>🐾🐕  No hay Turnos Reservados 🐈🐾 </h1>
+            <h1>🐾🐕  No hay consultas realizadas 🐈🐾 </h1>
           </div>
         }
         <div className="text-end">

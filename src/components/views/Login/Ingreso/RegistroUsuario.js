@@ -75,7 +75,6 @@ const RegistroUsuario = ( { DBR }) => {
                                         type="text"
                                         placeholder='Ingrese nombre y apellido'
                                         onChange={({ target }) => setNombreApellido(target.value)}>
-
                                     </Form.Control>
                                 </Form.Group>
                             </Col>
@@ -96,9 +95,13 @@ const RegistroUsuario = ( { DBR }) => {
                                         type="password"
                                         placeholder="Password"
                                         onChange={({ target }) => setContraseña(target.value)} />
+                                        <Form.Text className="text-muted">
+                                            Debe contener como minimo una mayuscula, minuscula y un numero.
+                                        </Form.Text>
                             </Form.Group>
+                            
                             </Col>
-                            <button className='btn-reservar'>Registrarme</button>
+                            <button className='btn-reservar mt-3'>Registrarme</button>
                         </Form>
                             <Link className='btn-reservar text-decoration-none my-3'  to="/login">Atras</Link>
                     </Col>
